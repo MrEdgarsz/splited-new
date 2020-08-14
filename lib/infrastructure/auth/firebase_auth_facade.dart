@@ -17,8 +17,7 @@ import 'package:http/http.dart' as http;
 import 'package:splited/domain/auth/value_objects/password_change_code.dart';
 import 'package:splited/infrastructure/auth/model/firebase_auth_credentials.dart';
 
-@lazySingleton
-@RegisterAs(IAuthFacade)
+@LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade extends IAuthFacade {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
