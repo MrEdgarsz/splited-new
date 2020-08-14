@@ -1,0 +1,100 @@
+import 'package:flare_flutter/flare_actor.dart';
+import 'package:flutter/material.dart';
+import 'package:native_color/native_color.dart';
+import 'package:splited/presentation/core/core_assets.dart';
+
+class CustomAppBar extends StatelessWidget {
+  final IconData icon;
+  final Function onIconPressed;
+  final String title;
+  final IconData suffixIcon;
+  final Function onSuffixPressed;
+  final String subtitle;
+
+  const CustomAppBar({
+    @required this.icon,
+    @required this.onIconPressed,
+    @required this.title,
+    this.suffixIcon,
+    this.onSuffixPressed,
+    this.subtitle = "",
+  });
+  const CustomAppBar.back({
+    this.icon = Icons.arrow_back,
+    @required this.onIconPressed,
+    @required this.title,
+    this.suffixIcon,
+    this.onSuffixPressed,
+    this.subtitle = "",
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        GestureDetector(
+          onTap: () => onIconPressed(),
+          child: Stack(
+            alignment: Alignment.centerLeft,
+            children: <Widget>[
+              Container(
+                  height: 57,
+                  width: 76,
+                  child: Image.asset(CoreAssets.backbutton)),
+              Positioned(
+                left: 11.0,
+                top: 8.0,
+                child: Icon(
+                  icon,
+                  size: 32.0,
+                  color: HexColor("#EBEBEB"),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+            child: Column(
+          children: <Widget>[
+            Text(
+              title,
+              style: Theme.of(context).textTheme.title,
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              subtitle,
+              style: Theme.of(context).textTheme.title.copyWith(
+                    fontSize: 11,
+                  ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        )),
+        (suffixIcon != null && onSuffixPressed != null)
+            ? GestureDetector(
+                onTap: () => onSuffixPressed(),
+                child: Stack(
+                  alignment: Alignment.centerLeft,
+                  children: <Widget>[
+                    Container(
+                        height: 57,
+                        width: 76,
+                        child: Image.asset(CoreAssets.suffixbutton)),
+                    Positioned(
+                      right: 11.0,
+                      top: 8.0,
+                      child: Icon(
+                        suffixIcon,
+                        size: 32.0,
+                        color: HexColor("#EBEBEB"),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            : const SizedBox(width: 76)
+      ],
+    );
+  }
+}

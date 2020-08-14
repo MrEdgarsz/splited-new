@@ -1,0 +1,69 @@
+{
+  "generate_tests": true,
+  "no_comments": true,
+  "export": true,
+  "use_part_of": true,
+  "package": "presentation/resources",
+  "groups": [
+    {
+      "path": "assets/SplashScreen",
+      "class_name": "SplashScreenAssets",
+      "types": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "gif",
+        "bmp",
+        "wbmp",
+        "svg",
+        "flr"
+      ]
+    },
+    {
+      "path": "assets/HomePage",
+      "class_name": "HomePageAssets",
+      "types": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "gif",
+        "bmp",
+        "wbmp",
+        "svg",
+        "flr"
+      ]
+    },
+    {
+      "path": "assets/RegisterPage",
+      "class_name": "RegisterPageAssets",
+      "types": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "gif",
+        "bmp",
+        "wbmp",
+        "svg",
+        "flr"
+      ]
+    },
+    {
+      "path": "assets/Core",
+      "class_name": "CoreAssets",
+      "types": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "gif",
+        "bmp",
+        "wbmp",
+        "svg",
+        "flr"
+      ]
+    }
+  ]
+}
