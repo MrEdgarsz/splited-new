@@ -29,24 +29,6 @@ class _AppWidgetState extends State<AppWidget> {
       builder: (context, state) {
         return MaterialApp(
           title: 'SplitEd',
-          supportedLocales: [
-            const Locale('en', 'US'),
-            const Locale('pl', 'PL'),
-          ],
-          localizationsDelegates: [
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-          ],
-          localeResolutionCallback: (locale, supportedLocales) {
-            for (final supportedLocale in supportedLocales) {
-              if (supportedLocale.languageCode == locale?.languageCode &&
-                  supportedLocale.countryCode == locale?.countryCode) {
-                return supportedLocale;
-              }
-            }
-            return supportedLocales.first;
-          },
           theme: (state as ThemeState).data,
           darkTheme: ((state as ThemeState).type == ThemeType.system)
               ? CustomAppTheme.dark
