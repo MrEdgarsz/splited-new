@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: CustomRaisedButton(
                 onPressed: () {
-                  ExtendedNavigator.of(context).pushNamed(Routes.signInPage);
+                  ExtendedNavigator.of(context).push(Routes.signInPage);
                 },
                 color: HexColor("#247DBA"),
                 child: Text(
@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: CustomRaisedButton(
                 onPressed: () {
-                  ExtendedNavigator.of(context).pushNamed(Routes.registerPage);
+                  ExtendedNavigator.of(context).push(Routes.registerPage);
                 },
                 color: HexColor("#24BA60"),
                 child: Text(

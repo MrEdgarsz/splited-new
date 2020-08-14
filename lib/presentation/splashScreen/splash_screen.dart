@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _changePage() {
-    ExtendedNavigator.of(context).pushReplacementNamed(Routes.homePage);
+    ExtendedNavigator.of(context).replace(Routes.homePage);
   }
 
   @override

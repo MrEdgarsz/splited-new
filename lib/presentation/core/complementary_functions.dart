@@ -47,8 +47,7 @@ void showLinkingDialog(
         FlatButton(
           onPressed: () {
             Navigator.pop(context);
-            ExtendedNavigator.of(context).pushReplacementNamed(
-                Routes.linkingAccountSignIn,
+            ExtendedNavigator.of(context).replace(Routes.linkingAccountSignIn,
                 arguments: LinkingAccountSignInArguments(
                     signInMethods: signInMethods, accountType: type));
           },

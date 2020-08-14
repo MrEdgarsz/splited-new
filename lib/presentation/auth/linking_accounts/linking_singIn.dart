@@ -74,7 +74,7 @@ class LinkingAccountSignIn extends StatelessWidget {
                         ),
                         (_) {
                           print("halo co jest kurwa");
-                          ExtendedNavigator.of(context).pushNamed(
+                          ExtendedNavigator.of(context).push(
                             Routes.linkingAccountJoinAccount,
                             arguments: LinkingAccountJoinAccountArguments(
                                 accountType: accountType),

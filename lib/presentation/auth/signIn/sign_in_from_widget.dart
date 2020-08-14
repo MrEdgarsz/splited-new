@@ -112,8 +112,7 @@ class SignInFormWidget extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Feedback.forTap(context);
-                  ExtendedNavigator.of(context)
-                      .pushReplacementNamed(Routes.registerPage);
+                  ExtendedNavigator.of(context).replace(Routes.registerPage);
                 },
                 child: Text(
                   AppLocalizations.of(context).translate("createAccount"),
