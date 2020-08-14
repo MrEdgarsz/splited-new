@@ -15,8 +15,8 @@ part 'theme_bloc.freezed.dart';
 
 @lazySingleton
 class ThemeBloc extends HydratedBloc<ThemeEvent, ThemeState> {
-  @override
-  ThemeState get initialState => super.initialState ?? ThemeState.initial();
+  ThemeBloc() : super(ThemeState.initial());
+
   @override
   ThemeState fromJson(Map<String, dynamic> json) {
     if (json["themeType"] == ThemeType.dark.toString()) {
