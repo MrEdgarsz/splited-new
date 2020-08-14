@@ -18,9 +18,7 @@ part 'register_bloc.freezed.dart';
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   final IAuthFacade _authFacade;
 
-  RegisterBloc(this._authFacade);
-  @override
-  RegisterState get initialState => RegisterState.initial();
+  RegisterBloc(this._authFacade) : super(RegisterState.initial());
 
   @override
   Stream<RegisterState> mapEventToState(
