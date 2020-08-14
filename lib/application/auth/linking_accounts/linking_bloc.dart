@@ -17,10 +17,8 @@ part 'linking_state.dart';
 
 @lazySingleton
 class LinkingBloc extends Bloc<LinkingEvent, LinkingState> {
-  LinkingBloc(this._authFacade);
+  LinkingBloc(this._authFacade) : super(LinkingState.initial());
   final IAuthFacade _authFacade;
-  @override
-  LinkingState get initialState => LinkingState.initial();
 
   @override
   Stream<LinkingState> mapEventToState(
