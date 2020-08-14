@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'theme_bloc.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$ThemeEventTearOff {
   const _$ThemeEventTearOff();
 
+// ignore: unused_element
   ChangeTheme changeTheme(ThemeType themeType) {
     return ChangeTheme(
       themeType,
@@ -24,6 +25,25 @@ const $ThemeEvent = _$ThemeEventTearOff();
 
 mixin _$ThemeEvent {
   ThemeType get themeType;
+
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result changeTheme(ThemeType themeType),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result changeTheme(ThemeType themeType),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result changeTheme(ChangeTheme value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result changeTheme(ChangeTheme value),
+    @required Result orElse(),
+  });
 
   $ThemeEventCopyWith<ThemeEvent> get copyWith;
 }
@@ -115,6 +135,50 @@ class _$ChangeTheme with DiagnosticableTreeMixin implements ChangeTheme {
   @override
   $ChangeThemeCopyWith<ChangeTheme> get copyWith =>
       _$ChangeThemeCopyWithImpl<ChangeTheme>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result changeTheme(ThemeType themeType),
+  }) {
+    assert(changeTheme != null);
+    return changeTheme(themeType);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result changeTheme(ThemeType themeType),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeTheme != null) {
+      return changeTheme(themeType);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result changeTheme(ChangeTheme value),
+  }) {
+    assert(changeTheme != null);
+    return changeTheme(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result changeTheme(ChangeTheme value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeTheme != null) {
+      return changeTheme(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class ChangeTheme implements ThemeEvent {
@@ -129,6 +193,7 @@ abstract class ChangeTheme implements ThemeEvent {
 class _$ThemeStateTearOff {
   const _$ThemeStateTearOff();
 
+// ignore: unused_element
   _ThemeState call({@required ThemeType type, @required ThemeData data}) {
     return _ThemeState(
       type: type,

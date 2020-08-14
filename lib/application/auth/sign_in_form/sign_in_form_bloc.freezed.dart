@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'sign_in_form_bloc.dart';
 
@@ -12,26 +12,31 @@ T _$identity<T>(T value) => value;
 class _$SignInFormEventTearOff {
   const _$SignInFormEventTearOff();
 
+// ignore: unused_element
   PasswordChanged passwordChanged(String password) {
     return PasswordChanged(
       password,
     );
   }
 
+// ignore: unused_element
   EmailChanged emailChanged(String email) {
     return EmailChanged(
       email,
     );
   }
 
+// ignore: unused_element
   SignInWithEmailAndPassword signInWithEmailAndPassword() {
     return const SignInWithEmailAndPassword();
   }
 
+// ignore: unused_element
   SignInWithGoogle signInWithGoogle() {
     return const SignInWithGoogle();
   }
 
+// ignore: unused_element
   SignInWithFacebook signInWithFacebook() {
     return const SignInWithFacebook();
   }
@@ -681,6 +686,7 @@ abstract class SignInWithFacebook implements SignInFormEvent {
 class _$SignInFormStateTearOff {
   const _$SignInFormStateTearOff();
 
+// ignore: unused_element
   _SignInFormState call(
       {@required EmailAddress emailAddress,
       @required Password password,

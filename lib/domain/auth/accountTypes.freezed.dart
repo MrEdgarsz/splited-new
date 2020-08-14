@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'accountTypes.dart';
 
@@ -12,14 +12,17 @@ T _$identity<T>(T value) => value;
 class _$AccountTypeTearOff {
   const _$AccountTypeTearOff();
 
+// ignore: unused_element
   Standard standard() {
     return const Standard();
   }
 
+// ignore: unused_element
   Google google() {
     return const Google();
   }
 
+// ignore: unused_element
   Facebook facebook() {
     return const Facebook();
   }
