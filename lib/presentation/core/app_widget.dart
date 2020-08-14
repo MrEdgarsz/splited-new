@@ -25,7 +25,7 @@ class _AppWidgetState extends State<AppWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder(
-      bloc: _bloc,
+      cubit: _bloc,
       builder: (context, state) {
         return MaterialApp(
           title: 'SplitEd',
