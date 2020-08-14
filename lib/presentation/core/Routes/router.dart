@@ -6,13 +6,15 @@ import 'package:splited/presentation/auth/signIn/sign_in_page.dart';
 import 'package:splited/presentation/homePage/home_page.dart';
 import 'package:splited/presentation/splashScreen/splash_screen.dart';
 
-@MaterialAutoRouter(generateRouteList: true)
-class $Router {
-  @initial
-  SplashScreen splashScreen;
-  HomePage homePage;
-  SignInPage signInPage;
-  RegisterPage registerPage;
-  LinkingAccountSignIn linkingAccountSignIn;
-  LinkingAccountJoinAccount linkingAccountJoinAccount;
-}
+@MaterialAutoRouter(
+  routes: <AutoRoute>[
+    // initial route is named "/"
+    MaterialRoute(page: SplashScreen, initial: true),
+    MaterialRoute(page: HomePage),
+    MaterialRoute(page: SignInPage),
+    MaterialRoute(page: RegisterPage),
+    MaterialRoute(page: LinkingAccountSignIn),
+    MaterialRoute(page: LinkingAccountJoinAccount),
+  ],
+)
+class $Router {}
