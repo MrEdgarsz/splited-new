@@ -1,7 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:native_color/native_color.dart';
-import 'package:splited/presentation/core/core_assets.dart';
+import 'package:splited/presentation/resources/resources.dart';
 
 class CustomAppBar extends StatelessWidget {
   final IconData icon;

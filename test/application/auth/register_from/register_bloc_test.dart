@@ -9,10 +9,8 @@ main() {
   final MockAuthFacade _mockAuthFacade = MockAuthFacade();
   blocTest(
     "Testing register bloc for having a hard time with showErrors",
-    build: () async => RegisterBloc(_mockAuthFacade),
-    act: (RegisterBloc bloc) async {
-      bloc.add(const RegisterEvent.registerWithEmailAndPassword());
-    },
+    build: () => RegisterBloc(_mockAuthFacade),
+    act: (bloc) => bloc.add(const RegisterEvent.registerWithEmailAndPassword()),
     expect: [
       RegisterState(
         emailAddress: EmailAddress(""),

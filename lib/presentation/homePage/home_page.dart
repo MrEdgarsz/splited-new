@@ -4,7 +4,7 @@ import 'package:native_color/native_color.dart';
 import 'package:splited/presentation/core/Routes/router.gr.dart';
 import 'package:splited/presentation/core/scroll_behaviour.dart';
 import 'package:splited/presentation/core/widgets/custom_raised_button.dart';
-import 'package:splited/presentation/homePage/home_page_assets.dart';
+import 'package:splited/presentation/resources/resources.dart';
 
 class HomePage extends StatelessWidget {
   @override

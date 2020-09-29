@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:native_color/native_color.dart';
 import 'package:splited/application/themes/theme_bloc.dart';
 import 'package:splited/presentation/core/Routes/router.gr.dart';
-import 'package:splited/presentation/splashScreen/splash_screen_assets.dart';
+import 'package:splited/presentation/resources/resources.dart';
 
 import '../../injection.dart';
 

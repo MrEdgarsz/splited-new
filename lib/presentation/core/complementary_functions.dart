@@ -2,23 +2,22 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:native_color/native_color.dart';
 import 'package:splited/domain/auth/accountTypes.dart';
-import 'package:splited/presentation/core/Localization/app_localizations.dart';
 
 import 'Routes/router.gr.dart';
 
-void showErrorDialog(BuildContext context, String titleId, String descId) {
+void showErrorDialog(BuildContext context, String title, String desc) {
   showDialog(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text(AppLocalizations.of(context).translate(titleId)),
-      content: Text(AppLocalizations.of(context).translate(descId)),
+      title: Text(title),
+      content: Text(desc),
       actions: <Widget>[
         FlatButton(
           onPressed: () {
             Navigator.pop(context);
           },
           child: Text(
-            AppLocalizations.of(context).translate('closeDialog'),
+            "Zamknij",
           ),
         ),
       ],
@@ -31,17 +30,16 @@ void showLinkingDialog(
   showDialog(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text(AppLocalizations.of(context)
-          .translate("AF_accountCanBeLinked_title")),
+      title: Text("Łączenie kont"),
       content: Text(
-          AppLocalizations.of(context).translate("AF_accountCanBeLinked_desc")),
+          "Konto do którego próbujesz się zalogować zostało założone inną metodą niż tą którą próbujesz się zalogować, czy chcesz powiązać swoje konto w serwisie również z tą metodą logowania?"),
       actions: <Widget>[
         FlatButton(
           onPressed: () {
             Navigator.pop(context);
           },
           child: Text(
-            AppLocalizations.of(context).translate('AF_LinkingDialog_close'),
+            "Zaloguj inną metodą",
           ),
         ),
         FlatButton(
@@ -52,7 +50,7 @@ void showLinkingDialog(
                     signInMethods: signInMethods, accountType: type));
           },
           child: Text(
-            AppLocalizations.of(context).translate('AF_LinkingDialog_link'),
+            "Połącz Konta",
             style: TextStyle(color: HexColor("#24BA60")),
           ),
         ),

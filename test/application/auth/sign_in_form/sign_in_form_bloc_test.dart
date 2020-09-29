@@ -10,8 +10,8 @@ void main() {
   final MockAuthFacade _mockAuthFacade = MockAuthFacade();
   blocTest(
     "Should return proper SignInFormState when PasswordChanged Event is sent",
-    build: () async => SignInFormBloc(_mockAuthFacade),
-    act: (SignInFormBloc bloc) async =>
+    build: () => SignInFormBloc(_mockAuthFacade),
+    act: (SignInFormBloc bloc) =>
         bloc.add(const PasswordChanged("Dwadawdawdaw")),
     expect: [
       SignInFormState(
@@ -24,9 +24,8 @@ void main() {
   );
   blocTest(
     "Should return proper SignInFormState when EmailChanged Event is sent",
-    build: () async => SignInFormBloc(_mockAuthFacade),
-    act: (SignInFormBloc bloc) async =>
-        bloc.add(const EmailChanged("Dwadawdawdaw")),
+    build: () => SignInFormBloc(_mockAuthFacade),
+    act: (SignInFormBloc bloc) => bloc.add(const EmailChanged("Dwadawdawdaw")),
     expect: [
       SignInFormState(
         password: Password(""),
@@ -38,8 +37,8 @@ void main() {
   );
   blocTest(
     "Should return proper SignInFormState when LogInWithEmailAndPassword Event is sent with wrong credentials",
-    build: () async => SignInFormBloc(_mockAuthFacade),
-    act: (SignInFormBloc bloc) async {
+    build: () => SignInFormBloc(_mockAuthFacade),
+    act: (SignInFormBloc bloc) {
       bloc.add(const EmailChanged("Dwadawdawdaw"));
       bloc.add(const PasswordChanged("Dwadawdawdaw"));
       bloc.add(const SignInWithEmailAndPassword());
@@ -67,8 +66,8 @@ void main() {
   );
   blocTest(
     "Should return proper SignInFormState when LogInWithEmailAndPassword Event is sent with good credentials",
-    build: () async => SignInFormBloc(_mockAuthFacade),
-    act: (SignInFormBloc bloc) async {
+    build: () => SignInFormBloc(_mockAuthFacade),
+    act: (SignInFormBloc bloc) {
       bloc.add(const EmailChanged("email@email.com"));
       bloc.add(const PasswordChanged("Test123"));
       bloc.add(const SignInWithEmailAndPassword());
@@ -102,8 +101,8 @@ void main() {
   );
   blocTest(
     "Should return proper SignInFormState when LogInWithFacebook Event is sent",
-    build: () async => SignInFormBloc(_mockAuthFacade),
-    act: (SignInFormBloc bloc) async {
+    build: () => SignInFormBloc(_mockAuthFacade),
+    act: (SignInFormBloc bloc) {
       bloc.add(const SignInWithFacebook());
     },
     expect: [
@@ -123,8 +122,8 @@ void main() {
   );
   blocTest(
     "Should return proper SignInFormState when LogInWithGoogle Event is sent",
-    build: () async => SignInFormBloc(_mockAuthFacade),
-    act: (SignInFormBloc bloc) async {
+    build: () => SignInFormBloc(_mockAuthFacade),
+    act: (SignInFormBloc bloc) {
       bloc.add(const SignInWithGoogle());
     },
     expect: [
