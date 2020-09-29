@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:native_color/native_color.dart';
 import 'package:splited/application/auth/register_from/register_bloc.dart';
-import 'package:splited/presentation/core/Localization/app_localizations.dart';
 import 'package:splited/presentation/core/complementary_functions.dart';
 import 'package:splited/presentation/core/widgets/checkbox.dart';
 import 'package:splited/presentation/core/widgets/custom_raised_button.dart';
@@ -64,8 +63,7 @@ class RegisterForm extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     CustomTextFormField(
-                      labelText:
-                          AppLocalizations.of(context).translate("email"),
+                      labelText: "E-mail",
                       onChanged: (value) {
                         context
                             .bloc<RegisterBloc>()
@@ -79,14 +77,13 @@ class RegisterForm extends StatelessWidget {
                             .emailAddress
                             .value
                             .fold(
-                                (l) => AppLocalizations.of(context)
-                                    .translate("emailNotValid"),
+                                (l) =>
+                                    "Wartość nie jest poprawnym adresem e-mail",
                                 (_) => null);
                       },
                     ),
                     CustomTextFormField(
-                      labelText:
-                          AppLocalizations.of(context).translate("password"),
+                      labelText: "Hasło",
                       onChanged: (value) {
                         context
                             .bloc<RegisterBloc>()
@@ -100,8 +97,8 @@ class RegisterForm extends StatelessWidget {
                             .password
                             .value
                             .fold(
-                                (l) => AppLocalizations.of(context)
-                                    .translate("passwordToWeak"),
+                                (l) =>
+                                    "Hasło nie spełnia wymagań bezpieczeństwa",
                                 (_) => null);
                       },
                       obscureText: true,
@@ -109,48 +106,47 @@ class RegisterForm extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           Text(
-                            AppLocalizations.of(context)
-                                .translate("passwordRequirements"),
-                            style: Theme.of(context).textTheme.body1.copyWith(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            "Hasło musi posiadać",
+                            style:
+                                Theme.of(context).textTheme.bodyText1.copyWith(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                             softWrap: false,
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 15),
                           Text(
-                            AppLocalizations.of(context)
-                                .translate("passwordRequirements_1"),
-                            style: Theme.of(context).textTheme.body1.copyWith(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            "Przynajmniej jedną małą literę",
+                            style:
+                                Theme.of(context).textTheme.bodyText1.copyWith(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                           ),
                           const SizedBox(height: 5),
                           Text(
-                            AppLocalizations.of(context)
-                                .translate("passwordRequirements_2"),
-                            style: Theme.of(context).textTheme.body1.copyWith(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            "Przynajmniej jedną wielką literę",
+                            style:
+                                Theme.of(context).textTheme.bodyText1.copyWith(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                           ),
                           const SizedBox(height: 5),
                           Text(
-                            AppLocalizations.of(context)
-                                .translate("passwordRequirements_3"),
-                            style: Theme.of(context).textTheme.body1.copyWith(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            "Przynajmniej jedną cyfrę",
+                            style:
+                                Theme.of(context).textTheme.bodyText1.copyWith(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                           ),
                         ],
                       ),
                     ),
                     CustomTextFormField(
-                      labelText: AppLocalizations.of(context)
-                          .translate("repeatPassword"),
+                      labelText: "Powtórz Hasło",
                       onChanged: (value) {
                         context
                             .bloc<RegisterBloc>()
@@ -162,8 +158,7 @@ class RegisterForm extends StatelessWidget {
                         final bool passwordsMatch = (currentState.password ==
                             currentState.passwordRepeat);
                         if (!passwordsMatch) {
-                          return AppLocalizations.of(context)
-                              .translate("passwordsDoNotMatch");
+                          return "Hasła się nie zgadzają";
                         }
                         return null;
                       },
@@ -175,8 +170,7 @@ class RegisterForm extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: CustomCheckBox(
-                  errorMessage: AppLocalizations.of(context)
-                      .translate("checkbox_required"),
+                  errorMessage: "Pole jest wymagane",
                   showError: (context.bloc<RegisterBloc>().state.showErrors)
                       ? (context.bloc<RegisterBloc>().state.termsAccepted)
                           ? false
@@ -189,22 +183,18 @@ class RegisterForm extends StatelessWidget {
                     },
                     child: RichText(
                       text: TextSpan(
-                        style: Theme.of(context).textTheme.body1.copyWith(
+                        style: Theme.of(context).textTheme.bodyText1.copyWith(
                             fontSize: 12, fontWeight: FontWeight.bold),
                         children: [
+                          TextSpan(text: "Potwierdzam zapoznanie się z "),
                           TextSpan(
-                              text: AppLocalizations.of(context)
-                                  .translate("termsCheckbox_1")),
-                          TextSpan(
-                            text: AppLocalizations.of(context)
-                                .translate("termsCheckbox_2"),
+                            text: "regulaminem",
                             style: TextStyle(
                               color: HexColor("#247DBA"),
                             ),
                           ),
                           TextSpan(
-                            text: AppLocalizations.of(context)
-                                .translate("termsCheckbox_3"),
+                            text: " i jego akceptację",
                           ),
                         ],
                       ),
@@ -227,7 +217,7 @@ class RegisterForm extends StatelessWidget {
                   },
                   color: HexColor("#247DBA"),
                   child: Text(
-                    AppLocalizations.of(context).translate("signIn"),
+                    "Zarejestruj",
                     style: Theme.of(context).textTheme.button,
                   ),
                 ),

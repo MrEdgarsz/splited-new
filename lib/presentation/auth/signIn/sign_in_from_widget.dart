@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:native_color/native_color.dart';
 import 'package:splited/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:splited/presentation/core/Localization/app_localizations.dart';
 import 'package:splited/presentation/core/Routes/router.gr.dart';
 import 'package:splited/presentation/core/complementary_functions.dart';
 import 'package:splited/presentation/core/widgets/custom_raised_button.dart';
@@ -25,18 +24,18 @@ class SignInFormWidget extends StatelessWidget {
             (l) => l.maybeMap(
               serverError: (_) => showErrorDialog(
                 context,
-                "AF_serverError_title",
-                "AF_serverError_desc",
+                "Błąd Serwera",
+                "Wystąpił błąd serwera, przepraszamy za niedogodności. Prosimy spróbować ponownie za kilka minut lub skontaktować się z administratorem usługi",
               ),
               invalidCredentials: (_) => showErrorDialog(
                 context,
-                "AF_invalidCredentials_title",
-                "AF_invalidCredentials_desc",
+                "Nieprawidłowe dane",
+                "Nasz system nie może odnaleźć konta powiązanego z takim zestawem danych.",
               ),
               internetConnectionNotAvailable: (_) => showErrorDialog(
                 context,
-                "AF_internetConnectionNotAvailable_title",
-                "AF_internetConnectionNotAvailable_desc",
+                "Brak Internetu",
+                "Nie możemy połączyć się z serwerami SplitEd. Sprawdź swoje połączenie internetowe i spróbuj ponownie.",
               ),
               accountCanBeLinked: (e) => showLinkingDialog(
                 context,
@@ -61,8 +60,7 @@ class SignInFormWidget extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     CustomTextFormField(
-                      labelText:
-                          AppLocalizations.of(context).translate("email"),
+                      labelText: "E-mail",
                       validator: null,
                       onChanged: (value) {
                         getIt<SignInFormBloc>()
@@ -71,8 +69,7 @@ class SignInFormWidget extends StatelessWidget {
                       keyboardType: TextInputType.emailAddress,
                     ),
                     CustomTextFormField(
-                      labelText:
-                          AppLocalizations.of(context).translate("password"),
+                      labelText: "Hasło",
                       onChanged: (value) {
                         getIt<SignInFormBloc>()
                             .add(SignInFormEvent.passwordChanged(value));
@@ -81,7 +78,7 @@ class SignInFormWidget extends StatelessWidget {
                       obscureText: true,
                     ),
                     Text(
-                      AppLocalizations.of(context).translate("forgotPassword"),
+                      "Nie pamiętasz hasła?",
                       style: TextStyle(
                         fontSize: 12,
                         color: HexColor("#247DBA"),
@@ -100,7 +97,7 @@ class SignInFormWidget extends StatelessWidget {
                         },
                         color: HexColor("#247DBA"),
                         child: Text(
-                          AppLocalizations.of(context).translate("signIn"),
+                          "Zaloguj",
                           style: Theme.of(context).textTheme.button,
                         ),
                       ),
@@ -115,7 +112,7 @@ class SignInFormWidget extends StatelessWidget {
                   ExtendedNavigator.of(context).replace(Routes.registerPage);
                 },
                 child: Text(
-                  AppLocalizations.of(context).translate("createAccount"),
+                  "Nie masz jeszcze konta? Zarejestruj się!",
                   style: TextStyle(
                     fontSize: 12,
                     color: HexColor("#247DBA"),
@@ -126,9 +123,7 @@ class SignInFormWidget extends StatelessWidget {
               const SizedBox(height: 26),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 37),
-                child: TextDivider(
-                    text: AppLocalizations.of(context)
-                        .translate("signInWithDifferentService")),
+                child: TextDivider(text: "Zaloguj przez inny serwis"),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(58, 15, 58, 0),
@@ -144,8 +139,7 @@ class SignInFormWidget extends StatelessWidget {
                         },
                         color: HexColor("#DE5246"),
                         child: Text(
-                          AppLocalizations.of(context)
-                              .translate("signInWithGoogle"),
+                          "Zaloguj przez konto Google",
                           style: TextStyle(
                             fontSize: 11,
                             color: HexColor("#EBEBEB"),
@@ -164,8 +158,7 @@ class SignInFormWidget extends StatelessWidget {
                         },
                         color: HexColor("#3B5998"),
                         child: Text(
-                          AppLocalizations.of(context)
-                              .translate("signInWithFacebook"),
+                          "Zaloguj przez portal Facebook",
                           style: TextStyle(
                             fontSize: 11,
                             color: HexColor("#EBEBEB"),

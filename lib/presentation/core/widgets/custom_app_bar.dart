@@ -59,12 +59,12 @@ class CustomAppBar extends StatelessWidget {
           children: <Widget>[
             Text(
               title,
-              style: Theme.of(context).textTheme.title,
+              style: Theme.of(context).textTheme.headline6,
               textAlign: TextAlign.center,
             ),
             Text(
               subtitle,
-              style: Theme.of(context).textTheme.title.copyWith(
+              style: Theme.of(context).textTheme.headline6.copyWith(
                     fontSize: 11,
                   ),
               textAlign: TextAlign.center,

@@ -1,10 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:native_color/native_color.dart';
-import 'package:splited/application/themes/theme_bloc.dart';
-import 'package:splited/presentation/core/Localization/app_localizations.dart';
 import 'package:splited/presentation/core/Routes/router.gr.dart';
 import 'package:splited/presentation/core/scroll_behaviour.dart';
 import 'package:splited/presentation/core/widgets/custom_raised_button.dart';
@@ -21,7 +17,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 50),
             Text(
               "SplitEd",
-              style: Theme.of(context).textTheme.title,
+              style: Theme.of(context).textTheme.headline6,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 64),
@@ -31,9 +27,9 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 60),
             Text(
-              AppLocalizations.of(context).translate("appDescription"),
+              "SplitEd to aplikacja, która pozwala w łatwy sposób dzielić rachunki między grupę ludzi.",
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.body1,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
             const SizedBox(height: 60),
             Padding(
@@ -44,7 +40,7 @@ class HomePage extends StatelessWidget {
                 },
                 color: HexColor("#247DBA"),
                 child: Text(
-                  AppLocalizations.of(context).translate("signingIn"),
+                  "Logowanie",
                   style: Theme.of(context).textTheme.button,
                 ),
               ),
@@ -58,7 +54,7 @@ class HomePage extends StatelessWidget {
                 },
                 color: HexColor("#24BA60"),
                 child: Text(
-                  AppLocalizations.of(context).translate("registration"),
+                  "Rejestracja",
                   style: Theme.of(context).textTheme.button,
                 ),
               ),

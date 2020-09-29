@@ -29,7 +29,7 @@ abstract class CustomAppTheme {
     fontFamily: "Poppins",
     cardColor: HexColor("#4B4B4B"),
     textTheme: TextTheme(
-      title: TextStyle(
+      headline6: TextStyle(
         color: Colors.white,
         fontSize: 29,
         fontWeight: FontWeight.bold,
@@ -39,12 +39,12 @@ abstract class CustomAppTheme {
         fontSize: 14,
         fontWeight: FontWeight.w500,
       ),
-      body1: TextStyle(
+      bodyText1: TextStyle(
         color: HexColor("#EBEBEB"),
         fontSize: 15,
         fontWeight: FontWeight.bold,
       ),
-      display2: TextStyle(
+      headline3: TextStyle(
         color: HexColor("#EBEBEB"),
         fontSize: 21,
         fontWeight: FontWeight.bold,

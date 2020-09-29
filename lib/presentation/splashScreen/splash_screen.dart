@@ -3,13 +3,10 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:native_color/native_color.dart';
 import 'package:splited/application/themes/theme_bloc.dart';
-import 'package:splited/presentation/core/Localization/app_localizations.dart';
 import 'package:splited/presentation/core/Routes/router.gr.dart';
 import 'package:splited/presentation/splashScreen/splash_screen_assets.dart';
-import 'package:splited/presentation/themes/theme_type.dart';
 
 import '../../injection.dart';
 
@@ -94,8 +91,8 @@ class _SplashScreenState extends State<SplashScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        AppLocalizations.of(context).translate("loading"),
-                        style: Theme.of(context).textTheme.display2,
+                        "Ładowanie...",
+                        style: Theme.of(context).textTheme.headline3,
                       ),
                       const SizedBox(height: 20.0),
                       Container(

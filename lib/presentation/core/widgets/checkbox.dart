@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:native_color/native_color.dart';
-import 'package:splited/presentation/core/Localization/app_localizations.dart';
 
 class CustomCheckBox extends StatefulWidget {
   const CustomCheckBox(
@@ -55,16 +54,14 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(
-                            AppLocalizations.of(context)
-                                .translate("checkbox_yes"),
+                            "tak",
                             style: const TextStyle(
                               fontSize: 9,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
-                            AppLocalizations.of(context)
-                                .translate("checkbox_no"),
+                            "nie",
                             style: const TextStyle(
                               fontSize: 9,
                               fontWeight: FontWeight.bold,

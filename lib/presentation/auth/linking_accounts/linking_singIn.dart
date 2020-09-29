@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:native_color/native_color.dart';
 import 'package:splited/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:splited/domain/auth/accountTypes.dart';
-import 'package:splited/presentation/core/Localization/app_localizations.dart';
 import 'package:splited/presentation/core/Routes/router.gr.dart';
 import 'package:splited/presentation/core/complementary_functions.dart';
 import 'package:splited/presentation/core/scroll_behaviour.dart';
@@ -29,7 +28,7 @@ class LinkingAccountSignIn extends StatelessWidget {
         child: MyListView(
           children: <Widget>[
             CustomAppBar.back(
-              title: AppLocalizations.of(context).translate("LinkingAccounts"),
+              title: "Łączenie kont",
               subtitle:
                   "Łączenie z kontem ${accountType.map(standard: (_) => 'podstawowym', google: (_) => 'google', facebook: (_) => 'facebook')}",
               onIconPressed: () {
@@ -73,7 +72,6 @@ class LinkingAccountSignIn extends StatelessWidget {
                           orElse: () {},
                         ),
                         (_) {
-                          print("halo co jest kurwa");
                           ExtendedNavigator.of(context).push(
                             Routes.linkingAccountJoinAccount,
                             arguments: LinkingAccountJoinAccountArguments(
@@ -88,7 +86,7 @@ class LinkingAccountSignIn extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           "Zaloguj się do swojego konta jedną z wcześniej połączonych metod logowania dostępnych poniżej",
-                          style: Theme.of(context).textTheme.body1.copyWith(
+                          style: Theme.of(context).textTheme.bodyText1.copyWith(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -109,8 +107,7 @@ class LinkingAccountSignIn extends StatelessWidget {
                                   child: Column(
                                     children: <Widget>[
                                       CustomTextFormField(
-                                        labelText: AppLocalizations.of(context)
-                                            .translate("email"),
+                                        labelText: "E-mail",
                                         validator: null,
                                         onChanged: (value) {
                                           getIt<SignInFormBloc>().add(
@@ -121,8 +118,7 @@ class LinkingAccountSignIn extends StatelessWidget {
                                             TextInputType.emailAddress,
                                       ),
                                       CustomTextFormField(
-                                        labelText: AppLocalizations.of(context)
-                                            .translate("password"),
+                                        labelText: "Hasło",
                                         onChanged: (value) {
                                           getIt<SignInFormBloc>().add(
                                               SignInFormEvent.passwordChanged(
@@ -141,8 +137,7 @@ class LinkingAccountSignIn extends StatelessWidget {
                                           },
                                           color: HexColor("#247DBA"),
                                           child: Text(
-                                            AppLocalizations.of(context)
-                                                .translate("signIn"),
+                                            "Zaloguj",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .button,
@@ -160,9 +155,7 @@ class LinkingAccountSignIn extends StatelessWidget {
                             signInMethods.contains("facebook.com"))
                           Column(
                             children: <Widget>[
-                              TextDivider(
-                                  text: AppLocalizations.of(context)
-                                      .translate("signInWithDifferentService")),
+                              TextDivider(text: "Zaloguj przez inny serwis"),
                               const SizedBox(height: 26),
                             ],
                           ),
@@ -180,8 +173,7 @@ class LinkingAccountSignIn extends StatelessWidget {
                                   },
                                   color: HexColor("#DE5246"),
                                   child: Text(
-                                    AppLocalizations.of(context)
-                                        .translate("signInWithGoogle"),
+                                    "Zaloguj przez konto Google",
                                     style: TextStyle(
                                       fontSize: 11,
                                       color: HexColor("#EBEBEB"),
@@ -199,8 +191,7 @@ class LinkingAccountSignIn extends StatelessWidget {
                               onPressed: () {},
                               color: HexColor("#3B5998"),
                               child: Text(
-                                AppLocalizations.of(context)
-                                    .translate("signInWithFacebook"),
+                                "Zaloguj przez portal Facebook",
                                 style: TextStyle(
                                   fontSize: 11,
                                   color: HexColor("#EBEBEB"),

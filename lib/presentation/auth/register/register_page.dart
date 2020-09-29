@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:splited/application/auth/register_from/register_bloc.dart';
 import 'package:splited/presentation/auth/register/widgets/register_form.dart';
-import 'package:splited/presentation/core/Localization/app_localizations.dart';
 import 'package:splited/presentation/core/scroll_behaviour.dart';
 import 'package:splited/presentation/core/widgets/custom_app_bar.dart';
 
@@ -19,7 +18,7 @@ class RegisterPage extends StatelessWidget {
         child: MyListView(
           children: [
             CustomAppBar.back(
-              title: AppLocalizations.of(context).translate("registration"),
+              title: "Rejestracja",
               onIconPressed: () {
                 Feedback.forTap(context);
                 ExtendedNavigator.of(context).pop();

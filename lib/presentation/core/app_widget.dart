@@ -7,8 +7,6 @@ import 'package:splited/presentation/auth/linking_accounts/linking_singIn.dart';
 import 'package:splited/presentation/splashScreen/splash_screen.dart';
 import 'package:splited/presentation/themes/custom_app_theme.dart';
 import 'package:splited/presentation/themes/theme_type.dart';
-
-import 'Localization/app_localizations.dart';
 import 'Routes/router.gr.dart';
 
 class AppWidget extends StatelessWidget {

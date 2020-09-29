@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:native_color/native_color.dart';
 import 'package:splited/application/auth/linking_accounts/linking_bloc.dart';
 import 'package:splited/domain/auth/accountTypes.dart';
-import 'package:splited/presentation/core/Localization/app_localizations.dart';
 import 'package:splited/presentation/core/complementary_functions.dart';
 import 'package:splited/presentation/core/scroll_behaviour.dart';
 import 'package:splited/presentation/core/widgets/checkbox.dart';
@@ -28,7 +27,7 @@ class LinkingAccountJoinAccount extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CustomAppBar.back(
-              title: AppLocalizations.of(context).translate("LinkingAccounts"),
+              title: "Łączenie kont",
               subtitle: "Łączenie z kontem Google",
               onIconPressed: () {
                 Feedback.forTap(context);
@@ -44,7 +43,7 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       "Zaloguj się teraz metodą logowania którą chcesz podłączyć do konta",
-                      style: Theme.of(context).textTheme.body1.copyWith(
+                      style: Theme.of(context).textTheme.bodyText1.copyWith(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -60,19 +59,19 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                             (l) => l.maybeMap(
                               serverError: (_) => showErrorDialog(
                                 context,
-                                "AF_serverError_title",
-                                "AF_serverError_desc",
+                                "Błąd Serwera",
+                                "Wystąpił błąd serwera, przepraszamy za niedogodności. Prosimy spróbować ponownie za kilka minut lub skontaktować się z administratorem usługi",
                               ),
                               invalidCredentials: (_) => showErrorDialog(
                                 context,
-                                "AF_invalidCredentials_title",
-                                "AF_invalidCredentials_desc",
+                                "Nieprawidłowe dane",
+                                "Nasz system nie może odnaleźć konta powiązanego z takim zestawem danych.",
                               ),
                               internetConnectionNotAvailable: (_) =>
                                   showErrorDialog(
                                 context,
-                                "AF_internetConnectionNotAvailable_title",
-                                "AF_internetConnectionNotAvailable_desc",
+                                "Brak Internetu",
+                                "Nie możemy połączyć się z serwerami SplitEd. Sprawdź swoje połączenie internetowe i spróbuj ponownie.",
                               ),
                               accountCanBeLinked: (e) => showLinkingDialog(
                                 context,
@@ -92,8 +91,7 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                               CustomTextFormField(
-                                labelText: AppLocalizations.of(context)
-                                    .translate("email"),
+                                labelText: "E-mail",
                                 onChanged: (value) {
                                   context
                                       .bloc<LinkingBloc>()
@@ -107,14 +105,13 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                                       .emailAddress
                                       .value
                                       .fold(
-                                          (l) => AppLocalizations.of(context)
-                                              .translate("emailNotValid"),
+                                          (l) =>
+                                              "Podaj prawidłowy adres e-mail",
                                           (_) => null);
                                 },
                               ),
                               CustomTextFormField(
-                                labelText: AppLocalizations.of(context)
-                                    .translate("password"),
+                                labelText: "Hasło",
                                 onChanged: (value) {
                                   context
                                       .bloc<LinkingBloc>()
@@ -127,9 +124,7 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                                       .state
                                       .password
                                       .value
-                                      .fold(
-                                          (l) => AppLocalizations.of(context)
-                                              .translate("passwordToWeak"),
+                                      .fold((l) => "Hasło jest za słabe",
                                           (_) => null);
                                 },
                                 obscureText: true,
@@ -137,11 +132,10 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
                                     Text(
-                                      AppLocalizations.of(context)
-                                          .translate("passwordRequirements"),
+                                      "Hasło musi posiadać",
                                       style: Theme.of(context)
                                           .textTheme
-                                          .body1
+                                          .bodyText1
                                           .copyWith(
                                             fontSize: 12,
                                             fontWeight: FontWeight.bold,
@@ -151,11 +145,10 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 15),
                                     Text(
-                                      AppLocalizations.of(context)
-                                          .translate("passwordRequirements_1"),
+                                      "Przynajmniej jedną małą literę",
                                       style: Theme.of(context)
                                           .textTheme
-                                          .body1
+                                          .bodyText1
                                           .copyWith(
                                             fontSize: 10,
                                             fontWeight: FontWeight.bold,
@@ -163,11 +156,10 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 5),
                                     Text(
-                                      AppLocalizations.of(context)
-                                          .translate("passwordRequirements_2"),
+                                      "Przynajmniej jedną wielką literę",
                                       style: Theme.of(context)
                                           .textTheme
-                                          .body1
+                                          .bodyText1
                                           .copyWith(
                                             fontSize: 10,
                                             fontWeight: FontWeight.bold,
@@ -175,11 +167,10 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 5),
                                     Text(
-                                      AppLocalizations.of(context)
-                                          .translate("passwordRequirements_3"),
+                                      "Przynajmniej jedną cyfrę",
                                       style: Theme.of(context)
                                           .textTheme
-                                          .body1
+                                          .bodyText1
                                           .copyWith(
                                             fontSize: 10,
                                             fontWeight: FontWeight.bold,
@@ -189,8 +180,7 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                                 ),
                               ),
                               CustomTextFormField(
-                                labelText: AppLocalizations.of(context)
-                                    .translate("repeatPassword"),
+                                labelText: "Powtórz Hasło",
                                 onChanged: (value) {
                                   context.bloc<LinkingBloc>().add(
                                       LinkingEvent.passwordRepeatChanged(
@@ -203,16 +193,14 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                                       (currentState.password ==
                                           currentState.passwordRepeat);
                                   if (!passwordsMatch) {
-                                    return AppLocalizations.of(context)
-                                        .translate("passwordsDoNotMatch");
+                                    return "Hasła się nie zgadzają";
                                   }
                                   return null;
                                 },
                                 obscureText: true,
                               ),
                               CustomCheckBox(
-                                errorMessage: AppLocalizations.of(context)
-                                    .translate("checkbox_required"),
+                                errorMessage: "Pole jest wymagane",
                                 showError: (context
                                         .bloc<LinkingBloc>()
                                         .state
@@ -233,25 +221,21 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                                     text: TextSpan(
                                       style: Theme.of(context)
                                           .textTheme
-                                          .body1
+                                          .bodyText1
                                           .copyWith(
                                               fontSize: 12,
                                               fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                            text: AppLocalizations.of(context)
-                                                .translate("termsCheckbox_1")),
+                                            text:
+                                                "Potwierdzam zapoznanie się z"),
                                         TextSpan(
-                                          text: AppLocalizations.of(context)
-                                              .translate("termsCheckbox_2"),
+                                          text: " regulaminem ",
                                           style: TextStyle(
                                             color: HexColor("#247DBA"),
                                           ),
                                         ),
-                                        TextSpan(
-                                          text: AppLocalizations.of(context)
-                                              .translate("termsCheckbox_3"),
-                                        ),
+                                        TextSpan(text: "i jego akceptację"),
                                       ],
                                     ),
                                   ),
@@ -273,8 +257,7 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                                   },
                                   color: HexColor("#247DBA"),
                                   child: Text(
-                                    AppLocalizations.of(context)
-                                        .translate("signIn"),
+                                    "Zaloguj",
                                     style: Theme.of(context).textTheme.button,
                                   ),
                                 ),
@@ -294,8 +277,7 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                           },
                           color: HexColor("#DE5246"),
                           child: Text(
-                            AppLocalizations.of(context)
-                                .translate("signInWithGoogle"),
+                            "Zaloguj przez konto Google",
                             style: TextStyle(
                               fontSize: 11,
                               color: HexColor("#EBEBEB"),
@@ -313,8 +295,7 @@ class LinkingAccountJoinAccount extends StatelessWidget {
                           },
                           color: HexColor("#3B5998"),
                           child: Text(
-                            AppLocalizations.of(context)
-                                .translate("signInWithFacebook"),
+                            "Zaloguj przez portal Facebook",
                             style: TextStyle(
                               fontSize: 11,
                               color: HexColor("#EBEBEB"),
