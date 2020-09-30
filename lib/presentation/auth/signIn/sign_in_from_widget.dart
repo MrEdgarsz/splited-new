@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:native_color/native_color.dart';
+import 'package:splited/application/auth/auth_bloc.dart';
 import 'package:splited/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:splited/presentation/core/Routes/router.gr.dart';
 import 'package:splited/presentation/core/complementary_functions.dart';
@@ -18,7 +19,7 @@ class SignInFormWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SignInFormBloc, SignInFormState>(
       listener: (BuildContext context, SignInFormState state) {
-        state.authFaliureOrSuccessOption.fold(
+        state.authFailureOrSuccessOption.fold(
           () {},
           (some) => some.fold(
             (l) => l.maybeMap(
@@ -37,14 +38,10 @@ class SignInFormWidget extends StatelessWidget {
                 "Brak Internetu",
                 "Nie możemy połączyć się z serwerami SplitEd. Sprawdź swoje połączenie internetowe i spróbuj ponownie.",
               ),
-              accountCanBeLinked: (e) => showLinkingDialog(
-                context,
-                e.listOfLoginMethods,
-                e.linkWith,
-              ),
               orElse: () {},
             ),
             (_) {
+              context.bloc<AuthBloc>()..add(AuthEvent.authCheckRequested());
               print("ZALOGOWANY KURŁA");
             },
           ),

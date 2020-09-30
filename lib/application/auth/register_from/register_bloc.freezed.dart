@@ -758,7 +758,7 @@ class _$RegisterStateTearOff {
       @required bool isSubmitting,
       @required bool showErrors,
       @required bool termsAccepted,
-      @required Option<Either<AuthFailure, Unit>> authFaliureOrSuccessOption}) {
+      @required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption}) {
     return _RegisterState(
       emailAddress: emailAddress,
       password: password,
@@ -766,7 +766,7 @@ class _$RegisterStateTearOff {
       isSubmitting: isSubmitting,
       showErrors: showErrors,
       termsAccepted: termsAccepted,
-      authFaliureOrSuccessOption: authFaliureOrSuccessOption,
+      authFailureOrSuccessOption: authFailureOrSuccessOption,
     );
   }
 }
@@ -781,7 +781,7 @@ mixin _$RegisterState {
   bool get isSubmitting;
   bool get showErrors;
   bool get termsAccepted;
-  Option<Either<AuthFailure, Unit>> get authFaliureOrSuccessOption;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
 
   $RegisterStateCopyWith<RegisterState> get copyWith;
 }
@@ -797,7 +797,7 @@ abstract class $RegisterStateCopyWith<$Res> {
       bool isSubmitting,
       bool showErrors,
       bool termsAccepted,
-      Option<Either<AuthFailure, Unit>> authFaliureOrSuccessOption});
+      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
 
 class _$RegisterStateCopyWithImpl<$Res>
@@ -816,7 +816,7 @@ class _$RegisterStateCopyWithImpl<$Res>
     Object isSubmitting = freezed,
     Object showErrors = freezed,
     Object termsAccepted = freezed,
-    Object authFaliureOrSuccessOption = freezed,
+    Object authFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       emailAddress: emailAddress == freezed
@@ -833,9 +833,9 @@ class _$RegisterStateCopyWithImpl<$Res>
       termsAccepted: termsAccepted == freezed
           ? _value.termsAccepted
           : termsAccepted as bool,
-      authFaliureOrSuccessOption: authFaliureOrSuccessOption == freezed
-          ? _value.authFaliureOrSuccessOption
-          : authFaliureOrSuccessOption as Option<Either<AuthFailure, Unit>>,
+      authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
+          ? _value.authFailureOrSuccessOption
+          : authFailureOrSuccessOption as Option<Either<AuthFailure, Unit>>,
     ));
   }
 }
@@ -853,7 +853,7 @@ abstract class _$RegisterStateCopyWith<$Res>
       bool isSubmitting,
       bool showErrors,
       bool termsAccepted,
-      Option<Either<AuthFailure, Unit>> authFaliureOrSuccessOption});
+      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
 
 class __$RegisterStateCopyWithImpl<$Res>
@@ -874,7 +874,7 @@ class __$RegisterStateCopyWithImpl<$Res>
     Object isSubmitting = freezed,
     Object showErrors = freezed,
     Object termsAccepted = freezed,
-    Object authFaliureOrSuccessOption = freezed,
+    Object authFailureOrSuccessOption = freezed,
   }) {
     return _then(_RegisterState(
       emailAddress: emailAddress == freezed
@@ -891,9 +891,9 @@ class __$RegisterStateCopyWithImpl<$Res>
       termsAccepted: termsAccepted == freezed
           ? _value.termsAccepted
           : termsAccepted as bool,
-      authFaliureOrSuccessOption: authFaliureOrSuccessOption == freezed
-          ? _value.authFaliureOrSuccessOption
-          : authFaliureOrSuccessOption as Option<Either<AuthFailure, Unit>>,
+      authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
+          ? _value.authFailureOrSuccessOption
+          : authFailureOrSuccessOption as Option<Either<AuthFailure, Unit>>,
     ));
   }
 }
@@ -906,14 +906,14 @@ class _$_RegisterState implements _RegisterState {
       @required this.isSubmitting,
       @required this.showErrors,
       @required this.termsAccepted,
-      @required this.authFaliureOrSuccessOption})
+      @required this.authFailureOrSuccessOption})
       : assert(emailAddress != null),
         assert(password != null),
         assert(passwordRepeat != null),
         assert(isSubmitting != null),
         assert(showErrors != null),
         assert(termsAccepted != null),
-        assert(authFaliureOrSuccessOption != null);
+        assert(authFailureOrSuccessOption != null);
 
   @override
   final EmailAddress emailAddress;
@@ -928,11 +928,11 @@ class _$_RegisterState implements _RegisterState {
   @override
   final bool termsAccepted;
   @override
-  final Option<Either<AuthFailure, Unit>> authFaliureOrSuccessOption;
+  final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'RegisterState(emailAddress: $emailAddress, password: $password, passwordRepeat: $passwordRepeat, isSubmitting: $isSubmitting, showErrors: $showErrors, termsAccepted: $termsAccepted, authFaliureOrSuccessOption: $authFaliureOrSuccessOption)';
+    return 'RegisterState(emailAddress: $emailAddress, password: $password, passwordRepeat: $passwordRepeat, isSubmitting: $isSubmitting, showErrors: $showErrors, termsAccepted: $termsAccepted, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
   }
 
   @override
@@ -957,11 +957,11 @@ class _$_RegisterState implements _RegisterState {
             (identical(other.termsAccepted, termsAccepted) ||
                 const DeepCollectionEquality()
                     .equals(other.termsAccepted, termsAccepted)) &&
-            (identical(other.authFaliureOrSuccessOption,
-                    authFaliureOrSuccessOption) ||
+            (identical(other.authFailureOrSuccessOption,
+                    authFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
-                    other.authFaliureOrSuccessOption,
-                    authFaliureOrSuccessOption)));
+                    other.authFailureOrSuccessOption,
+                    authFailureOrSuccessOption)));
   }
 
   @override
@@ -973,7 +973,7 @@ class _$_RegisterState implements _RegisterState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(showErrors) ^
       const DeepCollectionEquality().hash(termsAccepted) ^
-      const DeepCollectionEquality().hash(authFaliureOrSuccessOption);
+      const DeepCollectionEquality().hash(authFailureOrSuccessOption);
 
   @override
   _$RegisterStateCopyWith<_RegisterState> get copyWith =>
@@ -995,7 +995,7 @@ abstract class _RegisterState implements RegisterState {
           @required
               bool termsAccepted,
           @required
-              Option<Either<AuthFailure, Unit>> authFaliureOrSuccessOption}) =
+              Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption}) =
       _$_RegisterState;
 
   @override
@@ -1011,7 +1011,7 @@ abstract class _RegisterState implements RegisterState {
   @override
   bool get termsAccepted;
   @override
-  Option<Either<AuthFailure, Unit>> get authFaliureOrSuccessOption;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
   @override
   _$RegisterStateCopyWith<_RegisterState> get copyWith;
 }

@@ -5,6 +5,7 @@ import 'package:splited/domain/auth/i_auth_facade.dart';
 import 'package:splited/domain/auth/value_objects/email_address.dart';
 import 'package:splited/domain/auth/value_objects/password.dart';
 import 'package:splited/domain/auth/value_objects/password_change_code.dart';
+import 'package:splited/presentation/auth/user.dart';
 
 class MockAuthFacade extends IAuthFacade {
   @override
@@ -53,6 +54,18 @@ class MockAuthFacade extends IAuthFacade {
   Future<Either<AuthFailure, Unit>> linkAccountWith(
       {AccountType type, EmailAddress email, Password password}) {
     // TODO: implement linkAccountWith
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Option<User>> getSignedInUser() {
+    // TODO: implement getSignedInUser
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> signOut() {
+    // TODO: implement signOut
     throw UnimplementedError();
   }
 }

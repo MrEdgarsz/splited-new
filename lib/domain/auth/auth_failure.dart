@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:splited/domain/auth/accountTypes.dart';
 
 part 'auth_failure.freezed.dart';
 
@@ -13,7 +12,4 @@ abstract class AuthFailure with _$AuthFailure {
   const factory AuthFailure.userNotSignedIn() = UserNotSignedIn;
   const factory AuthFailure.internetConnectionNotAvailable() =
       InternetConnectionNotAvailable;
-  const factory AuthFailure.accountCanBeLinked(
-      {@required List<String> listOfLoginMethods,
-      @required AccountType linkWith}) = AccountCanBeLinked;
 }

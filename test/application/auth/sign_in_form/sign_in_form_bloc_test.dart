@@ -16,7 +16,7 @@ void main() {
     expect: [
       SignInFormState(
         password: Password("Dwadawdawdaw"),
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
         isSubmitting: false,
         emailAddress: EmailAddress(""),
       ),
@@ -29,7 +29,7 @@ void main() {
     expect: [
       SignInFormState(
         password: Password(""),
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
         isSubmitting: false,
         emailAddress: EmailAddress("Dwadawdawdaw"),
       ),
@@ -46,19 +46,19 @@ void main() {
     expect: [
       SignInFormState(
         password: Password(""),
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
         isSubmitting: false,
         emailAddress: EmailAddress("Dwadawdawdaw"),
       ),
       SignInFormState(
         password: Password("Dwadawdawdaw"),
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
         isSubmitting: false,
         emailAddress: EmailAddress("Dwadawdawdaw"),
       ),
       SignInFormState(
         password: Password("Dwadawdawdaw"),
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
         isSubmitting: false,
         emailAddress: EmailAddress("Dwadawdawdaw"),
       ),
@@ -75,25 +75,25 @@ void main() {
     expect: [
       SignInFormState(
         password: Password(""),
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
         isSubmitting: false,
         emailAddress: EmailAddress("email@email.com"),
       ),
       SignInFormState(
         password: Password("Test123"),
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
         isSubmitting: false,
         emailAddress: EmailAddress("email@email.com"),
       ),
       SignInFormState(
         password: Password("Test123"),
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
         isSubmitting: true,
         emailAddress: EmailAddress("email@email.com"),
       ),
       SignInFormState(
         password: Password("Test123"),
-        authFaliureOrSuccessOption: some(Right(unit)),
+        authFailureOrSuccessOption: some(Right(unit)),
         isSubmitting: false,
         emailAddress: EmailAddress("email@email.com"),
       ),
@@ -108,13 +108,13 @@ void main() {
     expect: [
       SignInFormState(
         password: Password(""),
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
         isSubmitting: true,
         emailAddress: EmailAddress(""),
       ),
       SignInFormState(
         password: Password(""),
-        authFaliureOrSuccessOption: some(Right(unit)),
+        authFailureOrSuccessOption: some(Right(unit)),
         isSubmitting: false,
         emailAddress: EmailAddress(""),
       ),
@@ -129,13 +129,13 @@ void main() {
     expect: [
       SignInFormState(
         password: Password(""),
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
         isSubmitting: true,
         emailAddress: EmailAddress(""),
       ),
       SignInFormState(
         password: Password(""),
-        authFaliureOrSuccessOption: some(Right(unit)),
+        authFailureOrSuccessOption: some(Right(unit)),
         isSubmitting: false,
         emailAddress: EmailAddress(""),
       ),

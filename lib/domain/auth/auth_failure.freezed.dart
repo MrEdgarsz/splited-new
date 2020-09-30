@@ -41,16 +41,6 @@ class _$AuthFailureTearOff {
   InternetConnectionNotAvailable internetConnectionNotAvailable() {
     return const InternetConnectionNotAvailable();
   }
-
-// ignore: unused_element
-  AccountCanBeLinked accountCanBeLinked(
-      {@required List<String> listOfLoginMethods,
-      @required AccountType linkWith}) {
-    return AccountCanBeLinked(
-      listOfLoginMethods: listOfLoginMethods,
-      linkWith: linkWith,
-    );
-  }
 }
 
 // ignore: unused_element
@@ -65,9 +55,6 @@ mixin _$AuthFailure {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
-    @required
-        Result accountCanBeLinked(
-            List<String> listOfLoginMethods, AccountType linkWith),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -77,8 +64,6 @@ mixin _$AuthFailure {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
-    Result accountCanBeLinked(
-        List<String> listOfLoginMethods, AccountType linkWith),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -91,7 +76,6 @@ mixin _$AuthFailure {
     @required
         Result internetConnectionNotAvailable(
             InternetConnectionNotAvailable value),
-    @required Result accountCanBeLinked(AccountCanBeLinked value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -101,7 +85,6 @@ mixin _$AuthFailure {
     Result emailAlreadyInUse(EmailAlredyInUse value),
     Result userNotSignedIn(UserNotSignedIn value),
     Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
-    Result accountCanBeLinked(AccountCanBeLinked value),
     @required Result orElse(),
   });
 }
@@ -161,9 +144,6 @@ class _$CanceledByUser implements CanceledByUser {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
-    @required
-        Result accountCanBeLinked(
-            List<String> listOfLoginMethods, AccountType linkWith),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -171,7 +151,6 @@ class _$CanceledByUser implements CanceledByUser {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return canceledByUser();
   }
 
@@ -184,8 +163,6 @@ class _$CanceledByUser implements CanceledByUser {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
-    Result accountCanBeLinked(
-        List<String> listOfLoginMethods, AccountType linkWith),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -206,7 +183,6 @@ class _$CanceledByUser implements CanceledByUser {
     @required
         Result internetConnectionNotAvailable(
             InternetConnectionNotAvailable value),
-    @required Result accountCanBeLinked(AccountCanBeLinked value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -214,7 +190,6 @@ class _$CanceledByUser implements CanceledByUser {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return canceledByUser(this);
   }
 
@@ -227,7 +202,6 @@ class _$CanceledByUser implements CanceledByUser {
     Result emailAlreadyInUse(EmailAlredyInUse value),
     Result userNotSignedIn(UserNotSignedIn value),
     Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
-    Result accountCanBeLinked(AccountCanBeLinked value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -283,9 +257,6 @@ class _$ServerError implements ServerError {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
-    @required
-        Result accountCanBeLinked(
-            List<String> listOfLoginMethods, AccountType linkWith),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -293,7 +264,6 @@ class _$ServerError implements ServerError {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return serverError();
   }
 
@@ -306,8 +276,6 @@ class _$ServerError implements ServerError {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
-    Result accountCanBeLinked(
-        List<String> listOfLoginMethods, AccountType linkWith),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -328,7 +296,6 @@ class _$ServerError implements ServerError {
     @required
         Result internetConnectionNotAvailable(
             InternetConnectionNotAvailable value),
-    @required Result accountCanBeLinked(AccountCanBeLinked value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -336,7 +303,6 @@ class _$ServerError implements ServerError {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return serverError(this);
   }
 
@@ -349,7 +315,6 @@ class _$ServerError implements ServerError {
     Result emailAlreadyInUse(EmailAlredyInUse value),
     Result userNotSignedIn(UserNotSignedIn value),
     Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
-    Result accountCanBeLinked(AccountCanBeLinked value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -406,9 +371,6 @@ class _$InvalidCredentials implements InvalidCredentials {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
-    @required
-        Result accountCanBeLinked(
-            List<String> listOfLoginMethods, AccountType linkWith),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -416,7 +378,6 @@ class _$InvalidCredentials implements InvalidCredentials {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return invalidCredentials();
   }
 
@@ -429,8 +390,6 @@ class _$InvalidCredentials implements InvalidCredentials {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
-    Result accountCanBeLinked(
-        List<String> listOfLoginMethods, AccountType linkWith),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -451,7 +410,6 @@ class _$InvalidCredentials implements InvalidCredentials {
     @required
         Result internetConnectionNotAvailable(
             InternetConnectionNotAvailable value),
-    @required Result accountCanBeLinked(AccountCanBeLinked value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -459,7 +417,6 @@ class _$InvalidCredentials implements InvalidCredentials {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return invalidCredentials(this);
   }
 
@@ -472,7 +429,6 @@ class _$InvalidCredentials implements InvalidCredentials {
     Result emailAlreadyInUse(EmailAlredyInUse value),
     Result userNotSignedIn(UserNotSignedIn value),
     Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
-    Result accountCanBeLinked(AccountCanBeLinked value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -529,9 +485,6 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
-    @required
-        Result accountCanBeLinked(
-            List<String> listOfLoginMethods, AccountType linkWith),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -539,7 +492,6 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return emailAlreadyInUse();
   }
 
@@ -552,8 +504,6 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
-    Result accountCanBeLinked(
-        List<String> listOfLoginMethods, AccountType linkWith),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -574,7 +524,6 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     @required
         Result internetConnectionNotAvailable(
             InternetConnectionNotAvailable value),
-    @required Result accountCanBeLinked(AccountCanBeLinked value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -582,7 +531,6 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return emailAlreadyInUse(this);
   }
 
@@ -595,7 +543,6 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     Result emailAlreadyInUse(EmailAlredyInUse value),
     Result userNotSignedIn(UserNotSignedIn value),
     Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
-    Result accountCanBeLinked(AccountCanBeLinked value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -652,9 +599,6 @@ class _$UserNotSignedIn implements UserNotSignedIn {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
-    @required
-        Result accountCanBeLinked(
-            List<String> listOfLoginMethods, AccountType linkWith),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -662,7 +606,6 @@ class _$UserNotSignedIn implements UserNotSignedIn {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return userNotSignedIn();
   }
 
@@ -675,8 +618,6 @@ class _$UserNotSignedIn implements UserNotSignedIn {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
-    Result accountCanBeLinked(
-        List<String> listOfLoginMethods, AccountType linkWith),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -697,7 +638,6 @@ class _$UserNotSignedIn implements UserNotSignedIn {
     @required
         Result internetConnectionNotAvailable(
             InternetConnectionNotAvailable value),
-    @required Result accountCanBeLinked(AccountCanBeLinked value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -705,7 +645,6 @@ class _$UserNotSignedIn implements UserNotSignedIn {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return userNotSignedIn(this);
   }
 
@@ -718,7 +657,6 @@ class _$UserNotSignedIn implements UserNotSignedIn {
     Result emailAlreadyInUse(EmailAlredyInUse value),
     Result userNotSignedIn(UserNotSignedIn value),
     Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
-    Result accountCanBeLinked(AccountCanBeLinked value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -779,9 +717,6 @@ class _$InternetConnectionNotAvailable
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
-    @required
-        Result accountCanBeLinked(
-            List<String> listOfLoginMethods, AccountType linkWith),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -789,7 +724,6 @@ class _$InternetConnectionNotAvailable
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return internetConnectionNotAvailable();
   }
 
@@ -802,8 +736,6 @@ class _$InternetConnectionNotAvailable
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
-    Result accountCanBeLinked(
-        List<String> listOfLoginMethods, AccountType linkWith),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -824,7 +756,6 @@ class _$InternetConnectionNotAvailable
     @required
         Result internetConnectionNotAvailable(
             InternetConnectionNotAvailable value),
-    @required Result accountCanBeLinked(AccountCanBeLinked value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -832,7 +763,6 @@ class _$InternetConnectionNotAvailable
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
     return internetConnectionNotAvailable(this);
   }
 
@@ -845,7 +775,6 @@ class _$InternetConnectionNotAvailable
     Result emailAlreadyInUse(EmailAlredyInUse value),
     Result userNotSignedIn(UserNotSignedIn value),
     Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
-    Result accountCanBeLinked(AccountCanBeLinked value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -859,181 +788,4 @@ class _$InternetConnectionNotAvailable
 abstract class InternetConnectionNotAvailable implements AuthFailure {
   const factory InternetConnectionNotAvailable() =
       _$InternetConnectionNotAvailable;
-}
-
-abstract class $AccountCanBeLinkedCopyWith<$Res> {
-  factory $AccountCanBeLinkedCopyWith(
-          AccountCanBeLinked value, $Res Function(AccountCanBeLinked) then) =
-      _$AccountCanBeLinkedCopyWithImpl<$Res>;
-  $Res call({List<String> listOfLoginMethods, AccountType linkWith});
-
-  $AccountTypeCopyWith<$Res> get linkWith;
-}
-
-class _$AccountCanBeLinkedCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
-    implements $AccountCanBeLinkedCopyWith<$Res> {
-  _$AccountCanBeLinkedCopyWithImpl(
-      AccountCanBeLinked _value, $Res Function(AccountCanBeLinked) _then)
-      : super(_value, (v) => _then(v as AccountCanBeLinked));
-
-  @override
-  AccountCanBeLinked get _value => super._value as AccountCanBeLinked;
-
-  @override
-  $Res call({
-    Object listOfLoginMethods = freezed,
-    Object linkWith = freezed,
-  }) {
-    return _then(AccountCanBeLinked(
-      listOfLoginMethods: listOfLoginMethods == freezed
-          ? _value.listOfLoginMethods
-          : listOfLoginMethods as List<String>,
-      linkWith: linkWith == freezed ? _value.linkWith : linkWith as AccountType,
-    ));
-  }
-
-  @override
-  $AccountTypeCopyWith<$Res> get linkWith {
-    if (_value.linkWith == null) {
-      return null;
-    }
-    return $AccountTypeCopyWith<$Res>(_value.linkWith, (value) {
-      return _then(_value.copyWith(linkWith: value));
-    });
-  }
-}
-
-class _$AccountCanBeLinked implements AccountCanBeLinked {
-  const _$AccountCanBeLinked(
-      {@required this.listOfLoginMethods, @required this.linkWith})
-      : assert(listOfLoginMethods != null),
-        assert(linkWith != null);
-
-  @override
-  final List<String> listOfLoginMethods;
-  @override
-  final AccountType linkWith;
-
-  @override
-  String toString() {
-    return 'AuthFailure.accountCanBeLinked(listOfLoginMethods: $listOfLoginMethods, linkWith: $linkWith)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is AccountCanBeLinked &&
-            (identical(other.listOfLoginMethods, listOfLoginMethods) ||
-                const DeepCollectionEquality()
-                    .equals(other.listOfLoginMethods, listOfLoginMethods)) &&
-            (identical(other.linkWith, linkWith) ||
-                const DeepCollectionEquality()
-                    .equals(other.linkWith, linkWith)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(listOfLoginMethods) ^
-      const DeepCollectionEquality().hash(linkWith);
-
-  @override
-  $AccountCanBeLinkedCopyWith<AccountCanBeLinked> get copyWith =>
-      _$AccountCanBeLinkedCopyWithImpl<AccountCanBeLinked>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result canceledByUser(),
-    @required Result serverError(),
-    @required Result invalidCredentials(),
-    @required Result emailAlreadyInUse(),
-    @required Result userNotSignedIn(),
-    @required Result internetConnectionNotAvailable(),
-    @required
-        Result accountCanBeLinked(
-            List<String> listOfLoginMethods, AccountType linkWith),
-  }) {
-    assert(canceledByUser != null);
-    assert(serverError != null);
-    assert(invalidCredentials != null);
-    assert(emailAlreadyInUse != null);
-    assert(userNotSignedIn != null);
-    assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
-    return accountCanBeLinked(listOfLoginMethods, linkWith);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result canceledByUser(),
-    Result serverError(),
-    Result invalidCredentials(),
-    Result emailAlreadyInUse(),
-    Result userNotSignedIn(),
-    Result internetConnectionNotAvailable(),
-    Result accountCanBeLinked(
-        List<String> listOfLoginMethods, AccountType linkWith),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (accountCanBeLinked != null) {
-      return accountCanBeLinked(listOfLoginMethods, linkWith);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result canceledByUser(CanceledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result invalidCredentials(InvalidCredentials value),
-    @required Result emailAlreadyInUse(EmailAlredyInUse value),
-    @required Result userNotSignedIn(UserNotSignedIn value),
-    @required
-        Result internetConnectionNotAvailable(
-            InternetConnectionNotAvailable value),
-    @required Result accountCanBeLinked(AccountCanBeLinked value),
-  }) {
-    assert(canceledByUser != null);
-    assert(serverError != null);
-    assert(invalidCredentials != null);
-    assert(emailAlreadyInUse != null);
-    assert(userNotSignedIn != null);
-    assert(internetConnectionNotAvailable != null);
-    assert(accountCanBeLinked != null);
-    return accountCanBeLinked(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result canceledByUser(CanceledByUser value),
-    Result serverError(ServerError value),
-    Result invalidCredentials(InvalidCredentials value),
-    Result emailAlreadyInUse(EmailAlredyInUse value),
-    Result userNotSignedIn(UserNotSignedIn value),
-    Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
-    Result accountCanBeLinked(AccountCanBeLinked value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (accountCanBeLinked != null) {
-      return accountCanBeLinked(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AccountCanBeLinked implements AuthFailure {
-  const factory AccountCanBeLinked(
-      {@required List<String> listOfLoginMethods,
-      @required AccountType linkWith}) = _$AccountCanBeLinked;
-
-  List<String> get listOfLoginMethods;
-  AccountType get linkWith;
-  $AccountCanBeLinkedCopyWith<AccountCanBeLinked> get copyWith;
 }

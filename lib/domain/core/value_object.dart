@@ -10,7 +10,7 @@ abstract class ValueObject<T> {
 
   bool get isValid => this.value.isRight();
 
-  ///Throws [UnexptectedValueError] containing the [ValueFaliure] or returns value.
+  ///Throws [UnexptectedValueError] containing the [ValueFailure] or returns value.
   T getOrCrash() {
     return value.fold((f) => throw UnexpectedValueError, id);
   }

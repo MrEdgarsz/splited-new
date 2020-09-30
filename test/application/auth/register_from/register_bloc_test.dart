@@ -19,7 +19,7 @@ main() {
         isSubmitting: false,
         showErrors: true,
         termsAccepted: false,
-        authFaliureOrSuccessOption: none(),
+        authFailureOrSuccessOption: none(),
       ),
     ],
   );

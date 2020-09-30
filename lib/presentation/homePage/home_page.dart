@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:native_color/native_color.dart';
+import 'package:splited/application/auth/register_from/register_bloc.dart';
+import 'package:splited/application/auth/sign_in_form/sign_in_form_bloc.dart';
+import 'package:splited/injection.dart';
 import 'package:splited/presentation/core/Routes/router.gr.dart';
 import 'package:splited/presentation/core/scroll_behaviour.dart';
 import 'package:splited/presentation/core/widgets/custom_raised_button.dart';
@@ -36,6 +39,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: CustomRaisedButton(
                 onPressed: () {
+                  getIt.resetLazySingleton<SignInFormBloc>();
                   ExtendedNavigator.of(context).push(Routes.signInPage);
                 },
                 color: HexColor("#247DBA"),
@@ -50,6 +54,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: CustomRaisedButton(
                 onPressed: () {
+                  getIt.resetLazySingleton<RegisterBloc>();
                   ExtendedNavigator.of(context).push(Routes.registerPage);
                 },
                 color: HexColor("#24BA60"),

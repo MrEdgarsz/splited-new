@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:native_color/native_color.dart';
+import 'package:splited/application/auth/auth_bloc.dart';
 import 'package:splited/application/auth/register_from/register_bloc.dart';
 import 'package:splited/presentation/core/complementary_functions.dart';
 import 'package:splited/presentation/core/widgets/checkbox.dart';
 import 'package:splited/presentation/core/widgets/custom_raised_button.dart';
 import 'package:splited/presentation/core/widgets/custom_text_from_field.dart';
-
-import '../register_page_assets.dart';
+import 'package:splited/presentation/resources/resources.dart';
 
 class RegisterForm extends StatelessWidget {
   const RegisterForm({Key key}) : super(key: key);
@@ -16,33 +16,40 @@ class RegisterForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<RegisterBloc, RegisterState>(
       listener: (BuildContext context, RegisterState state) {
-        state.authFaliureOrSuccessOption.fold(
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            content: Row(
+              children: [
+                CircularProgressIndicator(),
+                Text("Ładowanie..."),
+              ],
+            ),
+          ),
+        );
+        state.authFailureOrSuccessOption.fold(
           () {},
           (some) => some.fold(
             (l) => l.maybeMap(
               serverError: (_) => showErrorDialog(
                 context,
-                "AF_serverError_title",
-                "AF_serverError_desc",
+                "Błąd Serwera",
+                "Wystąpił błąd serwera, przepraszamy za niedogodności. Prosimy spróbować ponownie za kilka minut lub skontaktować się z administratorem usługi",
               ),
               internetConnectionNotAvailable: (_) => showErrorDialog(
                 context,
-                "AF_internetConnectionNotAvailable_title",
-                "AF_internetConnectionNotAvailable_desc",
-              ),
-              accountCanBeLinked: (e) => showLinkingDialog(
-                context,
-                e.listOfLoginMethods,
-                e.linkWith,
+                "Brak Internetu",
+                "Nie możemy połączyć się z serwerami SplitEd. Sprawdź swoje połączenie internetowe i spróbuj ponownie.",
               ),
               emailAlreadyInUse: (_) => showErrorDialog(
                 context,
-                "AF_emailAlreadyInUse_title",
-                "AF_emailAlreadyInUse_desc",
+                "E-mail już zarejestrowany",
+                "Konto o podanym adresie e-mail już istnieje w naszym serwisie.",
               ),
               orElse: () {},
             ),
             (_) {
+              context.bloc<AuthBloc>().add(AuthEvent.authCheckRequested());
               print("ZALOGOWANY KURŁA");
             },
           ),

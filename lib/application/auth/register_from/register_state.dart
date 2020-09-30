@@ -9,7 +9,7 @@ abstract class RegisterState with _$RegisterState {
     @required bool isSubmitting,
     @required bool showErrors,
     @required bool termsAccepted,
-    @required Option<Either<AuthFailure, Unit>> authFaliureOrSuccessOption,
+    @required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
   }) = _RegisterState;
 
   factory RegisterState.initial() => RegisterState(
@@ -19,5 +19,5 @@ abstract class RegisterState with _$RegisterState {
       isSubmitting: false,
       showErrors: false,
       termsAccepted: false,
-      authFaliureOrSuccessOption: none());
+      authFailureOrSuccessOption: none());
 }

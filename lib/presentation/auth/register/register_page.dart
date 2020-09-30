@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:splited/application/auth/register_from/register_bloc.dart';
-import 'package:splited/presentation/auth/register/widgets/register_form.dart';
+import 'package:splited/presentation/auth/register/register_form.dart';
 import 'package:splited/presentation/core/scroll_behaviour.dart';
 import 'package:splited/presentation/core/widgets/custom_app_bar.dart';
 

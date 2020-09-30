@@ -4,8 +4,7 @@ import 'package:splited/domain/auth/auth_failure.dart';
 import 'package:splited/domain/auth/value_objects/email_address.dart';
 import 'package:splited/domain/auth/value_objects/password.dart';
 import 'package:splited/domain/auth/value_objects/password_change_code.dart';
-
-import 'accountTypes.dart';
+import 'package:splited/presentation/auth/user.dart';
 
 abstract class IAuthFacade {
   Future<Either<AuthFailure, Unit>> signInWithLoginAndPassword({
@@ -18,11 +17,6 @@ abstract class IAuthFacade {
   });
   Future<Either<AuthFailure, Unit>> signInWithGoogle();
   Future<Either<AuthFailure, Unit>> signInWithFacebook();
-  Future<Either<AuthFailure, Unit>> linkAccountWith({
-    @required AccountType type,
-    EmailAddress email,
-    Password password,
-  });
   Future<Either<AuthFailure, Unit>> remindPassword({
     @required EmailAddress email,
   });
@@ -32,5 +26,7 @@ abstract class IAuthFacade {
   Future<Either<AuthFailure, Unit>> changePassword({
     @required EmailAddress email,
     @required Password password,
-  }); //
+  });
+  Future<Option<User>> getSignedInUser();
+  Future<void> signOut();
 }

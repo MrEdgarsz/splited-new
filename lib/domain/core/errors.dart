@@ -8,6 +8,6 @@ class UnexpectedValueError extends Error {
   @override
   String toString() {
     return Error.safeToString(
-        "Encoutered ValueFaliure at unrecoverable state. Terminating. Faliure was: $valueFailure");
+        "Encoutered ValueFailure at unrecoverable state. Terminating. Failure was: $valueFailure");
   }
 }

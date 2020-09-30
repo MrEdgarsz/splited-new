@@ -10,10 +10,10 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import 'application/auth/auth_bloc.dart';
 import 'infrastructure/auth/firebase_auth_facade.dart';
 import 'infrastructure/core/firebase_injectable_module.dart';
 import 'domain/auth/i_auth_facade.dart';
-import 'application/auth/linking_accounts/linking_bloc.dart';
 import 'application/auth/register_from/register_bloc.dart';
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'application/themes/theme_bloc.dart';
@@ -36,10 +36,10 @@ GetIt $initGetIt(
         get<GoogleSignIn>(),
         get<FacebookLogin>(),
       ));
-  gh.lazySingleton<LinkingBloc>(() => LinkingBloc(get<IAuthFacade>()));
   gh.lazySingleton<RegisterBloc>(() => RegisterBloc(get<IAuthFacade>()));
   gh.lazySingleton<SignInFormBloc>(() => SignInFormBloc(get<IAuthFacade>()));
   gh.lazySingleton<ThemeBloc>(() => ThemeBloc());
+  gh.factory<AuthBloc>(() => AuthBloc(get<IAuthFacade>()));
   return get;
 }
 

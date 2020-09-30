@@ -16,6 +16,7 @@ import 'package:splited/domain/auth/value_objects/password.dart';
 import 'package:http/http.dart' as http;
 import 'package:splited/domain/auth/value_objects/password_change_code.dart';
 import 'package:splited/infrastructure/auth/model/firebase_auth_credentials.dart';
+import 'package:splited/presentation/auth/user.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade extends IAuthFacade {
@@ -184,15 +185,6 @@ class FirebaseAuthFacade extends IAuthFacade {
     return authCredential.fold(
       (l) => left(l),
       (value) async {
-        final List<String> signInMethods = await _firebaseAuth
-            .fetchSignInMethodsForEmail(email: value.emailAddress);
-        if (signInMethods.isNotEmpty &&
-            !signInMethods.contains(_accountTypeToService(accountType))) {
-          return left(
-            AuthFailure.accountCanBeLinked(
-                listOfLoginMethods: signInMethods, linkWith: accountType),
-          );
-        }
         try {
           await _firebaseAuth.signInWithCredential(value.authCredential);
           return right(unit);
@@ -215,5 +207,17 @@ class FirebaseAuthFacade extends IAuthFacade {
         standard: (_) => "password",
         google: (_) => "google.com",
         facebook: (_) => "facebook.com");
+  }
+
+  @override
+  Future<Option<User>> getSignedInUser() {
+    // TODO: implement getSignedInUser
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> signOut() {
+    // TODO: implement signOut
+    throw UnimplementedError();
   }
 }

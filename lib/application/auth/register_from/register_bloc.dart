@@ -28,14 +28,14 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       passwordChanged: (e) async* {
         final result = state.copyWith(
           password: Password(e.password),
-          authFaliureOrSuccessOption: none(),
+          authFailureOrSuccessOption: none(),
         );
         yield result;
       },
       emailChanged: (e) async* {
         final result = state.copyWith(
           emailAddress: EmailAddress(e.email),
-          authFaliureOrSuccessOption: none(),
+          authFailureOrSuccessOption: none(),
         );
         yield result;
       },
@@ -51,7 +51,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
             state.password == state.passwordRepeat) {
           final result = state.copyWith(
             isSubmitting: true,
-            authFaliureOrSuccessOption: none(),
+            authFailureOrSuccessOption: none(),
           );
           yield result;
           failureOrSuccess = await _authFacade.registerWithLoginAndPassword(
@@ -60,20 +60,20 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         yield state.copyWith(
           isSubmitting: false,
           showErrors: true,
-          authFaliureOrSuccessOption: optionOf(failureOrSuccess),
+          authFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
       passwordRepeatChanged: (PasswordRepeatChanged e) async* {
         final result = state.copyWith(
           passwordRepeat: Password(e.passwordRepeat),
-          authFaliureOrSuccessOption: none(),
+          authFailureOrSuccessOption: none(),
         );
         yield result;
       },
       termsAcceptanceChanged: (TermsAcceptanceChanged e) async* {
         final result = state.copyWith(
           termsAccepted: e.termsAccepted,
-          authFaliureOrSuccessOption: none(),
+          authFailureOrSuccessOption: none(),
         );
         yield result;
       },
