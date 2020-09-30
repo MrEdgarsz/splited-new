@@ -41,7 +41,8 @@ class SignInFormWidget extends StatelessWidget {
               orElse: () {},
             ),
             (_) {
-              context.bloc<AuthBloc>()..add(AuthEvent.authCheckRequested());
+              context.bloc<AuthBloc>()
+                ..add(const AuthEvent.authCheckRequested());
               print("ZALOGOWANY KURŁA");
             },
           ),
@@ -118,8 +119,8 @@ class SignInFormWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 26),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 37),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 37),
                 child: TextDivider(text: "Zaloguj przez inny serwis"),
               ),
               Padding(

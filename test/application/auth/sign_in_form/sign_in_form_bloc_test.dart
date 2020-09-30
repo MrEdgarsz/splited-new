@@ -93,7 +93,7 @@ void main() {
       ),
       SignInFormState(
         password: Password("Test123"),
-        authFailureOrSuccessOption: some(Right(unit)),
+        authFailureOrSuccessOption: some(const Right(unit)),
         isSubmitting: false,
         emailAddress: EmailAddress("email@email.com"),
       ),
@@ -114,7 +114,7 @@ void main() {
       ),
       SignInFormState(
         password: Password(""),
-        authFailureOrSuccessOption: some(Right(unit)),
+        authFailureOrSuccessOption: some(const Right(unit)),
         isSubmitting: false,
         emailAddress: EmailAddress(""),
       ),
@@ -135,7 +135,7 @@ void main() {
       ),
       SignInFormState(
         password: Password(""),
-        authFailureOrSuccessOption: some(Right(unit)),
+        authFailureOrSuccessOption: some(const Right(unit)),
         isSubmitting: false,
         emailAddress: EmailAddress(""),
       ),

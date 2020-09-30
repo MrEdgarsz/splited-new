@@ -10,8 +10,8 @@ void main() {
     final Password password = Password("dwa");
     expect(
         password.value,
-        Left<ValueFailure<String>, String>(
-            const ValueFailure.invalidPassword(filedValue: "dwa")));
+        const Left<ValueFailure<String>, String>(
+            ValueFailure.invalidPassword(filedValue: "dwa")));
   });
   test(
       'Password should return shortPassword failure when value do not match RegExp',
@@ -19,19 +19,19 @@ void main() {
     final Password password = Password("dW1");
     expect(
         password.value,
-        Left<ValueFailure<String>, String>(
-            const ValueFailure.invalidPassword(filedValue: "dW1")));
+        const Left<ValueFailure<String>, String>(
+            ValueFailure.invalidPassword(filedValue: "dW1")));
   });
   test(
       'Password should return value when value matches RegExp and is atleast 6 characters long',
       () {
     final Password password = Password("dW1daw");
-    expect(password.value, Right<ValueFailure<String>, String>("dW1daw"));
+    expect(password.value, const Right<ValueFailure<String>, String>("dW1daw"));
   });
   test(
       'Password should return value when value matches RegExp and is atleast 6 characters long test2',
       () {
     final Password password = Password("Test12");
-    expect(password.value, Right<ValueFailure<String>, String>("Test12"));
+    expect(password.value, const Right<ValueFailure<String>, String>("Test12"));
   });
 }

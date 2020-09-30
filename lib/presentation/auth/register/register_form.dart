@@ -21,8 +21,8 @@ class RegisterForm extends StatelessWidget {
           builder: (context) => AlertDialog(
             content: Row(
               children: [
-                CircularProgressIndicator(),
-                Text("Ładowanie..."),
+                const CircularProgressIndicator(),
+                const Text("Ładowanie..."),
               ],
             ),
           ),
@@ -49,7 +49,9 @@ class RegisterForm extends StatelessWidget {
               orElse: () {},
             ),
             (_) {
-              context.bloc<AuthBloc>().add(AuthEvent.authCheckRequested());
+              context
+                  .bloc<AuthBloc>()
+                  .add(const AuthEvent.authCheckRequested());
               print("ZALOGOWANY KURŁA");
             },
           ),
@@ -193,14 +195,14 @@ class RegisterForm extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyText1.copyWith(
                             fontSize: 12, fontWeight: FontWeight.bold),
                         children: [
-                          TextSpan(text: "Potwierdzam zapoznanie się z "),
+                          const TextSpan(text: "Potwierdzam zapoznanie się z "),
                           TextSpan(
                             text: "regulaminem",
                             style: TextStyle(
                               color: HexColor("#247DBA"),
                             ),
                           ),
-                          TextSpan(
+                          const TextSpan(
                             text: " i jego akceptację",
                           ),
                         ],

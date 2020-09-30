@@ -8,12 +8,12 @@ void main() {
     final EmailAddress email = EmailAddress("dwa");
     expect(
         email.value,
-        Left<ValueFailure<String>, String>(
+        const Left<ValueFailure<String>, String>(
             const ValueFailure.invalidEmail(filedValue: "dwa")));
   });
   test('EmailAddres should return value when value matches RegExp', () {
     const String emailMock = "dwa@wp.pl";
     final EmailAddress email = EmailAddress(emailMock);
-    expect(email.value, Right<ValueFailure<String>, String>(emailMock));
+    expect(email.value, const Right<ValueFailure<String>, String>(emailMock));
   });
 }

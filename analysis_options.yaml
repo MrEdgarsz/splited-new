@@ -1,0 +1,13 @@
+include: package:lint/analysis_options.yaml
+
+linter:
+  rules:
+    avoid_bool_literals_in_conditional_expressions: false
+    unnecessary_parenthesis: false
+
+analyzer:
+  errors:
+    prefer_const_constructors: error
+    missing_required_param: error
+    missing_return: error
+    must_be_immutable: error

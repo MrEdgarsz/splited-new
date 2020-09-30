@@ -16,7 +16,7 @@ void showErrorDialog(BuildContext context, String title, String desc) {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text(
+          child: const Text(
             "Zamknij",
           ),
         ),

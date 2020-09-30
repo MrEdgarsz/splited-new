@@ -29,7 +29,7 @@ abstract class CustomAppTheme {
     fontFamily: "Poppins",
     cardColor: HexColor("#4B4B4B"),
     textTheme: TextTheme(
-      headline6: TextStyle(
+      headline6: const TextStyle(
         color: Colors.white,
         fontSize: 29,
         fontWeight: FontWeight.bold,
@@ -56,12 +56,12 @@ abstract class CustomAppTheme {
     ),
     dialogTheme: DialogTheme(
       backgroundColor: HexColor("#333333"),
-      titleTextStyle: TextStyle(
+      titleTextStyle: const TextStyle(
         fontWeight: FontWeight.w500,
         color: Colors.white,
         fontSize: 20,
       ),
-      contentTextStyle: TextStyle(
+      contentTextStyle: const TextStyle(
         fontWeight: FontWeight.normal,
         color: Colors.white,
         fontSize: 14,
@@ -122,12 +122,12 @@ abstract class CustomAppTheme {
     ),
     dialogTheme: DialogTheme(
       backgroundColor: HexColor("#333333"),
-      titleTextStyle: TextStyle(
+      titleTextStyle: const TextStyle(
         fontWeight: FontWeight.w500,
         color: Colors.white,
         fontSize: 20,
       ),
-      contentTextStyle: TextStyle(
+      contentTextStyle: const TextStyle(
         fontWeight: FontWeight.normal,
         color: Colors.white,
         fontSize: 14,
