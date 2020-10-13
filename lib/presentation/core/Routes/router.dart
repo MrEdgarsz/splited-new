@@ -12,6 +12,7 @@ import 'package:splited/presentation/auth/register/register_page.dart';
 import 'package:splited/presentation/auth/signIn/sign_in_page.dart';
 import 'package:splited/presentation/homePage/home_page.dart';
 import 'package:splited/presentation/splashScreen/splash_screen.dart';
+import 'package:splited/presentation/termsAndRegulations/terms_and_regulations_page.dart';
 
 @MaterialAutoRouter(
   routes: <AutoRoute>[
@@ -56,13 +57,19 @@ import 'package:splited/presentation/splashScreen/splash_screen.dart';
     ),
     CustomRoute(
       page: VerificationCodeInvalidPage,
-      initial: true,
+      // initial: true,
       transitionsBuilder: splitEdTransition,
       durationInMilliseconds: 200,
     ),
     CustomRoute(
       page: NewPasswordSetPage,
       // initial: true,
+      transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+      durationInMilliseconds: 300,
+    ),
+    CustomRoute(
+      page: TermsAndRegulationsPage,
+      initial: true,
       transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
       durationInMilliseconds: 300,
     )

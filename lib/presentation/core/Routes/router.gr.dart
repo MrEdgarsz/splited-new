@@ -20,6 +20,7 @@ import '../../auth/register/register_page.dart';
 import '../../auth/signIn/sign_in_page.dart';
 import '../../homePage/home_page.dart';
 import '../../splashScreen/splash_screen.dart';
+import '../../termsAndRegulations/terms_and_regulations_page.dart';
 import 'router.dart';
 
 class Routes {
@@ -30,8 +31,10 @@ class Routes {
   static const String sendVerificationCodePage = '/send-verification-code-page';
   static const String verifyCodePage = '/verify-code-page';
   static const String setNewPasswordPage = '/set-new-password-page';
-  static const String verificationCodeInvalidPage = '/';
+  static const String verificationCodeInvalidPage =
+      '/verification-code-invalid-page';
   static const String newPasswordSetPage = '/new-password-set-page';
+  static const String termsAndRegulationsPage = '/';
   static const all = <String>{
     splashScreen,
     homePage,
@@ -42,6 +45,7 @@ class Routes {
     setNewPasswordPage,
     verificationCodeInvalidPage,
     newPasswordSetPage,
+    termsAndRegulationsPage,
   };
 }
 
@@ -59,6 +63,7 @@ class Router extends RouterBase {
     RouteDef(Routes.verificationCodeInvalidPage,
         page: VerificationCodeInvalidPage),
     RouteDef(Routes.newPasswordSetPage, page: NewPasswordSetPage),
+    RouteDef(Routes.termsAndRegulationsPage, page: TermsAndRegulationsPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -140,6 +145,15 @@ class Router extends RouterBase {
       return PageRouteBuilder<dynamic>(
         pageBuilder: (context, animation, secondaryAnimation) =>
             NewPasswordSetPage(),
+        settings: data,
+        transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+        transitionDuration: const Duration(milliseconds: 300),
+      );
+    },
+    TermsAndRegulationsPage: (data) {
+      return PageRouteBuilder<dynamic>(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const TermsAndRegulationsPage(),
         settings: data,
         transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         transitionDuration: const Duration(milliseconds: 300),
