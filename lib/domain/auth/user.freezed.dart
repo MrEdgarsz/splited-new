@@ -13,10 +13,9 @@ class _$UserTearOff {
   const _$UserTearOff();
 
 // ignore: unused_element
-  _User call({@required UniqueID id, @required String accessToken}) {
+  _User call({@required UniqueID id}) {
     return _User(
       id: id,
-      accessToken: accessToken,
     );
   }
 }
@@ -26,7 +25,6 @@ const $User = _$UserTearOff();
 
 mixin _$User {
   UniqueID get id;
-  String get accessToken;
 
   $UserCopyWith<User> get copyWith;
 }
@@ -34,7 +32,7 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
-  $Res call({UniqueID id, String accessToken});
+  $Res call({UniqueID id});
 }
 
 class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
@@ -47,12 +45,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
-    Object accessToken = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueID,
-      accessToken:
-          accessToken == freezed ? _value.accessToken : accessToken as String,
     ));
   }
 }
@@ -61,7 +56,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
       __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueID id, String accessToken});
+  $Res call({UniqueID id});
 }
 
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
@@ -75,29 +70,22 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
-    Object accessToken = freezed,
   }) {
     return _then(_User(
       id: id == freezed ? _value.id : id as UniqueID,
-      accessToken:
-          accessToken == freezed ? _value.accessToken : accessToken as String,
     ));
   }
 }
 
 class _$_User implements _User {
-  const _$_User({@required this.id, @required this.accessToken})
-      : assert(id != null),
-        assert(accessToken != null);
+  const _$_User({@required this.id}) : assert(id != null);
 
   @override
   final UniqueID id;
-  @override
-  final String accessToken;
 
   @override
   String toString() {
-    return 'User(id: $id, accessToken: $accessToken)';
+    return 'User(id: $id)';
   }
 
   @override
@@ -105,17 +93,12 @@ class _$_User implements _User {
     return identical(this, other) ||
         (other is _User &&
             (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.accessToken, accessToken) ||
-                const DeepCollectionEquality()
-                    .equals(other.accessToken, accessToken)));
+                const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(accessToken);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
 
   @override
   _$UserCopyWith<_User> get copyWith =>
@@ -123,13 +106,10 @@ class _$_User implements _User {
 }
 
 abstract class _User implements User {
-  const factory _User({@required UniqueID id, @required String accessToken}) =
-      _$_User;
+  const factory _User({@required UniqueID id}) = _$_User;
 
   @override
   UniqueID get id;
-  @override
-  String get accessToken;
   @override
   _$UserCopyWith<_User> get copyWith;
 }

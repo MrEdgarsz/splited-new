@@ -4,26 +4,26 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.9.0 <3.0.0"
+  sdk: ">=2.8.4 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   auto_route: ^0.6.7
-  http: ^0.12.2
-  dartz: ^0.9.1
-  freezed_annotation: ^0.11.0+1
-  flutter_bloc: ^6.0.1
-  native_color: ^1.2.0+1
-  flare_flutter: ^2.0.6
-  hydrated_bloc: ^6.0.1
-  firebase_core: ^0.4.5
-  google_sign_in: ^4.5.1
-  flutter_facebook_login: ^3.0.0
-  firebase_auth: ^0.16.1
-  injectable: ^1.0.4
-  get_it: ^4.0.4
   cloud_functions: ^0.5.0
+  connectivity: ^0.4.9+3
+  dartz: ^0.9.1
+  firebase_auth: ^0.16.1
+  firebase_core: ^0.4.5
+  flare_flutter: ^2.0.6
+  flutter_bloc: ^6.0.1
+  flutter_facebook_login: ^3.0.0
+  freezed_annotation: ^0.11.0+1
+  get_it: ^4.0.4
+  google_sign_in: ^4.5.1
+  http: ^0.12.2
+  hydrated_bloc: ^6.0.1
+  injectable: ^1.0.4
   simple_tooltip: ^0.1.14
   uuid: ^2.2.2
 
@@ -31,12 +31,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   auto_route_generator: ^0.6.8
-  build_runner: 1.10.1
-  freezed: ^0.11.5
   bloc_test: ^7.0.0
+  build_runner: 1.10.1
   flutter_launcher_icons: ^0.7.5
-  lint: ^1.2.0
+  freezed: ^0.11.5
   injectable_generator: ^1.0.4
+  lint: ^1.2.0
 
 flutter:
   uses-material-design: true
@@ -46,6 +46,7 @@ flutter:
     - assets/HomePage/
     - assets/Core/
     - assets/RegisterPage/
+    - assets/ForgotPassword/
   fonts:
     - family: Poppins
       fonts:

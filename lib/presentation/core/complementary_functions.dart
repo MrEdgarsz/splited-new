@@ -1,9 +1,4 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:native_color/native_color.dart';
-import 'package:splited/domain/auth/accountTypes.dart';
-
-import 'Routes/router.gr.dart';
 
 void showErrorDialog(BuildContext context, String title, String desc) {
   showDialog(
@@ -21,6 +16,33 @@ void showErrorDialog(BuildContext context, String title, String desc) {
           ),
         ),
       ],
+    ),
+  );
+}
+
+void showLoadingDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (context) => WillPopScope(
+      onWillPop: () async => false,
+      child: AlertDialog(
+        contentPadding: const EdgeInsets.symmetric(vertical: 20),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        insetPadding:
+            const EdgeInsets.symmetric(horizontal: 100.0, vertical: 24.0),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const CircularProgressIndicator(),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text("Ładowanie..."),
+          ],
+        ),
+      ),
     ),
   );
 }

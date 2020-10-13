@@ -13,34 +13,34 @@ class _$RegisterEventTearOff {
   const _$RegisterEventTearOff();
 
 // ignore: unused_element
-  RegisterWithEmailAndPassword registerWithEmailAndPassword() {
-    return const RegisterWithEmailAndPassword();
+  _RegisterWithEmailAndPassword registerWithEmailAndPassword() {
+    return const _RegisterWithEmailAndPassword();
   }
 
 // ignore: unused_element
-  EmailChanged emailChanged(String email) {
-    return EmailChanged(
+  _EmailChanged emailChanged(String email) {
+    return _EmailChanged(
       email,
     );
   }
 
 // ignore: unused_element
-  PasswordChanged passwordChanged(String password) {
-    return PasswordChanged(
+  _PasswordChanged passwordChanged(String password) {
+    return _PasswordChanged(
       password,
     );
   }
 
 // ignore: unused_element
-  PasswordRepeatChanged passwordRepeatChanged(String passwordRepeat) {
-    return PasswordRepeatChanged(
+  _PasswordRepeatChanged passwordRepeatChanged(String passwordRepeat) {
+    return _PasswordRepeatChanged(
       passwordRepeat,
     );
   }
 
 // ignore: unused_element
-  TermsAcceptanceChanged termsAcceptanceChanged(bool termsAccepted) {
-    return TermsAcceptanceChanged(
+  _TermsAcceptanceChanged termsAcceptanceChanged(bool termsAccepted) {
+    return _TermsAcceptanceChanged(
       termsAccepted,
     );
   }
@@ -70,19 +70,20 @@ mixin _$RegisterEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required
-        Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result passwordRepeatChanged(PasswordRepeatChanged value),
-    @required Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+        Result registerWithEmailAndPassword(
+            _RegisterWithEmailAndPassword value),
+    @required Result emailChanged(_EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    @required Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result passwordRepeatChanged(PasswordRepeatChanged value),
-    Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+    Result registerWithEmailAndPassword(_RegisterWithEmailAndPassword value),
+    Result emailChanged(_EmailChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
     @required Result orElse(),
   });
 }
@@ -102,28 +103,28 @@ class _$RegisterEventCopyWithImpl<$Res>
   final $Res Function(RegisterEvent) _then;
 }
 
-abstract class $RegisterWithEmailAndPasswordCopyWith<$Res> {
-  factory $RegisterWithEmailAndPasswordCopyWith(
-          RegisterWithEmailAndPassword value,
-          $Res Function(RegisterWithEmailAndPassword) then) =
-      _$RegisterWithEmailAndPasswordCopyWithImpl<$Res>;
+abstract class _$RegisterWithEmailAndPasswordCopyWith<$Res> {
+  factory _$RegisterWithEmailAndPasswordCopyWith(
+          _RegisterWithEmailAndPassword value,
+          $Res Function(_RegisterWithEmailAndPassword) then) =
+      __$RegisterWithEmailAndPasswordCopyWithImpl<$Res>;
 }
 
-class _$RegisterWithEmailAndPasswordCopyWithImpl<$Res>
+class __$RegisterWithEmailAndPasswordCopyWithImpl<$Res>
     extends _$RegisterEventCopyWithImpl<$Res>
-    implements $RegisterWithEmailAndPasswordCopyWith<$Res> {
-  _$RegisterWithEmailAndPasswordCopyWithImpl(
-      RegisterWithEmailAndPassword _value,
-      $Res Function(RegisterWithEmailAndPassword) _then)
-      : super(_value, (v) => _then(v as RegisterWithEmailAndPassword));
+    implements _$RegisterWithEmailAndPasswordCopyWith<$Res> {
+  __$RegisterWithEmailAndPasswordCopyWithImpl(
+      _RegisterWithEmailAndPassword _value,
+      $Res Function(_RegisterWithEmailAndPassword) _then)
+      : super(_value, (v) => _then(v as _RegisterWithEmailAndPassword));
 
   @override
-  RegisterWithEmailAndPassword get _value =>
-      super._value as RegisterWithEmailAndPassword;
+  _RegisterWithEmailAndPassword get _value =>
+      super._value as _RegisterWithEmailAndPassword;
 }
 
-class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
-  const _$RegisterWithEmailAndPassword();
+class _$_RegisterWithEmailAndPassword implements _RegisterWithEmailAndPassword {
+  const _$_RegisterWithEmailAndPassword();
 
   @override
   String toString() {
@@ -132,7 +133,7 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is RegisterWithEmailAndPassword);
+    return identical(this, other) || (other is _RegisterWithEmailAndPassword);
   }
 
   @override
@@ -176,11 +177,12 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required
-        Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result passwordRepeatChanged(PasswordRepeatChanged value),
-    @required Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+        Result registerWithEmailAndPassword(
+            _RegisterWithEmailAndPassword value),
+    @required Result emailChanged(_EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    @required Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
   }) {
     assert(registerWithEmailAndPassword != null);
     assert(emailChanged != null);
@@ -193,11 +195,11 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result passwordRepeatChanged(PasswordRepeatChanged value),
-    Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+    Result registerWithEmailAndPassword(_RegisterWithEmailAndPassword value),
+    Result emailChanged(_EmailChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -208,38 +210,40 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
   }
 }
 
-abstract class RegisterWithEmailAndPassword implements RegisterEvent {
-  const factory RegisterWithEmailAndPassword() = _$RegisterWithEmailAndPassword;
+abstract class _RegisterWithEmailAndPassword implements RegisterEvent {
+  const factory _RegisterWithEmailAndPassword() =
+      _$_RegisterWithEmailAndPassword;
 }
 
-abstract class $EmailChangedCopyWith<$Res> {
-  factory $EmailChangedCopyWith(
-          EmailChanged value, $Res Function(EmailChanged) then) =
-      _$EmailChangedCopyWithImpl<$Res>;
+abstract class _$EmailChangedCopyWith<$Res> {
+  factory _$EmailChangedCopyWith(
+          _EmailChanged value, $Res Function(_EmailChanged) then) =
+      __$EmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
-class _$EmailChangedCopyWithImpl<$Res> extends _$RegisterEventCopyWithImpl<$Res>
-    implements $EmailChangedCopyWith<$Res> {
-  _$EmailChangedCopyWithImpl(
-      EmailChanged _value, $Res Function(EmailChanged) _then)
-      : super(_value, (v) => _then(v as EmailChanged));
+class __$EmailChangedCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res>
+    implements _$EmailChangedCopyWith<$Res> {
+  __$EmailChangedCopyWithImpl(
+      _EmailChanged _value, $Res Function(_EmailChanged) _then)
+      : super(_value, (v) => _then(v as _EmailChanged));
 
   @override
-  EmailChanged get _value => super._value as EmailChanged;
+  _EmailChanged get _value => super._value as _EmailChanged;
 
   @override
   $Res call({
     Object email = freezed,
   }) {
-    return _then(EmailChanged(
+    return _then(_EmailChanged(
       email == freezed ? _value.email : email as String,
     ));
   }
 }
 
-class _$EmailChanged implements EmailChanged {
-  const _$EmailChanged(this.email) : assert(email != null);
+class _$_EmailChanged implements _EmailChanged {
+  const _$_EmailChanged(this.email) : assert(email != null);
 
   @override
   final String email;
@@ -252,7 +256,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmailChanged &&
+        (other is _EmailChanged &&
             (identical(other.email, email) ||
                 const DeepCollectionEquality().equals(other.email, email)));
   }
@@ -262,8 +266,8 @@ class _$EmailChanged implements EmailChanged {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
 
   @override
-  $EmailChangedCopyWith<EmailChanged> get copyWith =>
-      _$EmailChangedCopyWithImpl<EmailChanged>(this, _$identity);
+  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
+      __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -303,11 +307,12 @@ class _$EmailChanged implements EmailChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required
-        Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result passwordRepeatChanged(PasswordRepeatChanged value),
-    @required Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+        Result registerWithEmailAndPassword(
+            _RegisterWithEmailAndPassword value),
+    @required Result emailChanged(_EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    @required Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
   }) {
     assert(registerWithEmailAndPassword != null);
     assert(emailChanged != null);
@@ -320,11 +325,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result passwordRepeatChanged(PasswordRepeatChanged value),
-    Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+    Result registerWithEmailAndPassword(_RegisterWithEmailAndPassword value),
+    Result emailChanged(_EmailChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -335,42 +340,42 @@ class _$EmailChanged implements EmailChanged {
   }
 }
 
-abstract class EmailChanged implements RegisterEvent {
-  const factory EmailChanged(String email) = _$EmailChanged;
+abstract class _EmailChanged implements RegisterEvent {
+  const factory _EmailChanged(String email) = _$_EmailChanged;
 
   String get email;
-  $EmailChangedCopyWith<EmailChanged> get copyWith;
+  _$EmailChangedCopyWith<_EmailChanged> get copyWith;
 }
 
-abstract class $PasswordChangedCopyWith<$Res> {
-  factory $PasswordChangedCopyWith(
-          PasswordChanged value, $Res Function(PasswordChanged) then) =
-      _$PasswordChangedCopyWithImpl<$Res>;
+abstract class _$PasswordChangedCopyWith<$Res> {
+  factory _$PasswordChangedCopyWith(
+          _PasswordChanged value, $Res Function(_PasswordChanged) then) =
+      __$PasswordChangedCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
-class _$PasswordChangedCopyWithImpl<$Res>
+class __$PasswordChangedCopyWithImpl<$Res>
     extends _$RegisterEventCopyWithImpl<$Res>
-    implements $PasswordChangedCopyWith<$Res> {
-  _$PasswordChangedCopyWithImpl(
-      PasswordChanged _value, $Res Function(PasswordChanged) _then)
-      : super(_value, (v) => _then(v as PasswordChanged));
+    implements _$PasswordChangedCopyWith<$Res> {
+  __$PasswordChangedCopyWithImpl(
+      _PasswordChanged _value, $Res Function(_PasswordChanged) _then)
+      : super(_value, (v) => _then(v as _PasswordChanged));
 
   @override
-  PasswordChanged get _value => super._value as PasswordChanged;
+  _PasswordChanged get _value => super._value as _PasswordChanged;
 
   @override
   $Res call({
     Object password = freezed,
   }) {
-    return _then(PasswordChanged(
+    return _then(_PasswordChanged(
       password == freezed ? _value.password : password as String,
     ));
   }
 }
 
-class _$PasswordChanged implements PasswordChanged {
-  const _$PasswordChanged(this.password) : assert(password != null);
+class _$_PasswordChanged implements _PasswordChanged {
+  const _$_PasswordChanged(this.password) : assert(password != null);
 
   @override
   final String password;
@@ -383,7 +388,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PasswordChanged &&
+        (other is _PasswordChanged &&
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
                     .equals(other.password, password)));
@@ -394,8 +399,8 @@ class _$PasswordChanged implements PasswordChanged {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
   @override
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
-      _$PasswordChangedCopyWithImpl<PasswordChanged>(this, _$identity);
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
+      __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -435,11 +440,12 @@ class _$PasswordChanged implements PasswordChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required
-        Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result passwordRepeatChanged(PasswordRepeatChanged value),
-    @required Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+        Result registerWithEmailAndPassword(
+            _RegisterWithEmailAndPassword value),
+    @required Result emailChanged(_EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    @required Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
   }) {
     assert(registerWithEmailAndPassword != null);
     assert(emailChanged != null);
@@ -452,11 +458,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result passwordRepeatChanged(PasswordRepeatChanged value),
-    Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+    Result registerWithEmailAndPassword(_RegisterWithEmailAndPassword value),
+    Result emailChanged(_EmailChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -467,35 +473,35 @@ class _$PasswordChanged implements PasswordChanged {
   }
 }
 
-abstract class PasswordChanged implements RegisterEvent {
-  const factory PasswordChanged(String password) = _$PasswordChanged;
+abstract class _PasswordChanged implements RegisterEvent {
+  const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
   String get password;
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith;
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
 }
 
-abstract class $PasswordRepeatChangedCopyWith<$Res> {
-  factory $PasswordRepeatChangedCopyWith(PasswordRepeatChanged value,
-          $Res Function(PasswordRepeatChanged) then) =
-      _$PasswordRepeatChangedCopyWithImpl<$Res>;
+abstract class _$PasswordRepeatChangedCopyWith<$Res> {
+  factory _$PasswordRepeatChangedCopyWith(_PasswordRepeatChanged value,
+          $Res Function(_PasswordRepeatChanged) then) =
+      __$PasswordRepeatChangedCopyWithImpl<$Res>;
   $Res call({String passwordRepeat});
 }
 
-class _$PasswordRepeatChangedCopyWithImpl<$Res>
+class __$PasswordRepeatChangedCopyWithImpl<$Res>
     extends _$RegisterEventCopyWithImpl<$Res>
-    implements $PasswordRepeatChangedCopyWith<$Res> {
-  _$PasswordRepeatChangedCopyWithImpl(
-      PasswordRepeatChanged _value, $Res Function(PasswordRepeatChanged) _then)
-      : super(_value, (v) => _then(v as PasswordRepeatChanged));
+    implements _$PasswordRepeatChangedCopyWith<$Res> {
+  __$PasswordRepeatChangedCopyWithImpl(_PasswordRepeatChanged _value,
+      $Res Function(_PasswordRepeatChanged) _then)
+      : super(_value, (v) => _then(v as _PasswordRepeatChanged));
 
   @override
-  PasswordRepeatChanged get _value => super._value as PasswordRepeatChanged;
+  _PasswordRepeatChanged get _value => super._value as _PasswordRepeatChanged;
 
   @override
   $Res call({
     Object passwordRepeat = freezed,
   }) {
-    return _then(PasswordRepeatChanged(
+    return _then(_PasswordRepeatChanged(
       passwordRepeat == freezed
           ? _value.passwordRepeat
           : passwordRepeat as String,
@@ -503,8 +509,8 @@ class _$PasswordRepeatChangedCopyWithImpl<$Res>
   }
 }
 
-class _$PasswordRepeatChanged implements PasswordRepeatChanged {
-  const _$PasswordRepeatChanged(this.passwordRepeat)
+class _$_PasswordRepeatChanged implements _PasswordRepeatChanged {
+  const _$_PasswordRepeatChanged(this.passwordRepeat)
       : assert(passwordRepeat != null);
 
   @override
@@ -518,7 +524,7 @@ class _$PasswordRepeatChanged implements PasswordRepeatChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PasswordRepeatChanged &&
+        (other is _PasswordRepeatChanged &&
             (identical(other.passwordRepeat, passwordRepeat) ||
                 const DeepCollectionEquality()
                     .equals(other.passwordRepeat, passwordRepeat)));
@@ -530,8 +536,8 @@ class _$PasswordRepeatChanged implements PasswordRepeatChanged {
       const DeepCollectionEquality().hash(passwordRepeat);
 
   @override
-  $PasswordRepeatChangedCopyWith<PasswordRepeatChanged> get copyWith =>
-      _$PasswordRepeatChangedCopyWithImpl<PasswordRepeatChanged>(
+  _$PasswordRepeatChangedCopyWith<_PasswordRepeatChanged> get copyWith =>
+      __$PasswordRepeatChangedCopyWithImpl<_PasswordRepeatChanged>(
           this, _$identity);
 
   @override
@@ -572,11 +578,12 @@ class _$PasswordRepeatChanged implements PasswordRepeatChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required
-        Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result passwordRepeatChanged(PasswordRepeatChanged value),
-    @required Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+        Result registerWithEmailAndPassword(
+            _RegisterWithEmailAndPassword value),
+    @required Result emailChanged(_EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    @required Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
   }) {
     assert(registerWithEmailAndPassword != null);
     assert(emailChanged != null);
@@ -589,11 +596,11 @@ class _$PasswordRepeatChanged implements PasswordRepeatChanged {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result passwordRepeatChanged(PasswordRepeatChanged value),
-    Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+    Result registerWithEmailAndPassword(_RegisterWithEmailAndPassword value),
+    Result emailChanged(_EmailChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -604,43 +611,43 @@ class _$PasswordRepeatChanged implements PasswordRepeatChanged {
   }
 }
 
-abstract class PasswordRepeatChanged implements RegisterEvent {
-  const factory PasswordRepeatChanged(String passwordRepeat) =
-      _$PasswordRepeatChanged;
+abstract class _PasswordRepeatChanged implements RegisterEvent {
+  const factory _PasswordRepeatChanged(String passwordRepeat) =
+      _$_PasswordRepeatChanged;
 
   String get passwordRepeat;
-  $PasswordRepeatChangedCopyWith<PasswordRepeatChanged> get copyWith;
+  _$PasswordRepeatChangedCopyWith<_PasswordRepeatChanged> get copyWith;
 }
 
-abstract class $TermsAcceptanceChangedCopyWith<$Res> {
-  factory $TermsAcceptanceChangedCopyWith(TermsAcceptanceChanged value,
-          $Res Function(TermsAcceptanceChanged) then) =
-      _$TermsAcceptanceChangedCopyWithImpl<$Res>;
+abstract class _$TermsAcceptanceChangedCopyWith<$Res> {
+  factory _$TermsAcceptanceChangedCopyWith(_TermsAcceptanceChanged value,
+          $Res Function(_TermsAcceptanceChanged) then) =
+      __$TermsAcceptanceChangedCopyWithImpl<$Res>;
   $Res call({bool termsAccepted});
 }
 
-class _$TermsAcceptanceChangedCopyWithImpl<$Res>
+class __$TermsAcceptanceChangedCopyWithImpl<$Res>
     extends _$RegisterEventCopyWithImpl<$Res>
-    implements $TermsAcceptanceChangedCopyWith<$Res> {
-  _$TermsAcceptanceChangedCopyWithImpl(TermsAcceptanceChanged _value,
-      $Res Function(TermsAcceptanceChanged) _then)
-      : super(_value, (v) => _then(v as TermsAcceptanceChanged));
+    implements _$TermsAcceptanceChangedCopyWith<$Res> {
+  __$TermsAcceptanceChangedCopyWithImpl(_TermsAcceptanceChanged _value,
+      $Res Function(_TermsAcceptanceChanged) _then)
+      : super(_value, (v) => _then(v as _TermsAcceptanceChanged));
 
   @override
-  TermsAcceptanceChanged get _value => super._value as TermsAcceptanceChanged;
+  _TermsAcceptanceChanged get _value => super._value as _TermsAcceptanceChanged;
 
   @override
   $Res call({
     Object termsAccepted = freezed,
   }) {
-    return _then(TermsAcceptanceChanged(
+    return _then(_TermsAcceptanceChanged(
       termsAccepted == freezed ? _value.termsAccepted : termsAccepted as bool,
     ));
   }
 }
 
-class _$TermsAcceptanceChanged implements TermsAcceptanceChanged {
-  const _$TermsAcceptanceChanged(this.termsAccepted)
+class _$_TermsAcceptanceChanged implements _TermsAcceptanceChanged {
+  const _$_TermsAcceptanceChanged(this.termsAccepted)
       : assert(termsAccepted != null);
 
   @override
@@ -654,7 +661,7 @@ class _$TermsAcceptanceChanged implements TermsAcceptanceChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is TermsAcceptanceChanged &&
+        (other is _TermsAcceptanceChanged &&
             (identical(other.termsAccepted, termsAccepted) ||
                 const DeepCollectionEquality()
                     .equals(other.termsAccepted, termsAccepted)));
@@ -665,8 +672,8 @@ class _$TermsAcceptanceChanged implements TermsAcceptanceChanged {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(termsAccepted);
 
   @override
-  $TermsAcceptanceChangedCopyWith<TermsAcceptanceChanged> get copyWith =>
-      _$TermsAcceptanceChangedCopyWithImpl<TermsAcceptanceChanged>(
+  _$TermsAcceptanceChangedCopyWith<_TermsAcceptanceChanged> get copyWith =>
+      __$TermsAcceptanceChangedCopyWithImpl<_TermsAcceptanceChanged>(
           this, _$identity);
 
   @override
@@ -707,11 +714,12 @@ class _$TermsAcceptanceChanged implements TermsAcceptanceChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required
-        Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result passwordRepeatChanged(PasswordRepeatChanged value),
-    @required Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+        Result registerWithEmailAndPassword(
+            _RegisterWithEmailAndPassword value),
+    @required Result emailChanged(_EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    @required Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
   }) {
     assert(registerWithEmailAndPassword != null);
     assert(emailChanged != null);
@@ -724,11 +732,11 @@ class _$TermsAcceptanceChanged implements TermsAcceptanceChanged {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result registerWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result passwordRepeatChanged(PasswordRepeatChanged value),
-    Result termsAcceptanceChanged(TermsAcceptanceChanged value),
+    Result registerWithEmailAndPassword(_RegisterWithEmailAndPassword value),
+    Result emailChanged(_EmailChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result passwordRepeatChanged(_PasswordRepeatChanged value),
+    Result termsAcceptanceChanged(_TermsAcceptanceChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -739,12 +747,12 @@ class _$TermsAcceptanceChanged implements TermsAcceptanceChanged {
   }
 }
 
-abstract class TermsAcceptanceChanged implements RegisterEvent {
-  const factory TermsAcceptanceChanged(bool termsAccepted) =
-      _$TermsAcceptanceChanged;
+abstract class _TermsAcceptanceChanged implements RegisterEvent {
+  const factory _TermsAcceptanceChanged(bool termsAccepted) =
+      _$_TermsAcceptanceChanged;
 
   bool get termsAccepted;
-  $TermsAcceptanceChangedCopyWith<TermsAcceptanceChanged> get copyWith;
+  _$TermsAcceptanceChangedCopyWith<_TermsAcceptanceChanged> get copyWith;
 }
 
 class _$RegisterStateTearOff {

@@ -51,6 +51,21 @@
       ]
     },
     {
+      "path": "assets/ForgotPassword",
+      "class_name": "ForgotPasswordAssets",
+      "types": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "gif",
+        "bmp",
+        "wbmp",
+        "svg",
+        "flr"
+      ]
+    },
+    {
       "path": "assets/Core",
       "class_name": "CoreAssets",
       "types": [

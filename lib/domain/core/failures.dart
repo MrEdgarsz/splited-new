@@ -6,11 +6,11 @@ part 'failures.freezed.dart';
 abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidEmail({
     @required String filedValue,
-  }) = InvalidEmail<T>;
+  }) = _InvalidEmail<T>;
   const factory ValueFailure.invalidPassword({
     @required String filedValue,
-  }) = InvalidPassowrd<T>;
-  const factory ValueFailure.invalidPasswordChangeCode({
-    @required int filedValue,
-  }) = InvalidVerificationCode<T>;
+  }) = _InvalidPassowrd<T>;
+  const factory ValueFailure.invalidVerificationCode({
+    @required List<String> filedValue,
+  }) = _InvalidVerificationCode<T>;
 }

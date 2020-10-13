@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:splited/domain/auth/i_auth_facade.dart';
-import 'package:splited/presentation/auth/user.dart';
+import 'package:splited/domain/auth/user.dart';
 
 part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';

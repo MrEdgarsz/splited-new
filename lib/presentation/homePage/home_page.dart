@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:native_color/native_color.dart';
 import 'package:splited/application/auth/register_from/register_bloc.dart';
 import 'package:splited/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:splited/injection.dart';
@@ -42,7 +41,7 @@ class HomePage extends StatelessWidget {
                   getIt.resetLazySingleton<SignInFormBloc>();
                   ExtendedNavigator.of(context).push(Routes.signInPage);
                 },
-                color: HexColor("#247DBA"),
+                color: const Color(0xff247DBA),
                 child: Text(
                   "Logowanie",
                   style: Theme.of(context).textTheme.button,
@@ -57,7 +56,7 @@ class HomePage extends StatelessWidget {
                   getIt.resetLazySingleton<RegisterBloc>();
                   ExtendedNavigator.of(context).push(Routes.registerPage);
                 },
-                color: HexColor("#24BA60"),
+                color: const Color(0xff24BA60),
                 child: Text(
                   "Rejestracja",
                   style: Theme.of(context).textTheme.button,

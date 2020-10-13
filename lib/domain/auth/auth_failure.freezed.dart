@@ -13,33 +13,48 @@ class _$AuthFailureTearOff {
   const _$AuthFailureTearOff();
 
 // ignore: unused_element
-  CanceledByUser canceledByUser() {
-    return const CanceledByUser();
+  _CanceledByUser canceledByUser() {
+    return const _CanceledByUser();
   }
 
 // ignore: unused_element
-  ServerError serverError() {
-    return const ServerError();
+  _ServerError serverError() {
+    return const _ServerError();
   }
 
 // ignore: unused_element
-  InvalidCredentials invalidCredentials() {
-    return const InvalidCredentials();
+  _InvalidCredentials invalidCredentials() {
+    return const _InvalidCredentials();
   }
 
 // ignore: unused_element
-  EmailAlredyInUse emailAlreadyInUse() {
-    return const EmailAlredyInUse();
+  _EmailAlredyInUse emailAlreadyInUse() {
+    return const _EmailAlredyInUse();
   }
 
 // ignore: unused_element
-  UserNotSignedIn userNotSignedIn() {
-    return const UserNotSignedIn();
+  _UserNotSignedIn userNotSignedIn() {
+    return const _UserNotSignedIn();
   }
 
 // ignore: unused_element
-  InternetConnectionNotAvailable internetConnectionNotAvailable() {
-    return const InternetConnectionNotAvailable();
+  _InternetConnectionNotAvailable internetConnectionNotAvailable() {
+    return const _InternetConnectionNotAvailable();
+  }
+
+// ignore: unused_element
+  _AccountWasCreatedWithDiffrentService accountWasCreatedWithDiffrentService() {
+    return const _AccountWasCreatedWithDiffrentService();
+  }
+
+// ignore: unused_element
+  _UserNotFound userNotFound() {
+    return const _UserNotFound();
+  }
+
+// ignore: unused_element
+  _VerificationCodeNotFound verificationCodeNotFound() {
+    return const _VerificationCodeNotFound();
   }
 }
 
@@ -55,6 +70,9 @@ mixin _$AuthFailure {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
+    @required Result accountWasCreatedWithDiffrentService(),
+    @required Result userNotFound(),
+    @required Result verificationCodeNotFound(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -64,27 +82,40 @@ mixin _$AuthFailure {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
+    Result accountWasCreatedWithDiffrentService(),
+    Result userNotFound(),
+    Result verificationCodeNotFound(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result canceledByUser(CanceledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result invalidCredentials(InvalidCredentials value),
-    @required Result emailAlreadyInUse(EmailAlredyInUse value),
-    @required Result userNotSignedIn(UserNotSignedIn value),
+    @required Result canceledByUser(_CanceledByUser value),
+    @required Result serverError(_ServerError value),
+    @required Result invalidCredentials(_InvalidCredentials value),
+    @required Result emailAlreadyInUse(_EmailAlredyInUse value),
+    @required Result userNotSignedIn(_UserNotSignedIn value),
     @required
         Result internetConnectionNotAvailable(
-            InternetConnectionNotAvailable value),
+            _InternetConnectionNotAvailable value),
+    @required
+        Result accountWasCreatedWithDiffrentService(
+            _AccountWasCreatedWithDiffrentService value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result verificationCodeNotFound(_VerificationCodeNotFound value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result canceledByUser(CanceledByUser value),
-    Result serverError(ServerError value),
-    Result invalidCredentials(InvalidCredentials value),
-    Result emailAlreadyInUse(EmailAlredyInUse value),
-    Result userNotSignedIn(UserNotSignedIn value),
-    Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
+    Result canceledByUser(_CanceledByUser value),
+    Result serverError(_ServerError value),
+    Result invalidCredentials(_InvalidCredentials value),
+    Result emailAlreadyInUse(_EmailAlredyInUse value),
+    Result userNotSignedIn(_UserNotSignedIn value),
+    Result internetConnectionNotAvailable(
+        _InternetConnectionNotAvailable value),
+    Result accountWasCreatedWithDiffrentService(
+        _AccountWasCreatedWithDiffrentService value),
+    Result userNotFound(_UserNotFound value),
+    Result verificationCodeNotFound(_VerificationCodeNotFound value),
     @required Result orElse(),
   });
 }
@@ -103,24 +134,25 @@ class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
   final $Res Function(AuthFailure) _then;
 }
 
-abstract class $CanceledByUserCopyWith<$Res> {
-  factory $CanceledByUserCopyWith(
-          CanceledByUser value, $Res Function(CanceledByUser) then) =
-      _$CanceledByUserCopyWithImpl<$Res>;
+abstract class _$CanceledByUserCopyWith<$Res> {
+  factory _$CanceledByUserCopyWith(
+          _CanceledByUser value, $Res Function(_CanceledByUser) then) =
+      __$CanceledByUserCopyWithImpl<$Res>;
 }
 
-class _$CanceledByUserCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
-    implements $CanceledByUserCopyWith<$Res> {
-  _$CanceledByUserCopyWithImpl(
-      CanceledByUser _value, $Res Function(CanceledByUser) _then)
-      : super(_value, (v) => _then(v as CanceledByUser));
+class __$CanceledByUserCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$CanceledByUserCopyWith<$Res> {
+  __$CanceledByUserCopyWithImpl(
+      _CanceledByUser _value, $Res Function(_CanceledByUser) _then)
+      : super(_value, (v) => _then(v as _CanceledByUser));
 
   @override
-  CanceledByUser get _value => super._value as CanceledByUser;
+  _CanceledByUser get _value => super._value as _CanceledByUser;
 }
 
-class _$CanceledByUser implements CanceledByUser {
-  const _$CanceledByUser();
+class _$_CanceledByUser implements _CanceledByUser {
+  const _$_CanceledByUser();
 
   @override
   String toString() {
@@ -129,7 +161,7 @@ class _$CanceledByUser implements CanceledByUser {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CanceledByUser);
+    return identical(this, other) || (other is _CanceledByUser);
   }
 
   @override
@@ -144,6 +176,9 @@ class _$CanceledByUser implements CanceledByUser {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
+    @required Result accountWasCreatedWithDiffrentService(),
+    @required Result userNotFound(),
+    @required Result verificationCodeNotFound(),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -151,6 +186,9 @@ class _$CanceledByUser implements CanceledByUser {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return canceledByUser();
   }
 
@@ -163,6 +201,9 @@ class _$CanceledByUser implements CanceledByUser {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
+    Result accountWasCreatedWithDiffrentService(),
+    Result userNotFound(),
+    Result verificationCodeNotFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -175,14 +216,19 @@ class _$CanceledByUser implements CanceledByUser {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result canceledByUser(CanceledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result invalidCredentials(InvalidCredentials value),
-    @required Result emailAlreadyInUse(EmailAlredyInUse value),
-    @required Result userNotSignedIn(UserNotSignedIn value),
+    @required Result canceledByUser(_CanceledByUser value),
+    @required Result serverError(_ServerError value),
+    @required Result invalidCredentials(_InvalidCredentials value),
+    @required Result emailAlreadyInUse(_EmailAlredyInUse value),
+    @required Result userNotSignedIn(_UserNotSignedIn value),
     @required
         Result internetConnectionNotAvailable(
-            InternetConnectionNotAvailable value),
+            _InternetConnectionNotAvailable value),
+    @required
+        Result accountWasCreatedWithDiffrentService(
+            _AccountWasCreatedWithDiffrentService value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result verificationCodeNotFound(_VerificationCodeNotFound value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -190,18 +236,26 @@ class _$CanceledByUser implements CanceledByUser {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return canceledByUser(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result canceledByUser(CanceledByUser value),
-    Result serverError(ServerError value),
-    Result invalidCredentials(InvalidCredentials value),
-    Result emailAlreadyInUse(EmailAlredyInUse value),
-    Result userNotSignedIn(UserNotSignedIn value),
-    Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
+    Result canceledByUser(_CanceledByUser value),
+    Result serverError(_ServerError value),
+    Result invalidCredentials(_InvalidCredentials value),
+    Result emailAlreadyInUse(_EmailAlredyInUse value),
+    Result userNotSignedIn(_UserNotSignedIn value),
+    Result internetConnectionNotAvailable(
+        _InternetConnectionNotAvailable value),
+    Result accountWasCreatedWithDiffrentService(
+        _AccountWasCreatedWithDiffrentService value),
+    Result userNotFound(_UserNotFound value),
+    Result verificationCodeNotFound(_VerificationCodeNotFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -212,28 +266,28 @@ class _$CanceledByUser implements CanceledByUser {
   }
 }
 
-abstract class CanceledByUser implements AuthFailure {
-  const factory CanceledByUser() = _$CanceledByUser;
+abstract class _CanceledByUser implements AuthFailure {
+  const factory _CanceledByUser() = _$_CanceledByUser;
 }
 
-abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(
-          ServerError value, $Res Function(ServerError) then) =
-      _$ServerErrorCopyWithImpl<$Res>;
+abstract class _$ServerErrorCopyWith<$Res> {
+  factory _$ServerErrorCopyWith(
+          _ServerError value, $Res Function(_ServerError) then) =
+      __$ServerErrorCopyWithImpl<$Res>;
 }
 
-class _$ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
-    implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(
-      ServerError _value, $Res Function(ServerError) _then)
-      : super(_value, (v) => _then(v as ServerError));
+class __$ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$ServerErrorCopyWith<$Res> {
+  __$ServerErrorCopyWithImpl(
+      _ServerError _value, $Res Function(_ServerError) _then)
+      : super(_value, (v) => _then(v as _ServerError));
 
   @override
-  ServerError get _value => super._value as ServerError;
+  _ServerError get _value => super._value as _ServerError;
 }
 
-class _$ServerError implements ServerError {
-  const _$ServerError();
+class _$_ServerError implements _ServerError {
+  const _$_ServerError();
 
   @override
   String toString() {
@@ -242,7 +296,7 @@ class _$ServerError implements ServerError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) || (other is _ServerError);
   }
 
   @override
@@ -257,6 +311,9 @@ class _$ServerError implements ServerError {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
+    @required Result accountWasCreatedWithDiffrentService(),
+    @required Result userNotFound(),
+    @required Result verificationCodeNotFound(),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -264,6 +321,9 @@ class _$ServerError implements ServerError {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return serverError();
   }
 
@@ -276,6 +336,9 @@ class _$ServerError implements ServerError {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
+    Result accountWasCreatedWithDiffrentService(),
+    Result userNotFound(),
+    Result verificationCodeNotFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -288,14 +351,19 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result canceledByUser(CanceledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result invalidCredentials(InvalidCredentials value),
-    @required Result emailAlreadyInUse(EmailAlredyInUse value),
-    @required Result userNotSignedIn(UserNotSignedIn value),
+    @required Result canceledByUser(_CanceledByUser value),
+    @required Result serverError(_ServerError value),
+    @required Result invalidCredentials(_InvalidCredentials value),
+    @required Result emailAlreadyInUse(_EmailAlredyInUse value),
+    @required Result userNotSignedIn(_UserNotSignedIn value),
     @required
         Result internetConnectionNotAvailable(
-            InternetConnectionNotAvailable value),
+            _InternetConnectionNotAvailable value),
+    @required
+        Result accountWasCreatedWithDiffrentService(
+            _AccountWasCreatedWithDiffrentService value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result verificationCodeNotFound(_VerificationCodeNotFound value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -303,18 +371,26 @@ class _$ServerError implements ServerError {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return serverError(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result canceledByUser(CanceledByUser value),
-    Result serverError(ServerError value),
-    Result invalidCredentials(InvalidCredentials value),
-    Result emailAlreadyInUse(EmailAlredyInUse value),
-    Result userNotSignedIn(UserNotSignedIn value),
-    Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
+    Result canceledByUser(_CanceledByUser value),
+    Result serverError(_ServerError value),
+    Result invalidCredentials(_InvalidCredentials value),
+    Result emailAlreadyInUse(_EmailAlredyInUse value),
+    Result userNotSignedIn(_UserNotSignedIn value),
+    Result internetConnectionNotAvailable(
+        _InternetConnectionNotAvailable value),
+    Result accountWasCreatedWithDiffrentService(
+        _AccountWasCreatedWithDiffrentService value),
+    Result userNotFound(_UserNotFound value),
+    Result verificationCodeNotFound(_VerificationCodeNotFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -325,29 +401,29 @@ class _$ServerError implements ServerError {
   }
 }
 
-abstract class ServerError implements AuthFailure {
-  const factory ServerError() = _$ServerError;
+abstract class _ServerError implements AuthFailure {
+  const factory _ServerError() = _$_ServerError;
 }
 
-abstract class $InvalidCredentialsCopyWith<$Res> {
-  factory $InvalidCredentialsCopyWith(
-          InvalidCredentials value, $Res Function(InvalidCredentials) then) =
-      _$InvalidCredentialsCopyWithImpl<$Res>;
+abstract class _$InvalidCredentialsCopyWith<$Res> {
+  factory _$InvalidCredentialsCopyWith(
+          _InvalidCredentials value, $Res Function(_InvalidCredentials) then) =
+      __$InvalidCredentialsCopyWithImpl<$Res>;
 }
 
-class _$InvalidCredentialsCopyWithImpl<$Res>
+class __$InvalidCredentialsCopyWithImpl<$Res>
     extends _$AuthFailureCopyWithImpl<$Res>
-    implements $InvalidCredentialsCopyWith<$Res> {
-  _$InvalidCredentialsCopyWithImpl(
-      InvalidCredentials _value, $Res Function(InvalidCredentials) _then)
-      : super(_value, (v) => _then(v as InvalidCredentials));
+    implements _$InvalidCredentialsCopyWith<$Res> {
+  __$InvalidCredentialsCopyWithImpl(
+      _InvalidCredentials _value, $Res Function(_InvalidCredentials) _then)
+      : super(_value, (v) => _then(v as _InvalidCredentials));
 
   @override
-  InvalidCredentials get _value => super._value as InvalidCredentials;
+  _InvalidCredentials get _value => super._value as _InvalidCredentials;
 }
 
-class _$InvalidCredentials implements InvalidCredentials {
-  const _$InvalidCredentials();
+class _$_InvalidCredentials implements _InvalidCredentials {
+  const _$_InvalidCredentials();
 
   @override
   String toString() {
@@ -356,7 +432,7 @@ class _$InvalidCredentials implements InvalidCredentials {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InvalidCredentials);
+    return identical(this, other) || (other is _InvalidCredentials);
   }
 
   @override
@@ -371,6 +447,9 @@ class _$InvalidCredentials implements InvalidCredentials {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
+    @required Result accountWasCreatedWithDiffrentService(),
+    @required Result userNotFound(),
+    @required Result verificationCodeNotFound(),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -378,6 +457,9 @@ class _$InvalidCredentials implements InvalidCredentials {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return invalidCredentials();
   }
 
@@ -390,6 +472,9 @@ class _$InvalidCredentials implements InvalidCredentials {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
+    Result accountWasCreatedWithDiffrentService(),
+    Result userNotFound(),
+    Result verificationCodeNotFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -402,14 +487,19 @@ class _$InvalidCredentials implements InvalidCredentials {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result canceledByUser(CanceledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result invalidCredentials(InvalidCredentials value),
-    @required Result emailAlreadyInUse(EmailAlredyInUse value),
-    @required Result userNotSignedIn(UserNotSignedIn value),
+    @required Result canceledByUser(_CanceledByUser value),
+    @required Result serverError(_ServerError value),
+    @required Result invalidCredentials(_InvalidCredentials value),
+    @required Result emailAlreadyInUse(_EmailAlredyInUse value),
+    @required Result userNotSignedIn(_UserNotSignedIn value),
     @required
         Result internetConnectionNotAvailable(
-            InternetConnectionNotAvailable value),
+            _InternetConnectionNotAvailable value),
+    @required
+        Result accountWasCreatedWithDiffrentService(
+            _AccountWasCreatedWithDiffrentService value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result verificationCodeNotFound(_VerificationCodeNotFound value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -417,18 +507,26 @@ class _$InvalidCredentials implements InvalidCredentials {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return invalidCredentials(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result canceledByUser(CanceledByUser value),
-    Result serverError(ServerError value),
-    Result invalidCredentials(InvalidCredentials value),
-    Result emailAlreadyInUse(EmailAlredyInUse value),
-    Result userNotSignedIn(UserNotSignedIn value),
-    Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
+    Result canceledByUser(_CanceledByUser value),
+    Result serverError(_ServerError value),
+    Result invalidCredentials(_InvalidCredentials value),
+    Result emailAlreadyInUse(_EmailAlredyInUse value),
+    Result userNotSignedIn(_UserNotSignedIn value),
+    Result internetConnectionNotAvailable(
+        _InternetConnectionNotAvailable value),
+    Result accountWasCreatedWithDiffrentService(
+        _AccountWasCreatedWithDiffrentService value),
+    Result userNotFound(_UserNotFound value),
+    Result verificationCodeNotFound(_VerificationCodeNotFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -439,29 +537,29 @@ class _$InvalidCredentials implements InvalidCredentials {
   }
 }
 
-abstract class InvalidCredentials implements AuthFailure {
-  const factory InvalidCredentials() = _$InvalidCredentials;
+abstract class _InvalidCredentials implements AuthFailure {
+  const factory _InvalidCredentials() = _$_InvalidCredentials;
 }
 
-abstract class $EmailAlredyInUseCopyWith<$Res> {
-  factory $EmailAlredyInUseCopyWith(
-          EmailAlredyInUse value, $Res Function(EmailAlredyInUse) then) =
-      _$EmailAlredyInUseCopyWithImpl<$Res>;
+abstract class _$EmailAlredyInUseCopyWith<$Res> {
+  factory _$EmailAlredyInUseCopyWith(
+          _EmailAlredyInUse value, $Res Function(_EmailAlredyInUse) then) =
+      __$EmailAlredyInUseCopyWithImpl<$Res>;
 }
 
-class _$EmailAlredyInUseCopyWithImpl<$Res>
+class __$EmailAlredyInUseCopyWithImpl<$Res>
     extends _$AuthFailureCopyWithImpl<$Res>
-    implements $EmailAlredyInUseCopyWith<$Res> {
-  _$EmailAlredyInUseCopyWithImpl(
-      EmailAlredyInUse _value, $Res Function(EmailAlredyInUse) _then)
-      : super(_value, (v) => _then(v as EmailAlredyInUse));
+    implements _$EmailAlredyInUseCopyWith<$Res> {
+  __$EmailAlredyInUseCopyWithImpl(
+      _EmailAlredyInUse _value, $Res Function(_EmailAlredyInUse) _then)
+      : super(_value, (v) => _then(v as _EmailAlredyInUse));
 
   @override
-  EmailAlredyInUse get _value => super._value as EmailAlredyInUse;
+  _EmailAlredyInUse get _value => super._value as _EmailAlredyInUse;
 }
 
-class _$EmailAlredyInUse implements EmailAlredyInUse {
-  const _$EmailAlredyInUse();
+class _$_EmailAlredyInUse implements _EmailAlredyInUse {
+  const _$_EmailAlredyInUse();
 
   @override
   String toString() {
@@ -470,7 +568,7 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is EmailAlredyInUse);
+    return identical(this, other) || (other is _EmailAlredyInUse);
   }
 
   @override
@@ -485,6 +583,9 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
+    @required Result accountWasCreatedWithDiffrentService(),
+    @required Result userNotFound(),
+    @required Result verificationCodeNotFound(),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -492,6 +593,9 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return emailAlreadyInUse();
   }
 
@@ -504,6 +608,9 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
+    Result accountWasCreatedWithDiffrentService(),
+    Result userNotFound(),
+    Result verificationCodeNotFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -516,14 +623,19 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result canceledByUser(CanceledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result invalidCredentials(InvalidCredentials value),
-    @required Result emailAlreadyInUse(EmailAlredyInUse value),
-    @required Result userNotSignedIn(UserNotSignedIn value),
+    @required Result canceledByUser(_CanceledByUser value),
+    @required Result serverError(_ServerError value),
+    @required Result invalidCredentials(_InvalidCredentials value),
+    @required Result emailAlreadyInUse(_EmailAlredyInUse value),
+    @required Result userNotSignedIn(_UserNotSignedIn value),
     @required
         Result internetConnectionNotAvailable(
-            InternetConnectionNotAvailable value),
+            _InternetConnectionNotAvailable value),
+    @required
+        Result accountWasCreatedWithDiffrentService(
+            _AccountWasCreatedWithDiffrentService value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result verificationCodeNotFound(_VerificationCodeNotFound value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -531,18 +643,26 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return emailAlreadyInUse(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result canceledByUser(CanceledByUser value),
-    Result serverError(ServerError value),
-    Result invalidCredentials(InvalidCredentials value),
-    Result emailAlreadyInUse(EmailAlredyInUse value),
-    Result userNotSignedIn(UserNotSignedIn value),
-    Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
+    Result canceledByUser(_CanceledByUser value),
+    Result serverError(_ServerError value),
+    Result invalidCredentials(_InvalidCredentials value),
+    Result emailAlreadyInUse(_EmailAlredyInUse value),
+    Result userNotSignedIn(_UserNotSignedIn value),
+    Result internetConnectionNotAvailable(
+        _InternetConnectionNotAvailable value),
+    Result accountWasCreatedWithDiffrentService(
+        _AccountWasCreatedWithDiffrentService value),
+    Result userNotFound(_UserNotFound value),
+    Result verificationCodeNotFound(_VerificationCodeNotFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -553,29 +673,29 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
   }
 }
 
-abstract class EmailAlredyInUse implements AuthFailure {
-  const factory EmailAlredyInUse() = _$EmailAlredyInUse;
+abstract class _EmailAlredyInUse implements AuthFailure {
+  const factory _EmailAlredyInUse() = _$_EmailAlredyInUse;
 }
 
-abstract class $UserNotSignedInCopyWith<$Res> {
-  factory $UserNotSignedInCopyWith(
-          UserNotSignedIn value, $Res Function(UserNotSignedIn) then) =
-      _$UserNotSignedInCopyWithImpl<$Res>;
+abstract class _$UserNotSignedInCopyWith<$Res> {
+  factory _$UserNotSignedInCopyWith(
+          _UserNotSignedIn value, $Res Function(_UserNotSignedIn) then) =
+      __$UserNotSignedInCopyWithImpl<$Res>;
 }
 
-class _$UserNotSignedInCopyWithImpl<$Res>
+class __$UserNotSignedInCopyWithImpl<$Res>
     extends _$AuthFailureCopyWithImpl<$Res>
-    implements $UserNotSignedInCopyWith<$Res> {
-  _$UserNotSignedInCopyWithImpl(
-      UserNotSignedIn _value, $Res Function(UserNotSignedIn) _then)
-      : super(_value, (v) => _then(v as UserNotSignedIn));
+    implements _$UserNotSignedInCopyWith<$Res> {
+  __$UserNotSignedInCopyWithImpl(
+      _UserNotSignedIn _value, $Res Function(_UserNotSignedIn) _then)
+      : super(_value, (v) => _then(v as _UserNotSignedIn));
 
   @override
-  UserNotSignedIn get _value => super._value as UserNotSignedIn;
+  _UserNotSignedIn get _value => super._value as _UserNotSignedIn;
 }
 
-class _$UserNotSignedIn implements UserNotSignedIn {
-  const _$UserNotSignedIn();
+class _$_UserNotSignedIn implements _UserNotSignedIn {
+  const _$_UserNotSignedIn();
 
   @override
   String toString() {
@@ -584,7 +704,7 @@ class _$UserNotSignedIn implements UserNotSignedIn {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UserNotSignedIn);
+    return identical(this, other) || (other is _UserNotSignedIn);
   }
 
   @override
@@ -599,6 +719,9 @@ class _$UserNotSignedIn implements UserNotSignedIn {
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
+    @required Result accountWasCreatedWithDiffrentService(),
+    @required Result userNotFound(),
+    @required Result verificationCodeNotFound(),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -606,6 +729,9 @@ class _$UserNotSignedIn implements UserNotSignedIn {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return userNotSignedIn();
   }
 
@@ -618,6 +744,9 @@ class _$UserNotSignedIn implements UserNotSignedIn {
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
+    Result accountWasCreatedWithDiffrentService(),
+    Result userNotFound(),
+    Result verificationCodeNotFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -630,14 +759,19 @@ class _$UserNotSignedIn implements UserNotSignedIn {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result canceledByUser(CanceledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result invalidCredentials(InvalidCredentials value),
-    @required Result emailAlreadyInUse(EmailAlredyInUse value),
-    @required Result userNotSignedIn(UserNotSignedIn value),
+    @required Result canceledByUser(_CanceledByUser value),
+    @required Result serverError(_ServerError value),
+    @required Result invalidCredentials(_InvalidCredentials value),
+    @required Result emailAlreadyInUse(_EmailAlredyInUse value),
+    @required Result userNotSignedIn(_UserNotSignedIn value),
     @required
         Result internetConnectionNotAvailable(
-            InternetConnectionNotAvailable value),
+            _InternetConnectionNotAvailable value),
+    @required
+        Result accountWasCreatedWithDiffrentService(
+            _AccountWasCreatedWithDiffrentService value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result verificationCodeNotFound(_VerificationCodeNotFound value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -645,18 +779,26 @@ class _$UserNotSignedIn implements UserNotSignedIn {
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return userNotSignedIn(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result canceledByUser(CanceledByUser value),
-    Result serverError(ServerError value),
-    Result invalidCredentials(InvalidCredentials value),
-    Result emailAlreadyInUse(EmailAlredyInUse value),
-    Result userNotSignedIn(UserNotSignedIn value),
-    Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
+    Result canceledByUser(_CanceledByUser value),
+    Result serverError(_ServerError value),
+    Result invalidCredentials(_InvalidCredentials value),
+    Result emailAlreadyInUse(_EmailAlredyInUse value),
+    Result userNotSignedIn(_UserNotSignedIn value),
+    Result internetConnectionNotAvailable(
+        _InternetConnectionNotAvailable value),
+    Result accountWasCreatedWithDiffrentService(
+        _AccountWasCreatedWithDiffrentService value),
+    Result userNotFound(_UserNotFound value),
+    Result verificationCodeNotFound(_VerificationCodeNotFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -667,33 +809,33 @@ class _$UserNotSignedIn implements UserNotSignedIn {
   }
 }
 
-abstract class UserNotSignedIn implements AuthFailure {
-  const factory UserNotSignedIn() = _$UserNotSignedIn;
+abstract class _UserNotSignedIn implements AuthFailure {
+  const factory _UserNotSignedIn() = _$_UserNotSignedIn;
 }
 
-abstract class $InternetConnectionNotAvailableCopyWith<$Res> {
-  factory $InternetConnectionNotAvailableCopyWith(
-          InternetConnectionNotAvailable value,
-          $Res Function(InternetConnectionNotAvailable) then) =
-      _$InternetConnectionNotAvailableCopyWithImpl<$Res>;
+abstract class _$InternetConnectionNotAvailableCopyWith<$Res> {
+  factory _$InternetConnectionNotAvailableCopyWith(
+          _InternetConnectionNotAvailable value,
+          $Res Function(_InternetConnectionNotAvailable) then) =
+      __$InternetConnectionNotAvailableCopyWithImpl<$Res>;
 }
 
-class _$InternetConnectionNotAvailableCopyWithImpl<$Res>
+class __$InternetConnectionNotAvailableCopyWithImpl<$Res>
     extends _$AuthFailureCopyWithImpl<$Res>
-    implements $InternetConnectionNotAvailableCopyWith<$Res> {
-  _$InternetConnectionNotAvailableCopyWithImpl(
-      InternetConnectionNotAvailable _value,
-      $Res Function(InternetConnectionNotAvailable) _then)
-      : super(_value, (v) => _then(v as InternetConnectionNotAvailable));
+    implements _$InternetConnectionNotAvailableCopyWith<$Res> {
+  __$InternetConnectionNotAvailableCopyWithImpl(
+      _InternetConnectionNotAvailable _value,
+      $Res Function(_InternetConnectionNotAvailable) _then)
+      : super(_value, (v) => _then(v as _InternetConnectionNotAvailable));
 
   @override
-  InternetConnectionNotAvailable get _value =>
-      super._value as InternetConnectionNotAvailable;
+  _InternetConnectionNotAvailable get _value =>
+      super._value as _InternetConnectionNotAvailable;
 }
 
-class _$InternetConnectionNotAvailable
-    implements InternetConnectionNotAvailable {
-  const _$InternetConnectionNotAvailable();
+class _$_InternetConnectionNotAvailable
+    implements _InternetConnectionNotAvailable {
+  const _$_InternetConnectionNotAvailable();
 
   @override
   String toString() {
@@ -702,7 +844,7 @@ class _$InternetConnectionNotAvailable
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InternetConnectionNotAvailable);
+    return identical(this, other) || (other is _InternetConnectionNotAvailable);
   }
 
   @override
@@ -717,6 +859,9 @@ class _$InternetConnectionNotAvailable
     @required Result emailAlreadyInUse(),
     @required Result userNotSignedIn(),
     @required Result internetConnectionNotAvailable(),
+    @required Result accountWasCreatedWithDiffrentService(),
+    @required Result userNotFound(),
+    @required Result verificationCodeNotFound(),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -724,6 +869,9 @@ class _$InternetConnectionNotAvailable
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return internetConnectionNotAvailable();
   }
 
@@ -736,6 +884,9 @@ class _$InternetConnectionNotAvailable
     Result emailAlreadyInUse(),
     Result userNotSignedIn(),
     Result internetConnectionNotAvailable(),
+    Result accountWasCreatedWithDiffrentService(),
+    Result userNotFound(),
+    Result verificationCodeNotFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -748,14 +899,19 @@ class _$InternetConnectionNotAvailable
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result canceledByUser(CanceledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result invalidCredentials(InvalidCredentials value),
-    @required Result emailAlreadyInUse(EmailAlredyInUse value),
-    @required Result userNotSignedIn(UserNotSignedIn value),
+    @required Result canceledByUser(_CanceledByUser value),
+    @required Result serverError(_ServerError value),
+    @required Result invalidCredentials(_InvalidCredentials value),
+    @required Result emailAlreadyInUse(_EmailAlredyInUse value),
+    @required Result userNotSignedIn(_UserNotSignedIn value),
     @required
         Result internetConnectionNotAvailable(
-            InternetConnectionNotAvailable value),
+            _InternetConnectionNotAvailable value),
+    @required
+        Result accountWasCreatedWithDiffrentService(
+            _AccountWasCreatedWithDiffrentService value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result verificationCodeNotFound(_VerificationCodeNotFound value),
   }) {
     assert(canceledByUser != null);
     assert(serverError != null);
@@ -763,18 +919,26 @@ class _$InternetConnectionNotAvailable
     assert(emailAlreadyInUse != null);
     assert(userNotSignedIn != null);
     assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
     return internetConnectionNotAvailable(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result canceledByUser(CanceledByUser value),
-    Result serverError(ServerError value),
-    Result invalidCredentials(InvalidCredentials value),
-    Result emailAlreadyInUse(EmailAlredyInUse value),
-    Result userNotSignedIn(UserNotSignedIn value),
-    Result internetConnectionNotAvailable(InternetConnectionNotAvailable value),
+    Result canceledByUser(_CanceledByUser value),
+    Result serverError(_ServerError value),
+    Result invalidCredentials(_InvalidCredentials value),
+    Result emailAlreadyInUse(_EmailAlredyInUse value),
+    Result userNotSignedIn(_UserNotSignedIn value),
+    Result internetConnectionNotAvailable(
+        _InternetConnectionNotAvailable value),
+    Result accountWasCreatedWithDiffrentService(
+        _AccountWasCreatedWithDiffrentService value),
+    Result userNotFound(_UserNotFound value),
+    Result verificationCodeNotFound(_VerificationCodeNotFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -785,7 +949,421 @@ class _$InternetConnectionNotAvailable
   }
 }
 
-abstract class InternetConnectionNotAvailable implements AuthFailure {
-  const factory InternetConnectionNotAvailable() =
-      _$InternetConnectionNotAvailable;
+abstract class _InternetConnectionNotAvailable implements AuthFailure {
+  const factory _InternetConnectionNotAvailable() =
+      _$_InternetConnectionNotAvailable;
+}
+
+abstract class _$AccountWasCreatedWithDiffrentServiceCopyWith<$Res> {
+  factory _$AccountWasCreatedWithDiffrentServiceCopyWith(
+          _AccountWasCreatedWithDiffrentService value,
+          $Res Function(_AccountWasCreatedWithDiffrentService) then) =
+      __$AccountWasCreatedWithDiffrentServiceCopyWithImpl<$Res>;
+}
+
+class __$AccountWasCreatedWithDiffrentServiceCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$AccountWasCreatedWithDiffrentServiceCopyWith<$Res> {
+  __$AccountWasCreatedWithDiffrentServiceCopyWithImpl(
+      _AccountWasCreatedWithDiffrentService _value,
+      $Res Function(_AccountWasCreatedWithDiffrentService) _then)
+      : super(_value, (v) => _then(v as _AccountWasCreatedWithDiffrentService));
+
+  @override
+  _AccountWasCreatedWithDiffrentService get _value =>
+      super._value as _AccountWasCreatedWithDiffrentService;
+}
+
+class _$_AccountWasCreatedWithDiffrentService
+    implements _AccountWasCreatedWithDiffrentService {
+  const _$_AccountWasCreatedWithDiffrentService();
+
+  @override
+  String toString() {
+    return 'AuthFailure.accountWasCreatedWithDiffrentService()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _AccountWasCreatedWithDiffrentService);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result canceledByUser(),
+    @required Result serverError(),
+    @required Result invalidCredentials(),
+    @required Result emailAlreadyInUse(),
+    @required Result userNotSignedIn(),
+    @required Result internetConnectionNotAvailable(),
+    @required Result accountWasCreatedWithDiffrentService(),
+    @required Result userNotFound(),
+    @required Result verificationCodeNotFound(),
+  }) {
+    assert(canceledByUser != null);
+    assert(serverError != null);
+    assert(invalidCredentials != null);
+    assert(emailAlreadyInUse != null);
+    assert(userNotSignedIn != null);
+    assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
+    return accountWasCreatedWithDiffrentService();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result canceledByUser(),
+    Result serverError(),
+    Result invalidCredentials(),
+    Result emailAlreadyInUse(),
+    Result userNotSignedIn(),
+    Result internetConnectionNotAvailable(),
+    Result accountWasCreatedWithDiffrentService(),
+    Result userNotFound(),
+    Result verificationCodeNotFound(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (accountWasCreatedWithDiffrentService != null) {
+      return accountWasCreatedWithDiffrentService();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result canceledByUser(_CanceledByUser value),
+    @required Result serverError(_ServerError value),
+    @required Result invalidCredentials(_InvalidCredentials value),
+    @required Result emailAlreadyInUse(_EmailAlredyInUse value),
+    @required Result userNotSignedIn(_UserNotSignedIn value),
+    @required
+        Result internetConnectionNotAvailable(
+            _InternetConnectionNotAvailable value),
+    @required
+        Result accountWasCreatedWithDiffrentService(
+            _AccountWasCreatedWithDiffrentService value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result verificationCodeNotFound(_VerificationCodeNotFound value),
+  }) {
+    assert(canceledByUser != null);
+    assert(serverError != null);
+    assert(invalidCredentials != null);
+    assert(emailAlreadyInUse != null);
+    assert(userNotSignedIn != null);
+    assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
+    return accountWasCreatedWithDiffrentService(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result canceledByUser(_CanceledByUser value),
+    Result serverError(_ServerError value),
+    Result invalidCredentials(_InvalidCredentials value),
+    Result emailAlreadyInUse(_EmailAlredyInUse value),
+    Result userNotSignedIn(_UserNotSignedIn value),
+    Result internetConnectionNotAvailable(
+        _InternetConnectionNotAvailable value),
+    Result accountWasCreatedWithDiffrentService(
+        _AccountWasCreatedWithDiffrentService value),
+    Result userNotFound(_UserNotFound value),
+    Result verificationCodeNotFound(_VerificationCodeNotFound value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (accountWasCreatedWithDiffrentService != null) {
+      return accountWasCreatedWithDiffrentService(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AccountWasCreatedWithDiffrentService implements AuthFailure {
+  const factory _AccountWasCreatedWithDiffrentService() =
+      _$_AccountWasCreatedWithDiffrentService;
+}
+
+abstract class _$UserNotFoundCopyWith<$Res> {
+  factory _$UserNotFoundCopyWith(
+          _UserNotFound value, $Res Function(_UserNotFound) then) =
+      __$UserNotFoundCopyWithImpl<$Res>;
+}
+
+class __$UserNotFoundCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$UserNotFoundCopyWith<$Res> {
+  __$UserNotFoundCopyWithImpl(
+      _UserNotFound _value, $Res Function(_UserNotFound) _then)
+      : super(_value, (v) => _then(v as _UserNotFound));
+
+  @override
+  _UserNotFound get _value => super._value as _UserNotFound;
+}
+
+class _$_UserNotFound implements _UserNotFound {
+  const _$_UserNotFound();
+
+  @override
+  String toString() {
+    return 'AuthFailure.userNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _UserNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result canceledByUser(),
+    @required Result serverError(),
+    @required Result invalidCredentials(),
+    @required Result emailAlreadyInUse(),
+    @required Result userNotSignedIn(),
+    @required Result internetConnectionNotAvailable(),
+    @required Result accountWasCreatedWithDiffrentService(),
+    @required Result userNotFound(),
+    @required Result verificationCodeNotFound(),
+  }) {
+    assert(canceledByUser != null);
+    assert(serverError != null);
+    assert(invalidCredentials != null);
+    assert(emailAlreadyInUse != null);
+    assert(userNotSignedIn != null);
+    assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
+    return userNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result canceledByUser(),
+    Result serverError(),
+    Result invalidCredentials(),
+    Result emailAlreadyInUse(),
+    Result userNotSignedIn(),
+    Result internetConnectionNotAvailable(),
+    Result accountWasCreatedWithDiffrentService(),
+    Result userNotFound(),
+    Result verificationCodeNotFound(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userNotFound != null) {
+      return userNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result canceledByUser(_CanceledByUser value),
+    @required Result serverError(_ServerError value),
+    @required Result invalidCredentials(_InvalidCredentials value),
+    @required Result emailAlreadyInUse(_EmailAlredyInUse value),
+    @required Result userNotSignedIn(_UserNotSignedIn value),
+    @required
+        Result internetConnectionNotAvailable(
+            _InternetConnectionNotAvailable value),
+    @required
+        Result accountWasCreatedWithDiffrentService(
+            _AccountWasCreatedWithDiffrentService value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result verificationCodeNotFound(_VerificationCodeNotFound value),
+  }) {
+    assert(canceledByUser != null);
+    assert(serverError != null);
+    assert(invalidCredentials != null);
+    assert(emailAlreadyInUse != null);
+    assert(userNotSignedIn != null);
+    assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
+    return userNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result canceledByUser(_CanceledByUser value),
+    Result serverError(_ServerError value),
+    Result invalidCredentials(_InvalidCredentials value),
+    Result emailAlreadyInUse(_EmailAlredyInUse value),
+    Result userNotSignedIn(_UserNotSignedIn value),
+    Result internetConnectionNotAvailable(
+        _InternetConnectionNotAvailable value),
+    Result accountWasCreatedWithDiffrentService(
+        _AccountWasCreatedWithDiffrentService value),
+    Result userNotFound(_UserNotFound value),
+    Result verificationCodeNotFound(_VerificationCodeNotFound value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userNotFound != null) {
+      return userNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserNotFound implements AuthFailure {
+  const factory _UserNotFound() = _$_UserNotFound;
+}
+
+abstract class _$VerificationCodeNotFoundCopyWith<$Res> {
+  factory _$VerificationCodeNotFoundCopyWith(_VerificationCodeNotFound value,
+          $Res Function(_VerificationCodeNotFound) then) =
+      __$VerificationCodeNotFoundCopyWithImpl<$Res>;
+}
+
+class __$VerificationCodeNotFoundCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$VerificationCodeNotFoundCopyWith<$Res> {
+  __$VerificationCodeNotFoundCopyWithImpl(_VerificationCodeNotFound _value,
+      $Res Function(_VerificationCodeNotFound) _then)
+      : super(_value, (v) => _then(v as _VerificationCodeNotFound));
+
+  @override
+  _VerificationCodeNotFound get _value =>
+      super._value as _VerificationCodeNotFound;
+}
+
+class _$_VerificationCodeNotFound implements _VerificationCodeNotFound {
+  const _$_VerificationCodeNotFound();
+
+  @override
+  String toString() {
+    return 'AuthFailure.verificationCodeNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _VerificationCodeNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result canceledByUser(),
+    @required Result serverError(),
+    @required Result invalidCredentials(),
+    @required Result emailAlreadyInUse(),
+    @required Result userNotSignedIn(),
+    @required Result internetConnectionNotAvailable(),
+    @required Result accountWasCreatedWithDiffrentService(),
+    @required Result userNotFound(),
+    @required Result verificationCodeNotFound(),
+  }) {
+    assert(canceledByUser != null);
+    assert(serverError != null);
+    assert(invalidCredentials != null);
+    assert(emailAlreadyInUse != null);
+    assert(userNotSignedIn != null);
+    assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
+    return verificationCodeNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result canceledByUser(),
+    Result serverError(),
+    Result invalidCredentials(),
+    Result emailAlreadyInUse(),
+    Result userNotSignedIn(),
+    Result internetConnectionNotAvailable(),
+    Result accountWasCreatedWithDiffrentService(),
+    Result userNotFound(),
+    Result verificationCodeNotFound(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (verificationCodeNotFound != null) {
+      return verificationCodeNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result canceledByUser(_CanceledByUser value),
+    @required Result serverError(_ServerError value),
+    @required Result invalidCredentials(_InvalidCredentials value),
+    @required Result emailAlreadyInUse(_EmailAlredyInUse value),
+    @required Result userNotSignedIn(_UserNotSignedIn value),
+    @required
+        Result internetConnectionNotAvailable(
+            _InternetConnectionNotAvailable value),
+    @required
+        Result accountWasCreatedWithDiffrentService(
+            _AccountWasCreatedWithDiffrentService value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result verificationCodeNotFound(_VerificationCodeNotFound value),
+  }) {
+    assert(canceledByUser != null);
+    assert(serverError != null);
+    assert(invalidCredentials != null);
+    assert(emailAlreadyInUse != null);
+    assert(userNotSignedIn != null);
+    assert(internetConnectionNotAvailable != null);
+    assert(accountWasCreatedWithDiffrentService != null);
+    assert(userNotFound != null);
+    assert(verificationCodeNotFound != null);
+    return verificationCodeNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result canceledByUser(_CanceledByUser value),
+    Result serverError(_ServerError value),
+    Result invalidCredentials(_InvalidCredentials value),
+    Result emailAlreadyInUse(_EmailAlredyInUse value),
+    Result userNotSignedIn(_UserNotSignedIn value),
+    Result internetConnectionNotAvailable(
+        _InternetConnectionNotAvailable value),
+    Result accountWasCreatedWithDiffrentService(
+        _AccountWasCreatedWithDiffrentService value),
+    Result userNotFound(_UserNotFound value),
+    Result verificationCodeNotFound(_VerificationCodeNotFound value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (verificationCodeNotFound != null) {
+      return verificationCodeNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VerificationCodeNotFound implements AuthFailure {
+  const factory _VerificationCodeNotFound() = _$_VerificationCodeNotFound;
 }

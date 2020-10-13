@@ -11,3 +11,15 @@ class UnexpectedValueError extends Error {
         "Encoutered ValueFailure at unrecoverable state. Terminating. Failure was: $valueFailure");
   }
 }
+
+class UnexpectedValueFailureError extends Error {
+  final String message;
+
+  UnexpectedValueFailureError(this.message);
+
+  @override
+  String toString() {
+    return Error.safeToString(
+        "Encoutered UnexpectedValueFailure at unrecoverable state. Terminating. Debug message was: $message");
+  }
+}

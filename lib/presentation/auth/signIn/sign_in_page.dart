@@ -20,7 +20,7 @@ class SignInPage extends StatelessWidget {
               title: "Logowanie",
               onIconPressed: () {
                 Feedback.forTap(context);
-                ExtendedNavigator.of(context).pop();
+                ExtendedNavigator.of(context).maybePop();
               },
             ),
             BlocProvider(

@@ -11,21 +11,25 @@ import 'package:injectable/injectable.dart';
 import 'package:splited/domain/auth/accountTypes.dart';
 import 'package:splited/domain/auth/auth_failure.dart';
 import 'package:splited/domain/auth/i_auth_facade.dart';
+import 'package:splited/domain/auth/user.dart';
 import 'package:splited/domain/auth/value_objects/email_address.dart';
 import 'package:splited/domain/auth/value_objects/password.dart';
 import 'package:http/http.dart' as http;
-import 'package:splited/domain/auth/value_objects/password_change_code.dart';
+import 'package:splited/domain/auth/value_objects/verification_code.dart';
 import 'package:splited/infrastructure/auth/model/firebase_auth_credentials.dart';
-import 'package:splited/presentation/auth/user.dart';
+import 'package:splited/infrastructure/connection/connection_facade.dart';
+import 'firebase_user_mapper.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade extends IAuthFacade {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
   final FacebookLogin _facebookLogin;
+  final ConnectionFacade _connectionFacade;
+  final CloudFunctions _cloudFunctions;
 
-  FirebaseAuthFacade(
-      this._firebaseAuth, this._googleSignIn, this._facebookLogin);
+  FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn,
+      this._facebookLogin, this._connectionFacade, this._cloudFunctions);
   @override
   Future<Either<AuthFailure, Unit>> registerWithLoginAndPassword(
       {EmailAddress email, Password password}) async {
@@ -46,73 +50,34 @@ class FirebaseAuthFacade extends IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithFacebook() async {
-    return _logInWithAccountType(accountType: const Facebook());
+    if (await _connectionFacade.internetConnectionAvailable()) {
+      return _logInWithAccountType(accountType: const Facebook());
+    } else {
+      return left(const AuthFailure.internetConnectionNotAvailable());
+    }
   }
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithGoogle() async {
-    return _logInWithAccountType(accountType: const Google());
+    if (await _connectionFacade.internetConnectionAvailable()) {
+      return _logInWithAccountType(accountType: const Google());
+    } else {
+      return left(const AuthFailure.internetConnectionNotAvailable());
+    }
   }
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithLoginAndPassword(
       {EmailAddress email, Password password}) async {
-    return _logInWithAccountType(
-        accountType: const Standard(), emailAddress: email, password: password);
-  }
-
-  @override
-  Future<Either<AuthFailure, Unit>> linkAccountWith({
-    @required AccountType type,
-    EmailAddress email,
-    Password password,
-  }) async {
-    final FirebaseUser firebaseUser = await _firebaseAuth.currentUser();
-    Either<AuthFailure, FirebaseAuthCredentials> authCredential;
-    type.map(
-      standard: (_) async {
-        authCredential = await _getLoginCredentials(
-            accountType: const Standard(), email: email, password: password);
-      },
-      google: (_) async {
-        authCredential =
-            await _getLoginCredentials(accountType: const Google());
-      },
-      facebook: (_) async {
-        authCredential =
-            await _getLoginCredentials(accountType: const Facebook());
-      },
-    );
-    return authCredential.fold((l) => left(l), (value) {
-      try {
-        firebaseUser.linkWithCredential(value.authCredential);
-      } on PlatformException catch (_) {
-        return left(const AuthFailure.serverError());
-      }
-      return right(unit);
-    });
-  }
-
-  @override
-  Future<Either<AuthFailure, Unit>> changePassword({
-    EmailAddress email,
-    Password password,
-  }) {
-    // TODO: implement changePassword
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<AuthFailure, Unit>> checkPasswordCode(
-      {PasswordChangeCode code}) {
-    // TODO: implement checkPasswordCode
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<AuthFailure, Unit>> remindPassword({EmailAddress email}) {
-    // TODO: implement remindPassword
-    throw UnimplementedError();
+    if (await _connectionFacade.internetConnectionAvailable()) {
+      return _logInWithAccountType(
+        accountType: const Standard(),
+        emailAddress: email,
+        password: password,
+      );
+    } else {
+      return left(const AuthFailure.internetConnectionNotAvailable());
+    }
   }
 
   Future<Either<AuthFailure, FirebaseAuthCredentials>> _getLoginCredentials({
@@ -192,6 +157,10 @@ class FirebaseAuthFacade extends IAuthFacade {
           if (e.code == "ERROR_INVALID_CREDENTIAL") {
             return left(const AuthFailure.invalidCredentials());
           }
+          if (e.code == "ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL") {
+            return left(
+                const AuthFailure.accountWasCreatedWithDiffrentService());
+          }
           if (e.code == "ERROR_USER_NOT_FOUND") {
             return left(const AuthFailure.invalidCredentials());
           } else {
@@ -202,22 +171,93 @@ class FirebaseAuthFacade extends IAuthFacade {
     );
   }
 
-  String _accountTypeToService(AccountType type) {
-    return type.map(
-        standard: (_) => "password",
-        google: (_) => "google.com",
-        facebook: (_) => "facebook.com");
+  @override
+  Future<Option<User>> getSignedInUser() async {
+    final FirebaseUser _firebaseUser = await _firebaseAuth.currentUser();
+    return optionOf(await _firebaseUser.toDomain());
   }
 
   @override
-  Future<Option<User>> getSignedInUser() {
-    // TODO: implement getSignedInUser
-    throw UnimplementedError();
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut();
+    await _googleSignIn.signOut();
+    await _facebookLogin.logOut();
   }
 
   @override
-  Future<void> signOut() {
-    // TODO: implement signOut
-    throw UnimplementedError();
+  Future<Either<AuthFailure, Unit>> remindPassword({EmailAddress email}) async {
+    if (await _connectionFacade.internetConnectionAvailable()) {
+      final String _emailStr = email.getOrCrash();
+      try {
+        await _cloudFunctions
+            .getHttpsCallable(functionName: "generatePasswordResetCode")
+            .call(<String, dynamic>{
+          'email': _emailStr,
+        });
+        return right(unit);
+      } on PlatformException catch (e) {
+        if (e.code == "not-found") {
+          return right(unit);
+        } else {
+          return left(const AuthFailure.serverError());
+        }
+      }
+    } else {
+      return left(const AuthFailure.internetConnectionNotAvailable());
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> checkPasswordCode(
+      {VerificationCode code, EmailAddress email}) async {
+    if (await _connectionFacade.internetConnectionAvailable()) {
+      final String _emailStr = email.getOrCrash();
+      final String _codeStr = code.getJoinedOrCrash();
+      try {
+        await _cloudFunctions
+            .getHttpsCallable(functionName: "verifyPasswordResetCode")
+            .call({'email': _emailStr, 'code': _codeStr});
+        return right(unit);
+      } on PlatformException catch (e) {
+        if (e.code == "not-found") {
+          return left(const AuthFailure.verificationCodeNotFound());
+        } else {
+          return left(const AuthFailure.serverError());
+        }
+      }
+    } else {
+      return left(const AuthFailure.internetConnectionNotAvailable());
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> changePassword({
+    EmailAddress email,
+    VerificationCode code,
+    Password password,
+  }) async {
+    if (await _connectionFacade.internetConnectionAvailable()) {
+      final String _emailStr = email.getOrCrash();
+      final String _codeStr = code.getJoinedOrCrash();
+      final String _passwordStr = password.getOrCrash();
+      try {
+        await _cloudFunctions
+            .getHttpsCallable(functionName: "resetPassword")
+            .call({
+          'email': _emailStr,
+          'code': _codeStr,
+          'password': _passwordStr,
+        });
+        return right(unit);
+      } on PlatformException catch (e) {
+        if (e.code == "not-found") {
+          return left(const AuthFailure.verificationCodeNotFound());
+        } else {
+          return left(const AuthFailure.serverError());
+        }
+      }
+    } else {
+      return left(const AuthFailure.internetConnectionNotAvailable());
+    }
   }
 }

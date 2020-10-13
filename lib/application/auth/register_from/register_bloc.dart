@@ -48,14 +48,16 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
             passwordValid &&
             passwordRepeatValid &&
             state.termsAccepted == true &&
-            state.password == state.passwordRepeat) {
+            state.password.value == state.passwordRepeat.value) {
           final result = state.copyWith(
             isSubmitting: true,
             authFailureOrSuccessOption: none(),
           );
           yield result;
-          failureOrSuccess = await _authFacade.registerWithLoginAndPassword(
-              email: state.emailAddress, password: state.password);
+          await Future.delayed(const Duration(seconds: 3),
+              () => failureOrSuccess = left(const AuthFailure.serverError()));
+          // failureOrSuccess = await _authFacade.registerWithLoginAndPassword(
+          // email: state.emailAddress, password: state.password);
         }
         yield state.copyWith(
           isSubmitting: false,
@@ -63,14 +65,14 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           authFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
-      passwordRepeatChanged: (PasswordRepeatChanged e) async* {
+      passwordRepeatChanged: (e) async* {
         final result = state.copyWith(
           passwordRepeat: Password(e.passwordRepeat),
           authFailureOrSuccessOption: none(),
         );
         yield result;
       },
-      termsAcceptanceChanged: (TermsAcceptanceChanged e) async* {
+      termsAcceptanceChanged: (e) async* {
         final result = state.copyWith(
           termsAccepted: e.termsAccepted,
           authFailureOrSuccessOption: none(),

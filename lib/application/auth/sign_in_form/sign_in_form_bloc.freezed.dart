@@ -13,32 +13,32 @@ class _$SignInFormEventTearOff {
   const _$SignInFormEventTearOff();
 
 // ignore: unused_element
-  PasswordChanged passwordChanged(String password) {
-    return PasswordChanged(
+  _PasswordChanged passwordChanged(String password) {
+    return _PasswordChanged(
       password,
     );
   }
 
 // ignore: unused_element
-  EmailChanged emailChanged(String email) {
-    return EmailChanged(
+  _EmailChanged emailChanged(String email) {
+    return _EmailChanged(
       email,
     );
   }
 
 // ignore: unused_element
-  SignInWithEmailAndPassword signInWithEmailAndPassword() {
-    return const SignInWithEmailAndPassword();
+  _SignInWithEmailAndPassword signInWithEmailAndPassword() {
+    return const _SignInWithEmailAndPassword();
   }
 
 // ignore: unused_element
-  SignInWithGoogle signInWithGoogle() {
-    return const SignInWithGoogle();
+  _SignInWithGoogle signInWithGoogle() {
+    return const _SignInWithGoogle();
   }
 
 // ignore: unused_element
-  SignInWithFacebook signInWithFacebook() {
-    return const SignInWithFacebook();
+  _SignInWithFacebook signInWithFacebook() {
+    return const _SignInWithFacebook();
   }
 }
 
@@ -65,20 +65,20 @@ mixin _$SignInFormEvent {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailChanged(_EmailChanged value),
     @required
-        Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required Result signInWithGoogle(SignInWithGoogle value),
-    @required Result signInWithFacebook(SignInWithFacebook value),
+        Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    @required Result signInWithGoogle(_SignInWithGoogle value),
+    @required Result signInWithFacebook(_SignInWithFacebook value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result passwordChanged(PasswordChanged value),
-    Result emailChanged(EmailChanged value),
-    Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result signInWithGoogle(SignInWithGoogle value),
-    Result signInWithFacebook(SignInWithFacebook value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailChanged(_EmailChanged value),
+    Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    Result signInWithGoogle(_SignInWithGoogle value),
+    Result signInWithFacebook(_SignInWithFacebook value),
     @required Result orElse(),
   });
 }
@@ -98,35 +98,35 @@ class _$SignInFormEventCopyWithImpl<$Res>
   final $Res Function(SignInFormEvent) _then;
 }
 
-abstract class $PasswordChangedCopyWith<$Res> {
-  factory $PasswordChangedCopyWith(
-          PasswordChanged value, $Res Function(PasswordChanged) then) =
-      _$PasswordChangedCopyWithImpl<$Res>;
+abstract class _$PasswordChangedCopyWith<$Res> {
+  factory _$PasswordChangedCopyWith(
+          _PasswordChanged value, $Res Function(_PasswordChanged) then) =
+      __$PasswordChangedCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
-class _$PasswordChangedCopyWithImpl<$Res>
+class __$PasswordChangedCopyWithImpl<$Res>
     extends _$SignInFormEventCopyWithImpl<$Res>
-    implements $PasswordChangedCopyWith<$Res> {
-  _$PasswordChangedCopyWithImpl(
-      PasswordChanged _value, $Res Function(PasswordChanged) _then)
-      : super(_value, (v) => _then(v as PasswordChanged));
+    implements _$PasswordChangedCopyWith<$Res> {
+  __$PasswordChangedCopyWithImpl(
+      _PasswordChanged _value, $Res Function(_PasswordChanged) _then)
+      : super(_value, (v) => _then(v as _PasswordChanged));
 
   @override
-  PasswordChanged get _value => super._value as PasswordChanged;
+  _PasswordChanged get _value => super._value as _PasswordChanged;
 
   @override
   $Res call({
     Object password = freezed,
   }) {
-    return _then(PasswordChanged(
+    return _then(_PasswordChanged(
       password == freezed ? _value.password : password as String,
     ));
   }
 }
 
-class _$PasswordChanged implements PasswordChanged {
-  const _$PasswordChanged(this.password) : assert(password != null);
+class _$_PasswordChanged implements _PasswordChanged {
+  const _$_PasswordChanged(this.password) : assert(password != null);
 
   @override
   final String password;
@@ -139,7 +139,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PasswordChanged &&
+        (other is _PasswordChanged &&
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
                     .equals(other.password, password)));
@@ -150,8 +150,8 @@ class _$PasswordChanged implements PasswordChanged {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
   @override
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
-      _$PasswordChangedCopyWithImpl<PasswordChanged>(this, _$identity);
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
+      __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -190,12 +190,12 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailChanged(_EmailChanged value),
     @required
-        Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required Result signInWithGoogle(SignInWithGoogle value),
-    @required Result signInWithFacebook(SignInWithFacebook value),
+        Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    @required Result signInWithGoogle(_SignInWithGoogle value),
+    @required Result signInWithFacebook(_SignInWithFacebook value),
   }) {
     assert(passwordChanged != null);
     assert(emailChanged != null);
@@ -208,11 +208,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result passwordChanged(PasswordChanged value),
-    Result emailChanged(EmailChanged value),
-    Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result signInWithGoogle(SignInWithGoogle value),
-    Result signInWithFacebook(SignInWithFacebook value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailChanged(_EmailChanged value),
+    Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    Result signInWithGoogle(_SignInWithGoogle value),
+    Result signInWithFacebook(_SignInWithFacebook value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -223,42 +223,42 @@ class _$PasswordChanged implements PasswordChanged {
   }
 }
 
-abstract class PasswordChanged implements SignInFormEvent {
-  const factory PasswordChanged(String password) = _$PasswordChanged;
+abstract class _PasswordChanged implements SignInFormEvent {
+  const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
   String get password;
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith;
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
 }
 
-abstract class $EmailChangedCopyWith<$Res> {
-  factory $EmailChangedCopyWith(
-          EmailChanged value, $Res Function(EmailChanged) then) =
-      _$EmailChangedCopyWithImpl<$Res>;
+abstract class _$EmailChangedCopyWith<$Res> {
+  factory _$EmailChangedCopyWith(
+          _EmailChanged value, $Res Function(_EmailChanged) then) =
+      __$EmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
-class _$EmailChangedCopyWithImpl<$Res>
+class __$EmailChangedCopyWithImpl<$Res>
     extends _$SignInFormEventCopyWithImpl<$Res>
-    implements $EmailChangedCopyWith<$Res> {
-  _$EmailChangedCopyWithImpl(
-      EmailChanged _value, $Res Function(EmailChanged) _then)
-      : super(_value, (v) => _then(v as EmailChanged));
+    implements _$EmailChangedCopyWith<$Res> {
+  __$EmailChangedCopyWithImpl(
+      _EmailChanged _value, $Res Function(_EmailChanged) _then)
+      : super(_value, (v) => _then(v as _EmailChanged));
 
   @override
-  EmailChanged get _value => super._value as EmailChanged;
+  _EmailChanged get _value => super._value as _EmailChanged;
 
   @override
   $Res call({
     Object email = freezed,
   }) {
-    return _then(EmailChanged(
+    return _then(_EmailChanged(
       email == freezed ? _value.email : email as String,
     ));
   }
 }
 
-class _$EmailChanged implements EmailChanged {
-  const _$EmailChanged(this.email) : assert(email != null);
+class _$_EmailChanged implements _EmailChanged {
+  const _$_EmailChanged(this.email) : assert(email != null);
 
   @override
   final String email;
@@ -271,7 +271,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmailChanged &&
+        (other is _EmailChanged &&
             (identical(other.email, email) ||
                 const DeepCollectionEquality().equals(other.email, email)));
   }
@@ -281,8 +281,8 @@ class _$EmailChanged implements EmailChanged {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
 
   @override
-  $EmailChangedCopyWith<EmailChanged> get copyWith =>
-      _$EmailChangedCopyWithImpl<EmailChanged>(this, _$identity);
+  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
+      __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -321,12 +321,12 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailChanged(_EmailChanged value),
     @required
-        Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required Result signInWithGoogle(SignInWithGoogle value),
-    @required Result signInWithFacebook(SignInWithFacebook value),
+        Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    @required Result signInWithGoogle(_SignInWithGoogle value),
+    @required Result signInWithFacebook(_SignInWithFacebook value),
   }) {
     assert(passwordChanged != null);
     assert(emailChanged != null);
@@ -339,11 +339,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result passwordChanged(PasswordChanged value),
-    Result emailChanged(EmailChanged value),
-    Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result signInWithGoogle(SignInWithGoogle value),
-    Result signInWithFacebook(SignInWithFacebook value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailChanged(_EmailChanged value),
+    Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    Result signInWithGoogle(_SignInWithGoogle value),
+    Result signInWithFacebook(_SignInWithFacebook value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -354,33 +354,34 @@ class _$EmailChanged implements EmailChanged {
   }
 }
 
-abstract class EmailChanged implements SignInFormEvent {
-  const factory EmailChanged(String email) = _$EmailChanged;
+abstract class _EmailChanged implements SignInFormEvent {
+  const factory _EmailChanged(String email) = _$_EmailChanged;
 
   String get email;
-  $EmailChangedCopyWith<EmailChanged> get copyWith;
+  _$EmailChangedCopyWith<_EmailChanged> get copyWith;
 }
 
-abstract class $SignInWithEmailAndPasswordCopyWith<$Res> {
-  factory $SignInWithEmailAndPasswordCopyWith(SignInWithEmailAndPassword value,
-          $Res Function(SignInWithEmailAndPassword) then) =
-      _$SignInWithEmailAndPasswordCopyWithImpl<$Res>;
+abstract class _$SignInWithEmailAndPasswordCopyWith<$Res> {
+  factory _$SignInWithEmailAndPasswordCopyWith(
+          _SignInWithEmailAndPassword value,
+          $Res Function(_SignInWithEmailAndPassword) then) =
+      __$SignInWithEmailAndPasswordCopyWithImpl<$Res>;
 }
 
-class _$SignInWithEmailAndPasswordCopyWithImpl<$Res>
+class __$SignInWithEmailAndPasswordCopyWithImpl<$Res>
     extends _$SignInFormEventCopyWithImpl<$Res>
-    implements $SignInWithEmailAndPasswordCopyWith<$Res> {
-  _$SignInWithEmailAndPasswordCopyWithImpl(SignInWithEmailAndPassword _value,
-      $Res Function(SignInWithEmailAndPassword) _then)
-      : super(_value, (v) => _then(v as SignInWithEmailAndPassword));
+    implements _$SignInWithEmailAndPasswordCopyWith<$Res> {
+  __$SignInWithEmailAndPasswordCopyWithImpl(_SignInWithEmailAndPassword _value,
+      $Res Function(_SignInWithEmailAndPassword) _then)
+      : super(_value, (v) => _then(v as _SignInWithEmailAndPassword));
 
   @override
-  SignInWithEmailAndPassword get _value =>
-      super._value as SignInWithEmailAndPassword;
+  _SignInWithEmailAndPassword get _value =>
+      super._value as _SignInWithEmailAndPassword;
 }
 
-class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
-  const _$SignInWithEmailAndPassword();
+class _$_SignInWithEmailAndPassword implements _SignInWithEmailAndPassword {
+  const _$_SignInWithEmailAndPassword();
 
   @override
   String toString() {
@@ -389,7 +390,7 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignInWithEmailAndPassword);
+    return identical(this, other) || (other is _SignInWithEmailAndPassword);
   }
 
   @override
@@ -432,12 +433,12 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailChanged(_EmailChanged value),
     @required
-        Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required Result signInWithGoogle(SignInWithGoogle value),
-    @required Result signInWithFacebook(SignInWithFacebook value),
+        Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    @required Result signInWithGoogle(_SignInWithGoogle value),
+    @required Result signInWithFacebook(_SignInWithFacebook value),
   }) {
     assert(passwordChanged != null);
     assert(emailChanged != null);
@@ -450,11 +451,11 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result passwordChanged(PasswordChanged value),
-    Result emailChanged(EmailChanged value),
-    Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result signInWithGoogle(SignInWithGoogle value),
-    Result signInWithFacebook(SignInWithFacebook value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailChanged(_EmailChanged value),
+    Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    Result signInWithGoogle(_SignInWithGoogle value),
+    Result signInWithFacebook(_SignInWithFacebook value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -465,29 +466,29 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
   }
 }
 
-abstract class SignInWithEmailAndPassword implements SignInFormEvent {
-  const factory SignInWithEmailAndPassword() = _$SignInWithEmailAndPassword;
+abstract class _SignInWithEmailAndPassword implements SignInFormEvent {
+  const factory _SignInWithEmailAndPassword() = _$_SignInWithEmailAndPassword;
 }
 
-abstract class $SignInWithGoogleCopyWith<$Res> {
-  factory $SignInWithGoogleCopyWith(
-          SignInWithGoogle value, $Res Function(SignInWithGoogle) then) =
-      _$SignInWithGoogleCopyWithImpl<$Res>;
+abstract class _$SignInWithGoogleCopyWith<$Res> {
+  factory _$SignInWithGoogleCopyWith(
+          _SignInWithGoogle value, $Res Function(_SignInWithGoogle) then) =
+      __$SignInWithGoogleCopyWithImpl<$Res>;
 }
 
-class _$SignInWithGoogleCopyWithImpl<$Res>
+class __$SignInWithGoogleCopyWithImpl<$Res>
     extends _$SignInFormEventCopyWithImpl<$Res>
-    implements $SignInWithGoogleCopyWith<$Res> {
-  _$SignInWithGoogleCopyWithImpl(
-      SignInWithGoogle _value, $Res Function(SignInWithGoogle) _then)
-      : super(_value, (v) => _then(v as SignInWithGoogle));
+    implements _$SignInWithGoogleCopyWith<$Res> {
+  __$SignInWithGoogleCopyWithImpl(
+      _SignInWithGoogle _value, $Res Function(_SignInWithGoogle) _then)
+      : super(_value, (v) => _then(v as _SignInWithGoogle));
 
   @override
-  SignInWithGoogle get _value => super._value as SignInWithGoogle;
+  _SignInWithGoogle get _value => super._value as _SignInWithGoogle;
 }
 
-class _$SignInWithGoogle implements SignInWithGoogle {
-  const _$SignInWithGoogle();
+class _$_SignInWithGoogle implements _SignInWithGoogle {
+  const _$_SignInWithGoogle();
 
   @override
   String toString() {
@@ -496,7 +497,7 @@ class _$SignInWithGoogle implements SignInWithGoogle {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignInWithGoogle);
+    return identical(this, other) || (other is _SignInWithGoogle);
   }
 
   @override
@@ -539,12 +540,12 @@ class _$SignInWithGoogle implements SignInWithGoogle {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailChanged(_EmailChanged value),
     @required
-        Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required Result signInWithGoogle(SignInWithGoogle value),
-    @required Result signInWithFacebook(SignInWithFacebook value),
+        Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    @required Result signInWithGoogle(_SignInWithGoogle value),
+    @required Result signInWithFacebook(_SignInWithFacebook value),
   }) {
     assert(passwordChanged != null);
     assert(emailChanged != null);
@@ -557,11 +558,11 @@ class _$SignInWithGoogle implements SignInWithGoogle {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result passwordChanged(PasswordChanged value),
-    Result emailChanged(EmailChanged value),
-    Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result signInWithGoogle(SignInWithGoogle value),
-    Result signInWithFacebook(SignInWithFacebook value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailChanged(_EmailChanged value),
+    Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    Result signInWithGoogle(_SignInWithGoogle value),
+    Result signInWithFacebook(_SignInWithFacebook value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -572,29 +573,29 @@ class _$SignInWithGoogle implements SignInWithGoogle {
   }
 }
 
-abstract class SignInWithGoogle implements SignInFormEvent {
-  const factory SignInWithGoogle() = _$SignInWithGoogle;
+abstract class _SignInWithGoogle implements SignInFormEvent {
+  const factory _SignInWithGoogle() = _$_SignInWithGoogle;
 }
 
-abstract class $SignInWithFacebookCopyWith<$Res> {
-  factory $SignInWithFacebookCopyWith(
-          SignInWithFacebook value, $Res Function(SignInWithFacebook) then) =
-      _$SignInWithFacebookCopyWithImpl<$Res>;
+abstract class _$SignInWithFacebookCopyWith<$Res> {
+  factory _$SignInWithFacebookCopyWith(
+          _SignInWithFacebook value, $Res Function(_SignInWithFacebook) then) =
+      __$SignInWithFacebookCopyWithImpl<$Res>;
 }
 
-class _$SignInWithFacebookCopyWithImpl<$Res>
+class __$SignInWithFacebookCopyWithImpl<$Res>
     extends _$SignInFormEventCopyWithImpl<$Res>
-    implements $SignInWithFacebookCopyWith<$Res> {
-  _$SignInWithFacebookCopyWithImpl(
-      SignInWithFacebook _value, $Res Function(SignInWithFacebook) _then)
-      : super(_value, (v) => _then(v as SignInWithFacebook));
+    implements _$SignInWithFacebookCopyWith<$Res> {
+  __$SignInWithFacebookCopyWithImpl(
+      _SignInWithFacebook _value, $Res Function(_SignInWithFacebook) _then)
+      : super(_value, (v) => _then(v as _SignInWithFacebook));
 
   @override
-  SignInWithFacebook get _value => super._value as SignInWithFacebook;
+  _SignInWithFacebook get _value => super._value as _SignInWithFacebook;
 }
 
-class _$SignInWithFacebook implements SignInWithFacebook {
-  const _$SignInWithFacebook();
+class _$_SignInWithFacebook implements _SignInWithFacebook {
+  const _$_SignInWithFacebook();
 
   @override
   String toString() {
@@ -603,7 +604,7 @@ class _$SignInWithFacebook implements SignInWithFacebook {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignInWithFacebook);
+    return identical(this, other) || (other is _SignInWithFacebook);
   }
 
   @override
@@ -646,12 +647,12 @@ class _$SignInWithFacebook implements SignInWithFacebook {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailChanged(_EmailChanged value),
     @required
-        Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required Result signInWithGoogle(SignInWithGoogle value),
-    @required Result signInWithFacebook(SignInWithFacebook value),
+        Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    @required Result signInWithGoogle(_SignInWithGoogle value),
+    @required Result signInWithFacebook(_SignInWithFacebook value),
   }) {
     assert(passwordChanged != null);
     assert(emailChanged != null);
@@ -664,11 +665,11 @@ class _$SignInWithFacebook implements SignInWithFacebook {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result passwordChanged(PasswordChanged value),
-    Result emailChanged(EmailChanged value),
-    Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result signInWithGoogle(SignInWithGoogle value),
-    Result signInWithFacebook(SignInWithFacebook value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailChanged(_EmailChanged value),
+    Result signInWithEmailAndPassword(_SignInWithEmailAndPassword value),
+    Result signInWithGoogle(_SignInWithGoogle value),
+    Result signInWithFacebook(_SignInWithFacebook value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -679,8 +680,8 @@ class _$SignInWithFacebook implements SignInWithFacebook {
   }
 }
 
-abstract class SignInWithFacebook implements SignInFormEvent {
-  const factory SignInWithFacebook() = _$SignInWithFacebook;
+abstract class _SignInWithFacebook implements SignInFormEvent {
+  const factory _SignInWithFacebook() = _$_SignInWithFacebook;
 }
 
 class _$SignInFormStateTearOff {

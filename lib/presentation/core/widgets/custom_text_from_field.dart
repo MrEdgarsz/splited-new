@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:native_color/native_color.dart';
 import 'package:simple_tooltip/simple_tooltip.dart';
 import 'package:splited/application/themes/theme_bloc.dart';
 import 'package:splited/injection.dart';
@@ -65,7 +64,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         arrowLength: 15,
         arrowBaseWidth: 30,
         arrowTipDistance: 1,
-        borderColor: HexColor("#707070"),
+        borderColor: const Color(0xff707070),
         backgroundColor: Theme.of(context).cardColor,
         tooltipDirection: TooltipDirection.down,
         show: showToolTip,
@@ -75,7 +74,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         child: Focus(
           onFocusChange: (value) => onFocusChange(value),
           child: TextFormField(
-            autocorrect: true,
             keyboardType: (!widget.obscureText)
                 ? widget.keyboardType
                 : (_obscure)

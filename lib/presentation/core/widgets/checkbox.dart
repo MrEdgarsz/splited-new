@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:native_color/native_color.dart';
 
 class CustomCheckBox extends StatefulWidget {
   const CustomCheckBox(
@@ -78,7 +77,7 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
                           width: 20,
                           height: 20,
                           decoration: BoxDecoration(
-                            color: HexColor("#247DBA"),
+                            color: const Color(0xff247DBA),
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
@@ -102,7 +101,7 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1
-                      .copyWith(fontSize: 11, color: HexColor("#BA4D24")),
+                      .copyWith(fontSize: 11, color: const Color(0xffBA4D24)),
                   textAlign: TextAlign.left,
                 ),
               ],

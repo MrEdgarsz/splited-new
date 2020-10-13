@@ -50,8 +50,10 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
             authFailureOrSuccessOption: none(),
           );
           yield result;
-          failureOrSuccess = await _authFacade.signInWithLoginAndPassword(
-              email: state.emailAddress, password: state.password);
+          await Future.delayed(const Duration(seconds: 3),
+              () => failureOrSuccess = left(const AuthFailure.serverError()));
+          // failureOrSuccess = await _authFacade.signInWithLoginAndPassword(
+          //     email: state.emailAddress, password: state.password);
         } else {
           failureOrSuccess = left(const AuthFailure.invalidCredentials());
         }

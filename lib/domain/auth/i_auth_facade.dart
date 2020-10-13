@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:splited/domain/auth/auth_failure.dart';
+import 'package:splited/domain/auth/user.dart';
 import 'package:splited/domain/auth/value_objects/email_address.dart';
 import 'package:splited/domain/auth/value_objects/password.dart';
-import 'package:splited/domain/auth/value_objects/password_change_code.dart';
-import 'package:splited/presentation/auth/user.dart';
+import 'package:splited/domain/auth/value_objects/verification_code.dart';
 
 abstract class IAuthFacade {
   Future<Either<AuthFailure, Unit>> signInWithLoginAndPassword({
@@ -21,10 +21,12 @@ abstract class IAuthFacade {
     @required EmailAddress email,
   });
   Future<Either<AuthFailure, Unit>> checkPasswordCode({
-    @required PasswordChangeCode code,
+    @required VerificationCode code,
+    @required EmailAddress email,
   });
   Future<Either<AuthFailure, Unit>> changePassword({
     @required EmailAddress email,
+    @required VerificationCode code,
     @required Password password,
   });
   Future<Option<User>> getSignedInUser();

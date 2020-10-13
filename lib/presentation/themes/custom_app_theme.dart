@@ -1,67 +1,72 @@
 import 'package:flutter/material.dart';
-import 'package:native_color/native_color.dart';
 
 abstract class CustomAppTheme {
   static ThemeData dark = ThemeData(
-    textSelectionColor: HexColor("#333333"),
-    textSelectionHandleColor: HexColor("#247DBA"),
-    cursorColor: HexColor("#247DBA"),
-    indicatorColor: HexColor("#247DBA"),
+    textSelectionColor: const Color(0xff333333),
+    textSelectionHandleColor: const Color(0xff247DBA),
+    cursorColor: const Color(0xff247DBA),
+    indicatorColor: const Color(0xff247DBA),
     brightness: Brightness.dark,
-    primaryColor: HexColor("#247DBA"),
-    accentColor: HexColor("#EBEBEB"),
-    scaffoldBackgroundColor: HexColor("#333333"),
-    inputDecorationTheme: InputDecorationTheme(
-      fillColor: HexColor("#4B4B4B"),
+    primaryColor: const Color(0xff247DBA),
+    accentColor: const Color(0xffEBEBEB),
+    scaffoldBackgroundColor: const Color(0xff333333),
+    inputDecorationTheme: const InputDecorationTheme(
+      fillColor: Color(0xff4B4B4B),
       filled: true,
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: HexColor("#247DBA"), width: 1),
+        borderSide: BorderSide(
+          color: Color(0xff247DBA),
+        ),
       ),
       errorBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: HexColor("#BA4D24"), width: 1),
+        borderSide: BorderSide(
+          color: Color(0xffBA4D24),
+        ),
       ),
       enabledBorder: InputBorder.none,
       disabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: HexColor("#EBEBEB"), width: 1),
+        borderSide: BorderSide(
+          color: Color(0xffEBEBEB),
+        ),
       ),
     ),
-    dividerColor: HexColor("#666666"),
+    dividerColor: const Color(0xff666666),
     fontFamily: "Poppins",
-    cardColor: HexColor("#4B4B4B"),
-    textTheme: TextTheme(
-      headline6: const TextStyle(
+    cardColor: const Color(0xff4B4B4B),
+    textTheme: const TextTheme(
+      headline6: TextStyle(
         color: Colors.white,
         fontSize: 29,
         fontWeight: FontWeight.bold,
       ),
       button: TextStyle(
-        color: HexColor("#EBEBEB"),
+        color: Color(0xffEBEBEB),
         fontSize: 14,
         fontWeight: FontWeight.w500,
       ),
       bodyText1: TextStyle(
-        color: HexColor("#EBEBEB"),
+        color: Color(0xffEBEBEB),
         fontSize: 15,
         fontWeight: FontWeight.bold,
       ),
       headline3: TextStyle(
-        color: HexColor("#EBEBEB"),
+        color: Color(0xffEBEBEB),
         fontSize: 21,
         fontWeight: FontWeight.bold,
       ),
       overline: TextStyle(
-        color: HexColor("#247DBA"),
+        color: Color(0xff247DBA),
         fontSize: 12,
       ),
     ),
-    dialogTheme: DialogTheme(
-      backgroundColor: HexColor("#333333"),
-      titleTextStyle: const TextStyle(
+    dialogTheme: const DialogTheme(
+      backgroundColor: Color(0xff333333),
+      titleTextStyle: TextStyle(
         fontWeight: FontWeight.w500,
         color: Colors.white,
         fontSize: 20,
       ),
-      contentTextStyle: const TextStyle(
+      contentTextStyle: TextStyle(
         fontWeight: FontWeight.normal,
         color: Colors.white,
         fontSize: 14,
@@ -69,65 +74,65 @@ abstract class CustomAppTheme {
     ),
   );
   static ThemeData light = ThemeData(
-    textSelectionColor: HexColor("#EBEBEB"),
-    textSelectionHandleColor: HexColor("#247DBA"),
-    cursorColor: HexColor("#247DBA"),
-    indicatorColor: HexColor("#247DBA"),
+    textSelectionColor: const Color(0xffEBEBEB),
+    textSelectionHandleColor: const Color(0xff247DBA),
+    cursorColor: const Color(0xff247DBA),
+    indicatorColor: const Color(0xff247DBA),
     brightness: Brightness.light,
-    primaryColor: HexColor("#247DBA"),
-    accentColor: HexColor("#707070"),
-    scaffoldBackgroundColor: HexColor("#EBEBEB"),
-    inputDecorationTheme: InputDecorationTheme(
-      fillColor: HexColor("#F1F1F1"),
+    primaryColor: const Color(0xff247DBA),
+    accentColor: const Color(0xff707070),
+    scaffoldBackgroundColor: const Color(0xffEBEBEB),
+    inputDecorationTheme: const InputDecorationTheme(
+      fillColor: Color(0xffF1F1F1),
       filled: true,
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: HexColor("#247DBA"), width: 1),
+        borderSide: BorderSide(color: Color(0xff247DBA), width: 1),
       ),
       errorBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: HexColor("#BA4D24"), width: 1),
+        borderSide: BorderSide(color: Color(0xffBA4D24), width: 1),
       ),
       enabledBorder: InputBorder.none,
       disabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: HexColor("#707070"), width: 1),
+        borderSide: BorderSide(color: Color(0xff707070), width: 1),
       ),
     ),
-    dividerColor: HexColor("#707070"),
+    dividerColor: const Color(0xff707070),
     fontFamily: "Poppins",
-    cardColor: HexColor("#F1F1F1"),
-    textTheme: TextTheme(
+    cardColor: const Color(0xffF1F1F1),
+    textTheme: const TextTheme(
       title: TextStyle(
-        color: HexColor("#707070"),
+        color: Color(0xff707070),
         fontSize: 29,
         fontWeight: FontWeight.bold,
       ),
       button: TextStyle(
-        color: HexColor("#FFFFFF"),
+        color: Color(0xffFFFFFF),
         fontSize: 14,
         fontWeight: FontWeight.w500,
       ),
       body1: TextStyle(
-        color: HexColor("#707070"),
+        color: Color(0xff707070),
         fontSize: 15,
         fontWeight: FontWeight.bold,
       ),
       display2: TextStyle(
-        color: HexColor("#707070"),
+        color: Color(0xff707070),
         fontSize: 21,
         fontWeight: FontWeight.bold,
       ),
       overline: TextStyle(
-        color: HexColor("#247DBA"),
+        color: Color(0xff247DBA),
         fontSize: 12,
       ),
     ),
-    dialogTheme: DialogTheme(
-      backgroundColor: HexColor("#333333"),
-      titleTextStyle: const TextStyle(
+    dialogTheme: const DialogTheme(
+      backgroundColor: Color(0xff333333),
+      titleTextStyle: TextStyle(
         fontWeight: FontWeight.w500,
         color: Colors.white,
         fontSize: 20,
       ),
-      contentTextStyle: const TextStyle(
+      contentTextStyle: TextStyle(
         fontWeight: FontWeight.normal,
         color: Colors.white,
         fontSize: 14,

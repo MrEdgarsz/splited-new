@@ -13,23 +13,23 @@ class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
 // ignore: unused_element
-  InvalidEmail<T> invalidEmail<T>({@required String filedValue}) {
-    return InvalidEmail<T>(
+  _InvalidEmail<T> invalidEmail<T>({@required String filedValue}) {
+    return _InvalidEmail<T>(
       filedValue: filedValue,
     );
   }
 
 // ignore: unused_element
-  InvalidPassowrd<T> invalidPassword<T>({@required String filedValue}) {
-    return InvalidPassowrd<T>(
+  _InvalidPassowrd<T> invalidPassword<T>({@required String filedValue}) {
+    return _InvalidPassowrd<T>(
       filedValue: filedValue,
     );
   }
 
 // ignore: unused_element
-  InvalidVerificationCode<T> invalidPasswordChangeCode<T>(
-      {@required int filedValue}) {
-    return InvalidVerificationCode<T>(
+  _InvalidVerificationCode<T> invalidVerificationCode<T>(
+      {@required List<String> filedValue}) {
+    return _InvalidVerificationCode<T>(
       filedValue: filedValue,
     );
   }
@@ -43,27 +43,26 @@ mixin _$ValueFailure<T> {
   Result when<Result extends Object>({
     @required Result invalidEmail(String filedValue),
     @required Result invalidPassword(String filedValue),
-    @required Result invalidPasswordChangeCode(int filedValue),
+    @required Result invalidVerificationCode(List<String> filedValue),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(String filedValue),
     Result invalidPassword(String filedValue),
-    Result invalidPasswordChangeCode(int filedValue),
+    Result invalidVerificationCode(List<String> filedValue),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassowrd<T> value),
-    @required
-        Result invalidPasswordChangeCode(InvalidVerificationCode<T> value),
+    @required Result invalidEmail(_InvalidEmail<T> value),
+    @required Result invalidPassword(_InvalidPassowrd<T> value),
+    @required Result invalidVerificationCode(_InvalidVerificationCode<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassowrd<T> value),
-    Result invalidPasswordChangeCode(InvalidVerificationCode<T> value),
+    Result invalidEmail(_InvalidEmail<T> value),
+    Result invalidPassword(_InvalidPassowrd<T> value),
+    Result invalidVerificationCode(_InvalidVerificationCode<T> value),
     @required Result orElse(),
   });
 }
@@ -83,36 +82,36 @@ class _$ValueFailureCopyWithImpl<T, $Res>
   final $Res Function(ValueFailure<T>) _then;
 }
 
-abstract class $InvalidEmailCopyWith<T, $Res> {
-  factory $InvalidEmailCopyWith(
-          InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) =
-      _$InvalidEmailCopyWithImpl<T, $Res>;
+abstract class _$InvalidEmailCopyWith<T, $Res> {
+  factory _$InvalidEmailCopyWith(
+          _InvalidEmail<T> value, $Res Function(_InvalidEmail<T>) then) =
+      __$InvalidEmailCopyWithImpl<T, $Res>;
   $Res call({String filedValue});
 }
 
-class _$InvalidEmailCopyWithImpl<T, $Res>
+class __$InvalidEmailCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $InvalidEmailCopyWith<T, $Res> {
-  _$InvalidEmailCopyWithImpl(
-      InvalidEmail<T> _value, $Res Function(InvalidEmail<T>) _then)
-      : super(_value, (v) => _then(v as InvalidEmail<T>));
+    implements _$InvalidEmailCopyWith<T, $Res> {
+  __$InvalidEmailCopyWithImpl(
+      _InvalidEmail<T> _value, $Res Function(_InvalidEmail<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidEmail<T>));
 
   @override
-  InvalidEmail<T> get _value => super._value as InvalidEmail<T>;
+  _InvalidEmail<T> get _value => super._value as _InvalidEmail<T>;
 
   @override
   $Res call({
     Object filedValue = freezed,
   }) {
-    return _then(InvalidEmail<T>(
+    return _then(_InvalidEmail<T>(
       filedValue:
           filedValue == freezed ? _value.filedValue : filedValue as String,
     ));
   }
 }
 
-class _$InvalidEmail<T> implements InvalidEmail<T> {
-  const _$InvalidEmail({@required this.filedValue})
+class _$_InvalidEmail<T> implements _InvalidEmail<T> {
+  const _$_InvalidEmail({@required this.filedValue})
       : assert(filedValue != null);
 
   @override
@@ -126,7 +125,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidEmail<T> &&
+        (other is _InvalidEmail<T> &&
             (identical(other.filedValue, filedValue) ||
                 const DeepCollectionEquality()
                     .equals(other.filedValue, filedValue)));
@@ -137,19 +136,19 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(filedValue);
 
   @override
-  $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
-      _$InvalidEmailCopyWithImpl<T, InvalidEmail<T>>(this, _$identity);
+  _$InvalidEmailCopyWith<T, _InvalidEmail<T>> get copyWith =>
+      __$InvalidEmailCopyWithImpl<T, _InvalidEmail<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmail(String filedValue),
     @required Result invalidPassword(String filedValue),
-    @required Result invalidPasswordChangeCode(int filedValue),
+    @required Result invalidVerificationCode(List<String> filedValue),
   }) {
     assert(invalidEmail != null);
     assert(invalidPassword != null);
-    assert(invalidPasswordChangeCode != null);
+    assert(invalidVerificationCode != null);
     return invalidEmail(filedValue);
   }
 
@@ -158,7 +157,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(String filedValue),
     Result invalidPassword(String filedValue),
-    Result invalidPasswordChangeCode(int filedValue),
+    Result invalidVerificationCode(List<String> filedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -171,23 +170,22 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassowrd<T> value),
-    @required
-        Result invalidPasswordChangeCode(InvalidVerificationCode<T> value),
+    @required Result invalidEmail(_InvalidEmail<T> value),
+    @required Result invalidPassword(_InvalidPassowrd<T> value),
+    @required Result invalidVerificationCode(_InvalidVerificationCode<T> value),
   }) {
     assert(invalidEmail != null);
     assert(invalidPassword != null);
-    assert(invalidPasswordChangeCode != null);
+    assert(invalidVerificationCode != null);
     return invalidEmail(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassowrd<T> value),
-    Result invalidPasswordChangeCode(InvalidVerificationCode<T> value),
+    Result invalidEmail(_InvalidEmail<T> value),
+    Result invalidPassword(_InvalidPassowrd<T> value),
+    Result invalidVerificationCode(_InvalidVerificationCode<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -198,43 +196,44 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   }
 }
 
-abstract class InvalidEmail<T> implements ValueFailure<T> {
-  const factory InvalidEmail({@required String filedValue}) = _$InvalidEmail<T>;
+abstract class _InvalidEmail<T> implements ValueFailure<T> {
+  const factory _InvalidEmail({@required String filedValue}) =
+      _$_InvalidEmail<T>;
 
   String get filedValue;
-  $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith;
+  _$InvalidEmailCopyWith<T, _InvalidEmail<T>> get copyWith;
 }
 
-abstract class $InvalidPassowrdCopyWith<T, $Res> {
-  factory $InvalidPassowrdCopyWith(
-          InvalidPassowrd<T> value, $Res Function(InvalidPassowrd<T>) then) =
-      _$InvalidPassowrdCopyWithImpl<T, $Res>;
+abstract class _$InvalidPassowrdCopyWith<T, $Res> {
+  factory _$InvalidPassowrdCopyWith(
+          _InvalidPassowrd<T> value, $Res Function(_InvalidPassowrd<T>) then) =
+      __$InvalidPassowrdCopyWithImpl<T, $Res>;
   $Res call({String filedValue});
 }
 
-class _$InvalidPassowrdCopyWithImpl<T, $Res>
+class __$InvalidPassowrdCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $InvalidPassowrdCopyWith<T, $Res> {
-  _$InvalidPassowrdCopyWithImpl(
-      InvalidPassowrd<T> _value, $Res Function(InvalidPassowrd<T>) _then)
-      : super(_value, (v) => _then(v as InvalidPassowrd<T>));
+    implements _$InvalidPassowrdCopyWith<T, $Res> {
+  __$InvalidPassowrdCopyWithImpl(
+      _InvalidPassowrd<T> _value, $Res Function(_InvalidPassowrd<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidPassowrd<T>));
 
   @override
-  InvalidPassowrd<T> get _value => super._value as InvalidPassowrd<T>;
+  _InvalidPassowrd<T> get _value => super._value as _InvalidPassowrd<T>;
 
   @override
   $Res call({
     Object filedValue = freezed,
   }) {
-    return _then(InvalidPassowrd<T>(
+    return _then(_InvalidPassowrd<T>(
       filedValue:
           filedValue == freezed ? _value.filedValue : filedValue as String,
     ));
   }
 }
 
-class _$InvalidPassowrd<T> implements InvalidPassowrd<T> {
-  const _$InvalidPassowrd({@required this.filedValue})
+class _$_InvalidPassowrd<T> implements _InvalidPassowrd<T> {
+  const _$_InvalidPassowrd({@required this.filedValue})
       : assert(filedValue != null);
 
   @override
@@ -248,7 +247,7 @@ class _$InvalidPassowrd<T> implements InvalidPassowrd<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidPassowrd<T> &&
+        (other is _InvalidPassowrd<T> &&
             (identical(other.filedValue, filedValue) ||
                 const DeepCollectionEquality()
                     .equals(other.filedValue, filedValue)));
@@ -259,19 +258,19 @@ class _$InvalidPassowrd<T> implements InvalidPassowrd<T> {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(filedValue);
 
   @override
-  $InvalidPassowrdCopyWith<T, InvalidPassowrd<T>> get copyWith =>
-      _$InvalidPassowrdCopyWithImpl<T, InvalidPassowrd<T>>(this, _$identity);
+  _$InvalidPassowrdCopyWith<T, _InvalidPassowrd<T>> get copyWith =>
+      __$InvalidPassowrdCopyWithImpl<T, _InvalidPassowrd<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmail(String filedValue),
     @required Result invalidPassword(String filedValue),
-    @required Result invalidPasswordChangeCode(int filedValue),
+    @required Result invalidVerificationCode(List<String> filedValue),
   }) {
     assert(invalidEmail != null);
     assert(invalidPassword != null);
-    assert(invalidPasswordChangeCode != null);
+    assert(invalidVerificationCode != null);
     return invalidPassword(filedValue);
   }
 
@@ -280,7 +279,7 @@ class _$InvalidPassowrd<T> implements InvalidPassowrd<T> {
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(String filedValue),
     Result invalidPassword(String filedValue),
-    Result invalidPasswordChangeCode(int filedValue),
+    Result invalidVerificationCode(List<String> filedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -293,23 +292,22 @@ class _$InvalidPassowrd<T> implements InvalidPassowrd<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassowrd<T> value),
-    @required
-        Result invalidPasswordChangeCode(InvalidVerificationCode<T> value),
+    @required Result invalidEmail(_InvalidEmail<T> value),
+    @required Result invalidPassword(_InvalidPassowrd<T> value),
+    @required Result invalidVerificationCode(_InvalidVerificationCode<T> value),
   }) {
     assert(invalidEmail != null);
     assert(invalidPassword != null);
-    assert(invalidPasswordChangeCode != null);
+    assert(invalidVerificationCode != null);
     return invalidPassword(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassowrd<T> value),
-    Result invalidPasswordChangeCode(InvalidVerificationCode<T> value),
+    Result invalidEmail(_InvalidEmail<T> value),
+    Result invalidPassword(_InvalidPassowrd<T> value),
+    Result invalidVerificationCode(_InvalidVerificationCode<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -320,58 +318,60 @@ class _$InvalidPassowrd<T> implements InvalidPassowrd<T> {
   }
 }
 
-abstract class InvalidPassowrd<T> implements ValueFailure<T> {
-  const factory InvalidPassowrd({@required String filedValue}) =
-      _$InvalidPassowrd<T>;
+abstract class _InvalidPassowrd<T> implements ValueFailure<T> {
+  const factory _InvalidPassowrd({@required String filedValue}) =
+      _$_InvalidPassowrd<T>;
 
   String get filedValue;
-  $InvalidPassowrdCopyWith<T, InvalidPassowrd<T>> get copyWith;
+  _$InvalidPassowrdCopyWith<T, _InvalidPassowrd<T>> get copyWith;
 }
 
-abstract class $InvalidVerificationCodeCopyWith<T, $Res> {
-  factory $InvalidVerificationCodeCopyWith(InvalidVerificationCode<T> value,
-          $Res Function(InvalidVerificationCode<T>) then) =
-      _$InvalidVerificationCodeCopyWithImpl<T, $Res>;
-  $Res call({int filedValue});
+abstract class _$InvalidVerificationCodeCopyWith<T, $Res> {
+  factory _$InvalidVerificationCodeCopyWith(_InvalidVerificationCode<T> value,
+          $Res Function(_InvalidVerificationCode<T>) then) =
+      __$InvalidVerificationCodeCopyWithImpl<T, $Res>;
+  $Res call({List<String> filedValue});
 }
 
-class _$InvalidVerificationCodeCopyWithImpl<T, $Res>
+class __$InvalidVerificationCodeCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $InvalidVerificationCodeCopyWith<T, $Res> {
-  _$InvalidVerificationCodeCopyWithImpl(InvalidVerificationCode<T> _value,
-      $Res Function(InvalidVerificationCode<T>) _then)
-      : super(_value, (v) => _then(v as InvalidVerificationCode<T>));
+    implements _$InvalidVerificationCodeCopyWith<T, $Res> {
+  __$InvalidVerificationCodeCopyWithImpl(_InvalidVerificationCode<T> _value,
+      $Res Function(_InvalidVerificationCode<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidVerificationCode<T>));
 
   @override
-  InvalidVerificationCode<T> get _value =>
-      super._value as InvalidVerificationCode<T>;
+  _InvalidVerificationCode<T> get _value =>
+      super._value as _InvalidVerificationCode<T>;
 
   @override
   $Res call({
     Object filedValue = freezed,
   }) {
-    return _then(InvalidVerificationCode<T>(
-      filedValue: filedValue == freezed ? _value.filedValue : filedValue as int,
+    return _then(_InvalidVerificationCode<T>(
+      filedValue: filedValue == freezed
+          ? _value.filedValue
+          : filedValue as List<String>,
     ));
   }
 }
 
-class _$InvalidVerificationCode<T> implements InvalidVerificationCode<T> {
-  const _$InvalidVerificationCode({@required this.filedValue})
+class _$_InvalidVerificationCode<T> implements _InvalidVerificationCode<T> {
+  const _$_InvalidVerificationCode({@required this.filedValue})
       : assert(filedValue != null);
 
   @override
-  final int filedValue;
+  final List<String> filedValue;
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.invalidPasswordChangeCode(filedValue: $filedValue)';
+    return 'ValueFailure<$T>.invalidVerificationCode(filedValue: $filedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidVerificationCode<T> &&
+        (other is _InvalidVerificationCode<T> &&
             (identical(other.filedValue, filedValue) ||
                 const DeepCollectionEquality()
                     .equals(other.filedValue, filedValue)));
@@ -382,22 +382,21 @@ class _$InvalidVerificationCode<T> implements InvalidVerificationCode<T> {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(filedValue);
 
   @override
-  $InvalidVerificationCodeCopyWith<T, InvalidVerificationCode<T>>
-      get copyWith =>
-          _$InvalidVerificationCodeCopyWithImpl<T, InvalidVerificationCode<T>>(
-              this, _$identity);
+  _$InvalidVerificationCodeCopyWith<T, _InvalidVerificationCode<T>>
+      get copyWith => __$InvalidVerificationCodeCopyWithImpl<T,
+          _InvalidVerificationCode<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmail(String filedValue),
     @required Result invalidPassword(String filedValue),
-    @required Result invalidPasswordChangeCode(int filedValue),
+    @required Result invalidVerificationCode(List<String> filedValue),
   }) {
     assert(invalidEmail != null);
     assert(invalidPassword != null);
-    assert(invalidPasswordChangeCode != null);
-    return invalidPasswordChangeCode(filedValue);
+    assert(invalidVerificationCode != null);
+    return invalidVerificationCode(filedValue);
   }
 
   @override
@@ -405,12 +404,12 @@ class _$InvalidVerificationCode<T> implements InvalidVerificationCode<T> {
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(String filedValue),
     Result invalidPassword(String filedValue),
-    Result invalidPasswordChangeCode(int filedValue),
+    Result invalidVerificationCode(List<String> filedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (invalidPasswordChangeCode != null) {
-      return invalidPasswordChangeCode(filedValue);
+    if (invalidVerificationCode != null) {
+      return invalidVerificationCode(filedValue);
     }
     return orElse();
   }
@@ -418,37 +417,37 @@ class _$InvalidVerificationCode<T> implements InvalidVerificationCode<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassowrd<T> value),
-    @required
-        Result invalidPasswordChangeCode(InvalidVerificationCode<T> value),
+    @required Result invalidEmail(_InvalidEmail<T> value),
+    @required Result invalidPassword(_InvalidPassowrd<T> value),
+    @required Result invalidVerificationCode(_InvalidVerificationCode<T> value),
   }) {
     assert(invalidEmail != null);
     assert(invalidPassword != null);
-    assert(invalidPasswordChangeCode != null);
-    return invalidPasswordChangeCode(this);
+    assert(invalidVerificationCode != null);
+    return invalidVerificationCode(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassowrd<T> value),
-    Result invalidPasswordChangeCode(InvalidVerificationCode<T> value),
+    Result invalidEmail(_InvalidEmail<T> value),
+    Result invalidPassword(_InvalidPassowrd<T> value),
+    Result invalidVerificationCode(_InvalidVerificationCode<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (invalidPasswordChangeCode != null) {
-      return invalidPasswordChangeCode(this);
+    if (invalidVerificationCode != null) {
+      return invalidVerificationCode(this);
     }
     return orElse();
   }
 }
 
-abstract class InvalidVerificationCode<T> implements ValueFailure<T> {
-  const factory InvalidVerificationCode({@required int filedValue}) =
-      _$InvalidVerificationCode<T>;
+abstract class _InvalidVerificationCode<T> implements ValueFailure<T> {
+  const factory _InvalidVerificationCode({@required List<String> filedValue}) =
+      _$_InvalidVerificationCode<T>;
 
-  int get filedValue;
-  $InvalidVerificationCodeCopyWith<T, InvalidVerificationCode<T>> get copyWith;
+  List<String> get filedValue;
+  _$InvalidVerificationCodeCopyWith<T, _InvalidVerificationCode<T>>
+      get copyWith;
 }

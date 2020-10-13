@@ -3,17 +3,17 @@ part of 'register_bloc.dart';
 @freezed
 abstract class RegisterEvent with _$RegisterEvent {
   const factory RegisterEvent.registerWithEmailAndPassword() =
-      RegisterWithEmailAndPassword;
+      _RegisterWithEmailAndPassword;
   const factory RegisterEvent.emailChanged(
     String email,
-  ) = EmailChanged;
+  ) = _EmailChanged;
   const factory RegisterEvent.passwordChanged(
     String password,
-  ) = PasswordChanged;
+  ) = _PasswordChanged;
   const factory RegisterEvent.passwordRepeatChanged(
     String passwordRepeat,
-  ) = PasswordRepeatChanged;
+  ) = _PasswordRepeatChanged;
   const factory RegisterEvent.termsAcceptanceChanged(
     bool termsAccepted,
-  ) = TermsAcceptanceChanged;
+  ) = _TermsAcceptanceChanged;
 }
